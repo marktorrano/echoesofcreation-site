@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes of Creation - Top-down 3D Action RPG</title>
+  <meta name="description" content="A top-down 3D action RPG where a young adventurer embarks on a journey to uncover the truth about the Creator of the world. Real-time combat, class advancement, and grindy loot-driven progression.">
+  <meta property="og:title" content="Echoes of Creation">
+  <meta property="og:description" content="A top-down 3D action RPG with real-time combat, class advancement, and loot-driven progression.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://echoesofcreation.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Echoes of Creation</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="https://app.echoesofcreation.net" class="nav-play-link" target="_blank">Play Now</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#world">World</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Echoes of Creation</h1>
+      <p class="hero-subtitle">Uncover the truth. Free the Light. Defy the Dark.</p>
+      <p class="hero-description">A top-down 3D action RPG with real-time combat, class advancement, and loot-driven progression.</p>
+      <div class="hero-actions">
+        <a href="https://app.echoesofcreation.net" class="btn btn-primary" target="_blank">Play Now</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </header>
+
+  <!-- Play Now Banner -->
+  <section class="play-banner" id="play">
+    <a href="https://app.echoesofcreation.net" target="_blank" class="play-banner-link">
+      <div class="play-banner-image">
+        <!-- Replace src with a real gameplay screenshot -->
+        <div class="play-banner-placeholder">
+          <div class="play-banner-scene">
+            <div class="scene-glow"></div>
+          </div>
+        </div>
+        <div class="play-banner-overlay">
+          <div class="play-banner-content">
+            <div class="play-icon-large">&#9654;</div>
+            <h2>Play Now in Your Browser</h2>
+            <p>No download required &mdash; jump straight into the action</p>
+            <span class="play-banner-btn">Launch Game</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">The Story</h2>
+      <div class="story-grid">
+        <div class="story-text">
+          <p class="story-lead">The world was shaped by a mysterious figure known only as <strong>the Creator</strong>.</p>
+          <p>In ages past, the Creator brought forth two mythical beings: <strong>The Light</strong>, a benevolent girl of immense power who once saved the world from a great catastrophe, and <strong>The Dark</strong>, a boy who seized the moment of her weakness to seal her away.</p>
+          <p>With the Light imprisoned, darkness creeps across the land. Guided by Elder Maren in Eloria Village, you set out to investigate the growing corruption, uncover ancient texts, and piece together the Creator's story.</p>
+          <p>Your journey will take you through seven distinct zones &mdash; from the peaceful village through corrupted forests, goblin-infested hills, cursed caverns, and ancient ruins &mdash; culminating at the Creator's Gate, where The Forgotten One guards the sealed Light.</p>
+        </div>
+        <div class="story-visual">
+          <div class="lore-card">
+            <div class="lore-icon">&#9728;</div>
+            <h3>The Light</h3>
+            <p>A benevolent being who sacrificed her power to save the world, now sealed away and waiting to be freed.</p>
+          </div>
+          <div class="lore-card">
+            <div class="lore-icon">&#9790;</div>
+            <h3>The Dark</h3>
+            <p>Seized the Light's moment of weakness to imprison her. His whereabouts remain unknown.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section section-dark" id="features">
+    <div class="container">
+      <h2 class="section-title">Core Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#9876;</div>
+          <h3>Real-Time Combat</h3>
+          <p>Fast-paced action with WASD movement, skill hotbar, and satisfying combat with status effects like stun, poison, bleed, and slow.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9733;</div>
+          <h3>Class Advancement</h3>
+          <p>Start as an Adventurer, experiment with all weapon types, then specialize into Swordsman, Assassin, Ranger, or Cleric at level 10.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128200;</div>
+          <h3>Grindy Progression</h3>
+          <p>Leveling feels earned. Grind monsters for EXP, gold, diamonds, and gear drops across a progressive difficulty curve to level 30.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#127891;</div>
+          <h3>Build Diversity</h3>
+          <p>Six base stats with player-allocated points allow diverse builds within each class. Your choices shape your playstyle.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128176;</div>
+          <h3>Loot-Driven Economy</h3>
+          <p>Four gear tiers and four skill tiers provide a clear upgrade path. Dual currency system with Gold and rare Diamonds.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9881;</div>
+          <h3>Auto-Combat</h3>
+          <p>Hunt mode and Guard mode let you grind while idle. Auto-potions, auto-loot charms, and smart targeting keep you alive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes Section -->
+  <section class="section" id="classes">
+    <div class="container">
+      <h2 class="section-title">Choose Your Path</h2>
+      <p class="section-subtitle">At level 10, choose one of four specializations. Each class offers a unique playstyle.</p>
+      <div class="classes-grid">
+        <div class="class-card" data-class="swordsman">
+          <div class="class-icon">&#128481;</div>
+          <h3>Swordsman</h3>
+          <div class="class-details">
+            <div class="class-stat"><span>Weapon</span> Sword + Shield</div>
+            <div class="class-stat"><span>Role</span> Frontline Tank</div>
+          </div>
+          <p>Defense and survivability. Shield provides defense and dodge bonuses. Wide melee arcs and the ability to stand your ground.</p>
+        </div>
+        <div class="class-card" data-class="assassin">
+          <div class="class-icon">&#128298;</div>
+          <h3>Assassin</h3>
+          <div class="class-details">
+            <div class="class-stat"><span>Weapon</span> Dual Daggers</div>
+            <div class="class-stat"><span>Role</span> Burst DPS</div>
+          </div>
+          <p>Speed and critical hits. Dual-wielding increases attack speed and crit chance. High risk, high reward gameplay.</p>
+        </div>
+        <div class="class-card" data-class="ranger">
+          <div class="class-icon">&#127993;</div>
+          <h3>Ranger</h3>
+          <div class="class-details">
+            <div class="class-stat"><span>Weapon</span> Bow + Quiver</div>
+            <div class="class-stat"><span>Role</span> Ranged DPS</div>
+          </div>
+          <p>Accuracy and range. Quiver boosts accuracy and extends effective range. Excels at kiting and area-of-effect damage.</p>
+        </div>
+        <div class="class-card" data-class="cleric">
+          <div class="class-icon">&#10031;</div>
+          <h3>Cleric</h3>
+          <div class="class-details">
+            <div class="class-stat"><span>Weapon</span> Staff + Orb</div>
+            <div class="class-stat"><span>Role</span> Healer / Mage</div>
+          </div>
+          <p>Magic and sustain. Orb boosts MP regen and magic damage. The only class with healing abilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- World Section -->
+  <section class="section section-dark" id="world">
+    <div class="container">
+      <h2 class="section-title">Explore the World</h2>
+      <p class="section-subtitle">Journey through seven distinct zones, each with unique enemies, lore, and challenges.</p>
+      <div class="world-timeline">
+        <div class="world-zone">
+          <div class="zone-level">Lv 1</div>
+          <div class="zone-info">
+            <h3>Eloria Village</h3>
+            <p>Your home base. NPCs, shops, class change master, and quest givers await.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 1-5</div>
+          <div class="zone-info">
+            <h3>Forest Path</h3>
+            <p>Corrupted wildlife and the first lore fragments hinting at an ancient conflict.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 4-7</div>
+          <div class="zone-info">
+            <h3>Dark Woods</h3>
+            <p>Deeper corruption. Fragments reveal the existence of two mythical beings.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 8-13</div>
+          <div class="zone-info">
+            <h3>Goblin Hills</h3>
+            <p>Goblins emboldened by growing darkness. Lore describes the Light's sacrifice.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 14-20</div>
+          <div class="zone-info">
+            <h3>Cursed Caverns</h3>
+            <p>Undead and spectral enemies. The Dark's betrayal and sealing of the Light revealed.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 21-27</div>
+          <div class="zone-info">
+            <h3>Ancient Ruins</h3>
+            <p>Remains of the Creator's domain. The Shadow Guardian lurks. The full story unfolds.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 28-30</div>
+          <div class="zone-info">
+            <h3>Creator's Gate</h3>
+            <p>The final zone. Shadow sentinels guard The Forgotten One &mdash; defeat it to free the Light.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Section -->
+  <section class="section" id="media">
+    <div class="container">
+      <h2 class="section-title">Media</h2>
+      <p class="section-subtitle">See the game in action.</p>
+      <div class="media-grid">
+        <div class="video-placeholder" id="video-1">
+          <div class="video-placeholder-content">
+            <!-- Replace with YouTube embed: <iframe src="https://www.youtube.com/embed/VIDEO_ID" ...></iframe> -->
+            <div class="play-icon">&#9654;</div>
+            <p>Gameplay Trailer</p>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+        <div class="video-placeholder" id="video-2">
+          <div class="video-placeholder-content">
+            <div class="play-icon">&#9654;</div>
+            <p>Combat Showcase</p>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+        <div class="video-placeholder" id="video-3">
+          <div class="video-placeholder-content">
+            <div class="play-icon">&#9654;</div>
+            <p>Class Overview</p>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section class="section section-dark" id="roadmap">
+    <div class="container">
+      <h2 class="section-title">Development Roadmap</h2>
+      <p class="section-subtitle">Follow our journey from early development to launch.</p>
+      <div class="roadmap">
+
+        <div class="roadmap-phase completed">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-status">Completed</div>
+            <h3>Phase 1 &mdash; Core Foundation</h3>
+            <ul>
+              <li>Player movement and camera system</li>
+              <li>Real-time combat with attack animations</li>
+              <li>Monster spawning and AI</li>
+              <li>Stats system and leveling</li>
+              <li>Inventory and equipment</li>
+              <li>NPC dialogue and shops</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="roadmap-phase completed">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-status">Completed</div>
+            <h3>Phase 2 &mdash; World Building</h3>
+            <ul>
+              <li>7 map zones with unique environments</li>
+              <li>Quest system (main + side quests)</li>
+              <li>Waypoint teleportation system</li>
+              <li>Consumables and buff system</li>
+              <li>Status effects on monsters</li>
+              <li>Auto-combat (Hunt / Guard modes)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="roadmap-phase in-progress">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-status">In Progress</div>
+            <h3>Phase 3 &mdash; Content & Polish</h3>
+            <ul>
+              <li>Class advancement system</li>
+              <li>Skill books and skill tiers</li>
+              <li>Elite monsters and boss encounters</li>
+              <li>Achievement system</li>
+              <li>Cutscenes and story delivery</li>
+              <li>Audio and sound effects</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="roadmap-phase upcoming">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-status">Upcoming</div>
+            <h3>Phase 4 &mdash; Launch</h3>
+            <ul>
+              <li>Final balancing pass</li>
+              <li>Mobile platform optimization</li>
+              <li>Web and desktop builds</li>
+              <li>Daily quests and login rewards</li>
+              <li>Monsterpedia</li>
+              <li>Public launch</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="roadmap-phase upcoming">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-status">Future</div>
+            <h3>Phase 5 &mdash; Post-Launch</h3>
+            <ul>
+              <li>New zones and level cap increase</li>
+              <li>The Dark storyline continuation</li>
+              <li>Multiplayer and social features</li>
+              <li>Crafting system</li>
+              <li>Guild system</li>
+              <li>PvP arena</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A top-down 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">Story</a>
+          <a href="#features">Features</a>
+          <a href="#classes">Classes</a>
+          <a href="#roadmap">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
