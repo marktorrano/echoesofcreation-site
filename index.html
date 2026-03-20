@@ -426,28 +426,20 @@
     <div class="container">
       <h2 class="section-title">Media</h2>
       <p class="section-subtitle">See the game in action.</p>
-      <div class="media-grid">
-        <div class="video-placeholder" id="video-1">
-          <div class="video-placeholder-content">
-            <!-- Replace with YouTube embed: <iframe src="https://www.youtube.com/embed/VIDEO_ID" ...></iframe> -->
-            <div class="play-icon">&#9654;</div>
-            <p>Gameplay Trailer</p>
-            <span>Coming Soon</span>
-          </div>
+      <div class="media-grid media-grid-2">
+        <div class="video-card">
+          <video class="media-video" controls preload="metadata" poster="">
+            <source src="videos/gameplay_trimmed.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+          <p class="video-label">Gameplay</p>
         </div>
-        <div class="video-placeholder" id="video-2">
-          <div class="video-placeholder-content">
-            <div class="play-icon">&#9654;</div>
-            <p>Combat Showcase</p>
-            <span>Coming Soon</span>
-          </div>
-        </div>
-        <div class="video-placeholder" id="video-3">
-          <div class="video-placeholder-content">
-            <div class="play-icon">&#9654;</div>
-            <p>Class Overview</p>
-            <span>Coming Soon</span>
-          </div>
+        <div class="video-card">
+          <video class="media-video" controls preload="metadata" poster="">
+            <source src="videos/vfx.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="video-label">Boss VFX</p>
         </div>
       </div>
     </div>
