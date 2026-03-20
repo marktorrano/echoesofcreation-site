@@ -1235,18 +1235,25 @@ a:hover {
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 50vh;
-    margin-top: 75px;
-    background-size: cover;
-    background-position: center 60%;
+    min-height: auto;
+    margin-top: 72px;
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+    padding-top: 56vw;
   }
 
   .hero-title-mobile {
     display: none;
   }
 
+  .hero-overlay {
+    background: linear-gradient(to bottom, transparent 20%, rgba(10, 10, 15, 0.85) 55%, var(--color-bg) 100%);
+  }
+
   .hero-content {
-    padding-bottom: 40px;
+    padding-bottom: 32px;
   }
 
   .showcase-grid {
