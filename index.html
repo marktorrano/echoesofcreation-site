@@ -107,38 +107,172 @@
   <!-- Features Section -->
   <section class="section section-dark" id="features">
     <div class="container">
-      <h2 class="section-title">Core Features</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">&#9876;</div>
-          <h3>Real-Time Combat</h3>
-          <p>Fast-paced action with WASD movement, skill hotbar, and satisfying combat with status effects like stun, poison, bleed, and slow.</p>
+      <h2 class="section-title">Game Features</h2>
+      <p class="section-subtitle">A full-featured action RPG packed with systems to explore, grind, and master.</p>
+
+      <div class="feature-categories">
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9876;</span>
+            <h3>Combat</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Real-time action combat with melee arcs and ranged projectiles</li>
+            <li>Accuracy vs Dodge hit chance system</li>
+            <li>Target locking with TAB cycling and click targeting</li>
+            <li>Auto-combat with Hunt mode (chase) and Guard mode (stationary)</li>
+            <li>Configurable hunt radius, target priority, and auto-potions</li>
+            <li>Auto-buff for expired buff potions</li>
+            <li>Combo chain system with EXP, gold, and drop rate bonuses</li>
+            <li>Status effects: stun, poison, bleed, and slow</li>
+            <li>Floating damage numbers with crit and miss indicators</li>
+            <li>PvP duels against other players</li>
+          </ul>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#9733;</div>
-          <h3>Class Advancement</h3>
-          <p>Start as an Adventurer, experiment with all weapon types, then specialize into Swordsman, Assassin, Ranger, or Cleric at level 10.</p>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128200;</span>
+            <h3>Progression</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Level 1 to 30 with a progressive EXP curve</li>
+            <li>6 stats (STR, DEX, INT, END, VIT, SPR) with 2 points per level</li>
+            <li>Class change at Lv 10: Swordsman, Assassin, Ranger, or Cleric</li>
+            <li>Stat preview and confirm/reset allocation UI</li>
+            <li>Active skills with cooldowns and MP costs on a 9-slot hotbar</li>
+            <li>Passive skills with permanent stat bonuses</li>
+            <li>4 skill tiers: Normal, Rare, Epic, and Legend</li>
+            <li>Auto-cast toggle for skills during auto-combat</li>
+          </ul>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128200;</div>
-          <h3>Grindy Progression</h3>
-          <p>Leveling feels earned. Grind monsters for EXP, gold, diamonds, and gear drops across a progressive difficulty curve to level 30.</p>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9881;</span>
+            <h3>Equipment &amp; Upgrades</h3>
+          </div>
+          <ul class="feature-list">
+            <li>14 gear slots: weapon, off-hand, 6 armor, and 6 accessories</li>
+            <li>4 rarity tiers: Normal, Rare, Epic, and Legend</li>
+            <li>Equipment upgrading from +1 to +10 at the blacksmith</li>
+            <li>Scrolls of Protection to prevent destruction on high upgrades</li>
+            <li>Gear set bonuses (4 armor sets, 3 accessory sets)</li>
+            <li>Gem socket system on Epic and Legend gear</li>
+            <li>Stat comparison overlay when browsing gear</li>
+            <li>Drag &amp; drop equipping, unequipping, and swapping</li>
+            <li>Global announcements for +9 and +10 upgrade successes</li>
+          </ul>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#127891;</div>
-          <h3>Build Diversity</h3>
-          <p>Six base stats with player-allocated points allow diverse builds within each class. Your choices shape your playstyle.</p>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128176;</span>
+            <h3>Economy &amp; Inventory</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Weight-based inventory system tied to VIT stat</li>
+            <li>Dual currency: Gold (common) and Diamonds (rare)</li>
+            <li>Auto-sell filters with configurable tier thresholds</li>
+            <li>Auto-loot charms (1 hour, stackable up to 4 hours)</li>
+            <li>Diamond Shop with boost potions and premium items</li>
+            <li>Player Marketplace to buy and sell items for diamonds</li>
+            <li>50-slot storage bank via an NPC in the village</li>
+            <li>Color-coded loot history feed and rarity loot beams</li>
+          </ul>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128176;</div>
-          <h3>Loot-Driven Economy</h3>
-          <p>Four gear tiers and four skill tiers provide a clear upgrade path. Dual currency system with Gold and rare Diamonds.</p>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#127758;</span>
+            <h3>World &amp; Exploration</h3>
+          </div>
+          <ul class="feature-list">
+            <li>7 unique maps: a safe village hub and 6 combat zones (Lv 1&ndash;30)</li>
+            <li>Portals connecting adjacent zones</li>
+            <li>Waypoint fast-travel discovered through exploration</li>
+            <li>Visual world map with click-to-teleport</li>
+            <li>Minimap with player, monster, NPC, quest, and waypoint markers</li>
+            <li>Weighted monster spawning and quadrant-based respawns</li>
+          </ul>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#9881;</div>
-          <h3>Auto-Combat</h3>
-          <p>Hunt mode and Guard mode let you grind while idle. Auto-potions, auto-loot charms, and smart targeting keep you alive.</p>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128123;</span>
+            <h3>Monsters &amp; Bosses</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Passive early-zone monsters and aggressive late-zone monsters</li>
+            <li>Elite monsters (5% spawn rate) with boosted stats and rewards</li>
+            <li>Multi-phase boss with telegraphed attacks, summons, and hazard zones</li>
+            <li>Boss skill VFX synced with animations</li>
+            <li>Monsterpedia bestiary with progressive kill-based unlocks</li>
+          </ul>
         </div>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128220;</span>
+            <h3>Quests &amp; Story</h3>
+          </div>
+          <ul class="feature-list">
+            <li>6 main story quests forming a linear chain through all zones</li>
+            <li>12 side quests (2 per zone) with kill and collect objectives</li>
+            <li>Quest tracker HUD with progress bars</li>
+            <li>Quest auto-pathing through portals to objectives</li>
+            <li>Quest compass with on-screen and minimap arrows</li>
+            <li>NPC quest indicators (available, in-progress, completable)</li>
+            <li>Story cutscenes on quest completion and first zone entry</li>
+          </ul>
+        </div>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#127942;</span>
+            <h3>Daily Activities &amp; Achievements</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Daily login rewards on a 7-day streak cycle</li>
+            <li>3 random daily quests that reset at midnight</li>
+            <li>Achievement system across Combat, Progression, and Exploration</li>
+            <li>Unlockable titles from achievements</li>
+            <li>Global leaderboard: Level, Kills, Best Combo, and Gold</li>
+          </ul>
+        </div>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128101;</span>
+            <h3>Multiplayer &amp; Social</h3>
+          </div>
+          <ul class="feature-list">
+            <li>See other players on the same map in real time</li>
+            <li>Map chat and global chat</li>
+            <li>Cloud saves synced across devices</li>
+            <li>Guest accounts with upgrade to full account</li>
+            <li>Offline mode for solo play without internet</li>
+            <li>Global announcements for legend drops and high upgrades</li>
+          </ul>
+        </div>
+
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9889;</span>
+            <h3>Quality of Life</h3>
+          </div>
+          <ul class="feature-list">
+            <li>5 character slots with a title screen manager</li>
+            <li>Auto-save every 60 seconds and on key events</li>
+            <li>Click-to-move and WASD movement</li>
+            <li>Camera zoom with scroll wheel or pinch-to-zoom</li>
+            <li>Mobile touch controls: virtual joystick, attack, and skill buttons</li>
+            <li>No death penalty &mdash; respawn at village with 30% HP</li>
+            <li>NPC dialogue portraits and visual effect system</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
@@ -311,10 +445,42 @@
             <ul>
               <li>7 map zones with unique environments</li>
               <li>Quest system (main + side quests)</li>
-              <li>Waypoint teleportation system</li>
-              <li>Consumables and buff system</li>
-              <li>Status effects on monsters</li>
+              <li>Waypoint fast-travel system</li>
+              <li>Consumables, buffs, and status effects</li>
               <li>Auto-combat (Hunt / Guard modes)</li>
+              <li>Combo chain and elite monster systems</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="roadmap-phase completed">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-status">Completed</div>
+            <h3>Phase 3 &mdash; Content &amp; Systems</h3>
+            <ul>
+              <li>Class advancement at level 10</li>
+              <li>Skill books and 4-tier skill system</li>
+              <li>Boss encounters with multi-phase mechanics</li>
+              <li>Equipment upgrades, gem sockets, and set bonuses</li>
+              <li>Achievement system with unlockable titles</li>
+              <li>Story cutscenes and lore delivery</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="roadmap-phase completed">
+          <div class="roadmap-marker"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-status">Completed</div>
+            <h3>Phase 4 &mdash; Social &amp; Economy</h3>
+            <ul>
+              <li>Multiplayer with real-time player visibility</li>
+              <li>Map and global chat</li>
+              <li>PvP duels</li>
+              <li>Player marketplace and Diamond Shop</li>
+              <li>Daily quests, login rewards, and leaderboard</li>
+              <li>Monsterpedia and world map</li>
             </ul>
           </div>
         </div>
@@ -323,29 +489,13 @@
           <div class="roadmap-marker"></div>
           <div class="roadmap-content">
             <div class="roadmap-status">In Progress</div>
-            <h3>Phase 3 &mdash; Content & Polish</h3>
+            <h3>Phase 5 &mdash; Polish &amp; Launch</h3>
             <ul>
-              <li>Class advancement system</li>
-              <li>Skill books and skill tiers</li>
-              <li>Elite monsters and boss encounters</li>
-              <li>Achievement system</li>
-              <li>Cutscenes and story delivery</li>
-              <li>Audio and sound effects</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="roadmap-phase upcoming">
-          <div class="roadmap-marker"></div>
-          <div class="roadmap-content">
-            <div class="roadmap-status">Upcoming</div>
-            <h3>Phase 4 &mdash; Launch</h3>
-            <ul>
-              <li>Final balancing pass</li>
-              <li>Mobile platform optimization</li>
+              <li>Mobile touch controls and optimization</li>
+              <li>Visual effects and audio polish</li>
+              <li>Balancing pass across all zones</li>
+              <li>Cloud saves and cross-device play</li>
               <li>Web and desktop builds</li>
-              <li>Daily quests and login rewards</li>
-              <li>Monsterpedia</li>
               <li>Public launch</li>
             </ul>
           </div>
@@ -355,14 +505,14 @@
           <div class="roadmap-marker"></div>
           <div class="roadmap-content">
             <div class="roadmap-status">Future</div>
-            <h3>Phase 5 &mdash; Post-Launch</h3>
+            <h3>Phase 6 &mdash; Post-Launch</h3>
             <ul>
               <li>New zones and level cap increase</li>
               <li>The Dark storyline continuation</li>
-              <li>Multiplayer and social features</li>
               <li>Crafting system</li>
               <li>Guild system</li>
               <li>PvP arena</li>
+              <li>Seasonal events and content updates</li>
             </ul>
           </div>
         </div>

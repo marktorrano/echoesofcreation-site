@@ -489,6 +489,89 @@ a:hover {
 }
 
 /* --- Features --- */
+.feature-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.feature-category {
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 28px 28px 24px;
+  transition: border-color 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s;
+}
+
+.feature-category.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-category:nth-child(2) { transition-delay: 0.05s; }
+.feature-category:nth-child(3) { transition-delay: 0.1s; }
+.feature-category:nth-child(4) { transition-delay: 0.15s; }
+.feature-category:nth-child(5) { transition-delay: 0.2s; }
+.feature-category:nth-child(6) { transition-delay: 0.25s; }
+.feature-category:nth-child(7) { transition-delay: 0.3s; }
+.feature-category:nth-child(8) { transition-delay: 0.35s; }
+.feature-category:nth-child(9) { transition-delay: 0.4s; }
+.feature-category:nth-child(10) { transition-delay: 0.45s; }
+
+.feature-category:hover {
+  border-color: rgba(212, 168, 83, 0.3);
+}
+
+.feature-category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(212, 168, 83, 0.12);
+}
+
+.feature-category-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.feature-category-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-gold-light);
+  letter-spacing: 0.03em;
+}
+
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-list li {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  padding: 4px 0 4px 18px;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-gold-dark);
+}
+
+/* Legacy feature-card support (keep for scroll reveal JS) */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -945,6 +1028,10 @@ a:hover {
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
+  .feature-categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -980,6 +1067,10 @@ a:hover {
   .story-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .feature-categories {
+    grid-template-columns: 1fr;
   }
 
   .features-grid {
