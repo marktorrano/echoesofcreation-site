@@ -194,6 +194,10 @@ a:hover {
   max-width: 800px;
 }
 
+.hero-title-mobile {
+  display: none;
+}
+
 .hero-title {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 7vw, 5rem);
@@ -1231,9 +1235,12 @@ a:hover {
 
 @media (max-width: 768px) {
   .hero {
-    background-size: contain;
-    background-position: center top;
-    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
+  }
+
+  .hero-title-mobile {
+    display: block;
   }
 
   .hero-content {
