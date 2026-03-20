@@ -1235,14 +1235,14 @@ a:hover {
 
 @media (max-width: 768px) {
   .hero {
+    min-height: 50vh;
+    margin-top: 75px;
     background-size: cover;
     background-position: center 60%;
   }
 
   .hero-title-mobile {
-    display: block;
-    font-size: clamp(2rem, 8vw, 3rem);
-    margin-bottom: 12px;
+    display: none;
   }
 
   .hero-content {
