@@ -83,11 +83,19 @@ a:hover {
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-gold) !important;
-  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+  transition: opacity 0.3s;
+}
+
+.nav-logo:hover .nav-logo-img {
+  opacity: 0.85;
 }
 
 .nav-links {
