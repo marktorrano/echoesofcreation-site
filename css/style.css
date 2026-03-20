@@ -1230,6 +1230,16 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .hero-content {
+    padding-bottom: 40px;
+  }
+
   .showcase-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
