@@ -132,6 +132,15 @@ a:hover {
   transform: translateY(-1px);
 }
 
+.nav-discord-link {
+  color: #7289da !important;
+  font-weight: 600 !important;
+}
+
+.nav-discord-link:hover {
+  color: #99aeff !important;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -1060,6 +1069,31 @@ a:hover {
 
 .roadmap-phase.in-progress .roadmap-content li::before {
   background: var(--color-warning);
+}
+
+/* --- CTA / Steam Section --- */
+.cta-section {
+  background: linear-gradient(to bottom, var(--color-bg-alt), var(--color-bg));
+  text-align: center;
+  padding: 80px 0;
+}
+
+.cta-container {
+  max-width: 640px;
+}
+
+.cta-text {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* --- Footer --- */
