@@ -862,16 +862,30 @@ a:hover {
 
 .video-card:nth-child(2) { transition-delay: 0.1s; }
 
-.media-video {
+.video-card-wrap {
+  position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
   background: var(--color-surface);
   transition: border-color 0.3s;
 }
 
-.media-video:hover {
+.video-card-wrap:hover {
   border-color: rgba(212, 168, 83, 0.3);
+}
+
+.media-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  border-radius: 8px;
 }
 
 .video-label {
