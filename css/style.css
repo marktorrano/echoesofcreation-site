@@ -648,6 +648,19 @@ a:hover {
   transform: scaleX(1);
 }
 
+.class-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s;
+}
+
+.class-card:hover .class-image {
+  transform: scale(1.08);
+}
+
 .class-icon {
   font-size: 2.5rem;
   margin-bottom: 16px;
@@ -734,6 +747,86 @@ a:hover {
 .zone-info p {
   color: var(--color-text-muted);
   font-size: 0.9rem;
+}
+
+/* --- Showcase (Monsters & Weapons) --- */
+.showcase-group {
+  margin-bottom: 48px;
+}
+
+.showcase-group:last-child {
+  margin-bottom: 0;
+}
+
+.showcase-label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.showcase-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 900px;
+}
+
+.showcase-item {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.showcase-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcase-item:nth-child(2) { transition-delay: 0.1s; }
+.showcase-item:nth-child(3) { transition-delay: 0.2s; }
+.showcase-item:nth-child(4) { transition-delay: 0.3s; }
+
+.showcase-image-wrap {
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 12px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.showcase-image-wrap:hover {
+  border-color: rgba(212, 168, 83, 0.3);
+  transform: translateY(-4px);
+}
+
+.showcase-image-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.showcase-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  letter-spacing: 0.03em;
 }
 
 /* --- Media --- */
@@ -1042,6 +1135,15 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .showcase-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .nav-toggle {
     display: flex;
   }

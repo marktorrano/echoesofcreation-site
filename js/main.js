@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Scroll reveal ---
   const revealElements = document.querySelectorAll(
-    '.section-title, .feature-card, .feature-category, .class-card, .world-zone, .roadmap-phase, .lore-card, .video-placeholder, .play-banner-link'
+    '.section-title, .feature-card, .feature-category, .class-card, .world-zone, .roadmap-phase, .lore-card, .video-placeholder, .play-banner-link, .showcase-item'
   );
 
   const revealObserver = new IntersectionObserver((entries) => {
