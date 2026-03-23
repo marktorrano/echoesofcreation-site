@@ -420,6 +420,22 @@ a:hover {
   transform: translateY(-2px);
 }
 
+.btn-play {
+  background: linear-gradient(135deg, #2a7a3a, #3da64e);
+  color: #fff;
+  border: none;
+  font-size: 1.15rem;
+  padding: 1rem 2.5rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-play:hover {
+  background: linear-gradient(135deg, #3da64e, #4ebd5f);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(61, 166, 78, 0.35);
+}
+
 /* --- Sections --- */
 .section {
   padding: 100px 0;
