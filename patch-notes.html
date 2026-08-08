@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patch Notes - The Sundering | Echoes of Creation</title>
+  <meta name="description" content="The Sundering: a new continent, three factions, new bosses, armor sets, and a complete collections overhaul. Read the full patch notes for the biggest Echoes of Creation update yet.">
+  <meta property="og:title" content="The Sundering - Echoes of Creation">
+  <meta property="og:description" content="A new continent tears open: three factions, four field zones, new bosses, new armor, and a collections overhaul.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://echoesofcreation.net/patch-notes.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .patch-hero {
+      min-height: 46vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.75)), url('images/hero-banner.webp') center/cover no-repeat;
+    }
+    .patch-hero .hero-subtitle { margin-top: 12px; }
+    .patch-tag {
+      display: inline-block;
+      padding: 6px 18px;
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      border-radius: 999px;
+      color: #d4af37;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .patch-date { color: rgba(255, 255, 255, 0.55); font-size: 0.95rem; margin-top: 14px; }
+    .patch-intro { max-width: 780px; margin: 0 auto 10px; text-align: center; color: rgba(255,255,255,0.8); line-height: 1.7; }
+    .patch-note-fine { text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 40px; }
+    .zone-band { color: #d4af37; font-size: 0.85rem; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="index.html#roadmap">Roadmap</a></li>
+        <li><a href="patch-notes.html" class="active">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Patch Hero -->
+  <header class="patch-hero">
+    <div>
+      <div class="patch-tag">Major Content Update</div>
+      <h1 class="hero-title">The Sundering</h1>
+      <p class="hero-subtitle">The world's spine has cracked. A new continent rises from the wound.</p>
+      <p class="patch-date">Target release: August 17, 2026 &mdash; dates may shift as we polish</p>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section class="section" id="overview">
+    <div class="container">
+      <p class="patch-intro">The death of The Forgotten One did more than crack a seal &mdash; it broke the world itself. Across the new land bridge lies <strong>the Sundering</strong>: a torn continent where three powers pull the pieces their way, and something older stirs beneath the Scar. This is the largest update Echoes of Creation has ever received.</p>
+    </div>
+  </section>
+
+  <!-- By the numbers -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:18px; text-align:center; max-width:900px; margin:0 auto;">
+        <div><div style="font-family:'Cinzel',serif; font-size:2.2rem; color:#d4af37;">7</div><div style="color:rgba(255,255,255,0.65); font-size:0.9rem;">New zones</div></div>
+        <div><div style="font-family:'Cinzel',serif; font-size:2.2rem; color:#d4af37;">11</div><div style="color:rgba(255,255,255,0.65); font-size:0.9rem;">Boss arenas</div></div>
+        <div><div style="font-family:'Cinzel',serif; font-size:2.2rem; color:#d4af37;">17</div><div style="color:rgba(255,255,255,0.65); font-size:0.9rem;">New monster species</div></div>
+        <div><div style="font-family:'Cinzel',serif; font-size:2.2rem; color:#d4af37;">36</div><div style="color:rgba(255,255,255,0.65); font-size:0.9rem;">New armor pieces</div></div>
+        <div><div style="font-family:'Cinzel',serif; font-size:2.2rem; color:#d4af37;">160+</div><div style="color:rgba(255,255,255,0.65); font-size:0.9rem;">New collection entries</div></div>
+        <div><div style="font-family:'Cinzel',serif; font-size:2.2rem; color:#d4af37;">16</div><div style="color:rgba(255,255,255,0.65); font-size:0.9rem;">New combat stats</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Continent -->
+  <section class="section section-dark" id="continent">
+    <div class="container">
+      <h2 class="section-title">A New Continent</h2>
+      <p class="section-subtitle">Seven new zones spanning levels 31&ndash;50, from faction capitals to the endgame crater.</p>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#127984;</span>
+            <h3>Three Faction Capitals</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Dawnspire Bastion</strong> &mdash; seat of the Light</li>
+            <li><strong>Umbral Hold</strong> &mdash; refuge of the Dark</li>
+            <li><strong>The Wellspring</strong> &mdash; sanctuary of Creation</li>
+            <li>Living cities: roaming citizens, guards, merchants, and your new home waypoint</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9968;</span>
+            <h3>Field Zones</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Reclaimed Dominion</strong> <span class="zone-band">Lv 31&ndash;39</span> &mdash; Light territory</li>
+            <li><strong>The Umbral Reach</strong> <span class="zone-band">Lv 31&ndash;39</span> &mdash; Dark badlands under an ember dusk</li>
+            <li><strong>Nascent Wilds</strong> <span class="zone-band">Lv 31&ndash;39</span> &mdash; Creation's overgrown frontier</li>
+            <li><strong>The Sundering Scar</strong> <span class="zone-band">Lv 42&ndash;50</span> &mdash; the neutral endgame wound, where a Lv100 titan sleeps in the crater</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Factions -->
+  <section class="section" id="factions">
+    <div class="container">
+      <h2 class="section-title">Choose Your Faction</h2>
+      <p class="section-subtitle">Light, Dark, or Creation &mdash; the choice shapes where you fight, where you respawn, and who stands beside you.</p>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9876;</span>
+            <h3>Faction Life</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Pledge to one of three factions and gain your capital as home ground</li>
+            <li>Faction members respawn at their own HQ</li>
+            <li>Each faction holds its own field zone with its own monsters, bosses, and loot</li>
+            <li>The Scar belongs to no one &mdash; all three factions send expeditions</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128081;</span>
+            <h3>New Bosses</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Nine faction bosses</strong> &mdash; three champions for each of Light, Dark, and Creation &mdash; plus the guardians of the neutral Scar</li>
+            <li><strong>Light:</strong> Solarch the Fallen Dawn, the shielded Dawnwarden, and the Oracle of the First Light with her orbiting halo of ammunition</li>
+            <li><strong>Dark:</strong> the greatsword tyrant <strong>Umbral Dreadlord</strong>; <strong>Nightmaw, the Long Hunger</strong> &mdash; an eyeless horror that rains bolts from the sky and ignites the arena from the edge inward, the only safe ground at his feet; and <strong>Dreadplate, the Unbroken</strong> &mdash; an armoured avalanche that leaps onto your position and raises an impenetrable guard</li>
+            <li><strong>Creation:</strong> the Thorn Titan and two guardians yet to be unearthed</li>
+            <li>New boss mechanics throughout: inverted ring zones you dodge <em>inward</em>, protective wards that turn an ally into a hazard, and <strong>Trembling</strong> &mdash; get touched by the wrong boss and his next wail sends you running in blind panic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gear & Collections -->
+  <section class="section section-dark" id="gear">
+    <div class="container">
+      <h2 class="section-title">New Gear &amp; Collections</h2>
+      <p class="section-subtitle">Three new armor lines, a reworked collection book, and long-haul goals worth months of hunting.</p>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128737;</span>
+            <h3>Sundering Armor</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Dawnweave</strong>, <strong>Duskweave</strong>, and <strong>Rootweave</strong> sets &mdash; one per faction</li>
+            <li>Ultra-rare <strong>Exalted</strong> versions of every piece</li>
+            <li>Drops from faction bosses and field monsters &mdash; and yes, they are tradeable</li>
+            <li>New upgrade materials: <strong>Elorite</strong> and <strong>Sunderite</strong>, crystallised from the break itself</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128214;</span>
+            <h3>Collections Reworked</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Every Sundering monster drops <strong>relics and cores</strong> feeding a two-line collection book</li>
+            <li>Second lines combine trophies across monsters &mdash; the real chase</li>
+            <li>New collection stats: PvE/PvP Accuracy and Dodge, Damage Reduction, Skill Damage, Critical Damage, carry Weight and more</li>
+            <li>Deposit straight from your bag with a tap-in number pad</li>
+            <li>Search, stat filters, and an "Available" toggle to find where your loot goes</li>
+            <li>Gear collections extended to the Genesis tier</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- World Reborn -->
+  <section class="section section-dark" id="world-reborn">
+    <div class="container">
+      <h2 class="section-title">A World Reborn</h2>
+      <p class="section-subtitle">The old world grew to meet the new one.</p>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#127959;</span>
+            <h3>Bigger, Denser, Alive</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Characters, monsters, and architecture rescaled &mdash; the world has real presence now</li>
+            <li>Faction capitals built as living cities: plazas, arches, altars, roaming citizens, birds overhead</li>
+            <li>Hunting fields roughly <strong>doubled in monster density</strong> across the continent</li>
+            <li>Every Sundering species fights back with a full kit &mdash; spinning AoEs, leaping colossi, exploding cores</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128142;</span>
+            <h3>Loot Worth Hunting</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Every species drops its own <strong>relic and core</strong> &mdash; 34 new collectibles feeding the new book</li>
+            <li>Boss armor drops roll straight from the server with visible bestiary rates</li>
+            <li>Sundering armor is <strong>tradeable</strong> &mdash; hunt it, wear it, or sell it on the marketplace</li>
+            <li>Zone capstone collections for the long-haul: months of goals for completionists</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Combat & QoL -->
+  <section class="section" id="combat">
+    <div class="container">
+      <h2 class="section-title">Combat &amp; Quality of Life</h2>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9889;</span>
+            <h3>Combat Changes</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Accuracy overhaul: high accuracy now lands reliably against monsters &mdash; no more phantom misses in PvE</li>
+            <li>New PvP hit model: match your rival's Dodge with Accuracy and your strikes are guaranteed</li>
+            <li>New status effects with on-screen indicators: <strong>Trembling</strong>, <strong>Fear</strong>, and a visible timer for Stun</li>
+            <li>Over a dozen new monster species across the continent, each with its own collection</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128295;</span>
+            <h3>Quality of Life</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Chat loot filters &mdash; choose which pickup messages appear (gold, materials, equipment, Lumina, pets, gems)</li>
+            <li>Bestiary upgrades: bigger pages, armor set entries, cleaner drop tables</li>
+            <li>Collection and bestiary panels enlarged for easier browsing</li>
+            <li>Storage expanded to 250 slots</li>
+          </ul>
+        </div>
+      </div>
+      <p class="patch-note-fine">Numbers, names, and dates reflect the current test build and may change before release.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">The wound is opening</h2>
+      <p class="section-subtitle">Play now and be ready when the continent tears.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A top-down 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="index.html#roadmap">Roadmap</a>
+          <a href="patch-notes.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
