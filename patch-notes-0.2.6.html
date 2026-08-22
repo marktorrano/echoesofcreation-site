@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patch Notes v0.2.6 - Shoulder to Shoulder | Echoes of Creation</title>
+  <meta name="description" content="v0.2.6: select the people you fight beside, Clerics heal their ally, the Warrior gets its weapon line, and the Sundering gives up its armour twenty times more willingly.">
+  <meta property="og:title" content="v0.2.6 - Shoulder to Shoulder | Echoes of Creation">
+  <meta property="og:description" content="Ally selection and Cleric ally-healing, a complete Warrior weapon line, and a major Sundering loot rebalance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://echoesofcreation.net/patch-notes-0.2.6.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .patch-hero {
+      min-height: 46vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.75)), url('images/hero-banner.webp') center/cover no-repeat;
+    }
+    .patch-hero .hero-subtitle { margin-top: 12px; }
+    .patch-tag {
+      display: inline-block;
+      padding: 6px 18px;
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      border-radius: 999px;
+      color: #d4af37;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .patch-date { color: rgba(255, 255, 255, 0.55); font-size: 0.95rem; margin-top: 14px; }
+    .patch-intro { max-width: 780px; margin: 0 auto 10px; text-align: center; color: rgba(255,255,255,0.8); line-height: 1.7; }
+    .patch-note-fine { text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 40px; }
+    .zone-band { color: #d4af37; font-size: 0.85rem; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="index.html#roadmap">Roadmap</a></li>
+        <li><a href="patch-notes-0.2.6.html" class="active">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Patch Hero -->
+  <header class="patch-hero">
+    <div>
+      <div class="patch-tag">Update v0.2.6</div>
+      <h1 class="hero-title">Shoulder to Shoulder</h1>
+      <p class="hero-subtitle">Hold the ones you fight beside &mdash; and heal them.</p>
+      <p class="patch-date">Released August 22, 2026</p>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section class="section" id="overview">
+    <div class="container">
+      <p class="patch-intro">This one is about the people you fight beside. Clerics can finally hold a friend and heal them, the Warrior gets the weapon line its calling was always missing, and the Sundering gives up its armour far more willingly than it used to.</p>
+    </div>
+  </section>
+
+  <!-- Fighting together -->
+  <section class="section section-dark" id="party">
+    <div class="container">
+      <h2 class="section-title">The People You Fight Beside</h2>
+      <p class="section-subtitle">Select an ally, keep them on screen, and heal the person who actually needs it.</p>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128101;</span>
+            <h3>Ally Selection</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Click another player and you <strong>hold them</strong> &mdash; a ring marks them on the ground, and their name, level and health appear beneath your party frames</li>
+            <li><strong>Green for an ally, red for a rival faction</strong></li>
+            <li>You can click a party card directly, which is what everyone reached for in the first place</li>
+            <li>Selecting a friend never interrupts your attack. TAB still cycles enemies only; ESC lets go</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#10010;</span>
+            <h3>Clerics Heal Their Ally</h3>
+          </div>
+          <ul class="feature-list">
+            <li>With an ally selected and within <strong>20 metres</strong>, Heal lands on <em>them</em> instead of you</li>
+            <li>Drift too far and the cast falls back to you and <strong>says why</strong> &mdash; "Ally out of range" &mdash; rather than quietly healing the wrong person</li>
+            <li>It no longer fails in silence</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9889;</span>
+            <h3>Combat Power Speaks Up</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Every change <strong>counts up on screen</strong> with the gain or loss beside it &mdash; green up, red down</li>
+            <li>See whether that upgrade was worth it without opening the stat screen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warrior -->
+  <section class="section" id="warrior">
+    <div class="container">
+      <h2 class="section-title">The Warrior Finally Has a Weapon Line</h2>
+      <p class="section-subtitle">Gareth can now forge the two greatswords that were never there.</p>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128481;</span>
+            <h3>Two New Greatswords</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Steel Greatsword</strong> &mdash; Level 10</li>
+            <li><strong>Berserker's Greatsword</strong> &mdash; Level 20</li>
+            <li>Until now the Warrior's path ran from its starter blade straight to Worldrender at Lv28 with <strong>nothing at all in between</strong> &mdash; every other calling had two steps on that road</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128269;</span>
+            <h3>And They Were Invisible</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Greatswords were missing from the <strong>Warrior filter</strong> in Gareth's craft list entirely &mdash; Worldrender included</li>
+            <li>All of them are there now</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sundering -->
+  <section class="section section-dark" id="sundering">
+    <div class="container">
+      <h2 class="section-title">The Sundering Gives Up Its Armour</h2>
+      <p class="section-subtitle">A serious rebalance of what the torn continent is willing to part with.</p>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128737;</span>
+            <h3>Boss Weave Armour &times;20</h3>
+          </div>
+          <ul class="feature-list">
+            <li>A <strong>boss drop change only</strong> &mdash; every piece the nine faction bosses carry went from half a percent to a full <strong>10%</strong></li>
+            <li>Ordinary monsters are <strong>unchanged</strong> and still drop weave only very rarely</li>
+            <li>Each piece rolls <strong>separately</strong>, so walking away with two from one kill is ordinary rather than a story</li>
+            <li>The Exalted versions are unchanged and remain the rare prize</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9935;</span>
+            <h3>Ore by the Handful</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Bosses drop <strong>1&ndash;5 Elorite</strong> and <strong>1&ndash;3 Sunderite</strong> at a time instead of one apiece</li>
+            <li><strong>Dark bosses finally drop ore.</strong> Nightmaw, Dreadplate and the Umbral Dreadlord gave neither before &mdash; Dark players had to look elsewhere for their own faction's upgrades</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128220;</span>
+            <h3>Collection Relics Fixed</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Drops from a creature far beneath you are deliberately thinned &mdash; fair when you choose an easy field, but the book names <strong>one creature per set</strong>, so you had no choice at all</li>
+            <li>It was the players who had <em>finished</em> the content who could no longer collect it</li>
+            <li><strong>24 of the 34 collection materials were affected.</strong> Emberglass Shard was arriving once in five thousand kills while the book asks for two hundred and fifty</li>
+            <li>If you had given up on a set because the numbers looked impossible &mdash; they were</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#127983;</span>
+            <h3>A Fuller, Slower World</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Bosses take longer to return</strong> &mdash; 3 hours in the fields and 6 in the Scar, instead of a quarter of an hour</li>
+            <li>Hollow Blades, Elder Treants and Ruin Colossi now stand <strong>40 to a field</strong> &mdash; and all three factions match, which they quietly did not</li>
+            <li>The Corrupted stand half again as tall, and the <strong>Corrupted Warrior</strong> has taken the field in the Corrupted Hollow and the Defiled Sanctum</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128176;</span>
+            <h3>The Marketplace Opens to the Corrupted</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Void-Husks and Void-Shards can be sold.</strong> They were yours to hoard and nothing else</li>
+            <li>They now trade like any other material, with a price band to keep the market honest</li>
+            <li>The weapons and off-hands they forge still bind to you &mdash; this buys a shorter road, not a resale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Balance -->
+  <section class="section" id="balance">
+    <div class="container">
+      <h2 class="section-title">Balance</h2>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#127890;</span>
+            <h3>Buffs That Actually Stack</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Your class buff now stacks with your potions.</strong> Berserker's Warcry, Killing Intent, Guardian's Roar and Hunter's Boon were being swallowed whole by a potion strengthening the same thing</li>
+            <li>Warcry over a Damage Boost Potion is <strong>37%</strong> instead of 25%; Killing Intent 35%</li>
+            <li><strong>Different shouts stack with each other too</strong> &mdash; a party carrying both a Warrior's Warcry and an Assassin's Killing Intent got the louder of the two, not the sum</li>
+            <li>Two of a kind still do not stack, which was never the intent</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128165;</span>
+            <h3>Warcry Becomes a Melee Roar</h3>
+          </div>
+          <ul class="feature-list">
+            <li>It strengthened every kind of damage, so an archer at the back of the party collected a Warrior's fury on <strong>every arrow</strong></li>
+            <li>It now adds its 12% to <strong>melee hits only</strong>, where the roar was always meant to land</li>
+            <li>Killing Intent and the Damage Boost Potion are unchanged and still help everyone</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128064;</span>
+            <h3>Monsters Answer For It</h3>
+          </div>
+          <ul class="feature-list">
+            <li>A monster you strike <strong>now comes for you</strong> no matter how far away you were standing</li>
+            <li>Attacking something from beyond its notice used to cost you nothing at all</li>
+            <li><strong>Eagle Eye reaches further</strong> &mdash; its extra range applied only to ordinary attacks, never to skills. It applies to both now, which is what it always claimed</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#9878;</span>
+            <h3>The Assassin, and One Yardstick</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>The Assassin's attack returns to standard.</strong> Both damage classes have carried a make-up buff since a weapon-upgrade correction last cycle; the Ranger's was retired earlier, and the Assassin's now follows. <span class="change-note">This is a real reduction and Assassins will feel it in a fight.</span></li>
+            <li><strong>Assassin and Ranger Combat Power can now be compared.</strong> The two were scored against different yardsticks &mdash; identical gear came out thousands of points apart for no reason you could see or play around</li>
+            <li>Assassin CP drops by roughly 3%; Ranger CP is unchanged. Nothing about your gear or progress has been taken away &mdash; the number simply means the same thing for both callings now</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128142;</span>
+            <h3>Gems in an Empty Slot</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Gems left behind by an item you are no longer wearing were still granting their <strong>full bonus</strong></li>
+            <li>If your character was affected, some stats will read lower. What you are actually wearing is untouched, and the gems themselves went back to your bag when the item came off</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QoL + Fixes -->
+  <section class="section section-dark" id="fixes">
+    <div class="container">
+      <h2 class="section-title">Quality of Life &amp; Fixes</h2>
+      <div class="feature-categories">
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#10024;</span>
+            <h3>Quality of Life</h3>
+          </div>
+          <ul class="feature-list">
+            <li>Gold reads as <strong>72.3M</strong> once it passes a million, with the exact figure in the tooltip</li>
+            <li><strong>Marketplace Bookmarks</strong> &mdash; star up to 10 items, watch their price, and open the listings to choose the one you want rather than being handed the cheapest</li>
+            <li>Sunderite and Elorite counts sit at the top of Gareth's panel</li>
+            <li>Right-click clears a world map marker again, and the map now tells you that you can drop your own</li>
+            <li>Scenery between the camera and your character fades, so the capital plazas no longer swallow you</li>
+            <li>Balances now appear on the panels where you actually spend them</li>
+          </ul>
+        </div>
+        <div class="feature-category">
+          <div class="feature-category-header">
+            <span class="feature-category-icon">&#128295;</span>
+            <h3>Fixes</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Faction bosses that never appeared.</strong> One boss in each faction's zone could not spawn at all &mdash; you could take damage from something you could not see or strike</li>
+            <li><strong>Bosses that would not lie down</strong> &mdash; a boss you had killed stayed standing, health bar and all, until you left the area</li>
+            <li><strong>The Creation Gem the Sundering bosses carry could not be spent.</strong> The forge insisted you had none, however many you were holding. It now buys a Genesis weapon exactly as its Primordius counterpart does</li>
+            <li>Ashcantor's shuriken storm hung motionless in the air and never faded</li>
+            <li>Wings were about twice their intended size on the default body</li>
+            <li>Party members vanishing from the roster while still in the party and still talking</li>
+            <li>Locked items could still be spent into a gear collection</li>
+            <li>Registering the first tier of a collection hid the second one, leaving it unfindable</li>
+            <li><strong>Loot on the floor.</strong> Ordinary monsters were scattering their drops &mdash; only Sundering bosses do that now</li>
+            <li>Depositing a gem you had just found reported that you had none</li>
+            <li>The Crit Damage tooltip credited your collection and enchantment bonuses to "Gems"</li>
+            <li><strong>The bestiary</strong> listed six creatures that cannot be found anywhere, and its discovery count could never reach the full number</li>
+          </ul>
+        </div>
+      </div>
+      <p class="patch-note-fine">Extra character slots have been retired in favour of Multiclass &mdash; one hero can now train in several callings, which is the better answer to the problem the slot was solving. Everyone who bought one has already been refunded in full.</p>
+    </div>
+  </section>
+
+  <!-- Archive -->
+  <section class="section">
+    <div class="container">
+      <a class="archive-link" href="patch-notes.html">&laquo; Previous update &mdash; The Sundering (v0.2.5)</a>
+    </div>
+  </section>
+
+<!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">See you out there</h2>
+      <p class="section-subtitle">Grab a friend. Someone has to hold the line.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A top-down 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="index.html#roadmap">Roadmap</a>
+          <a href="patch-notes-0.2.6.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
