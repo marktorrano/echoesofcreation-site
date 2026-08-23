@@ -1,0 +1,513 @@
+<title>v0.2.7 &mdash; The Party Decides | Echoes of Creation</title>
+<meta name="description" content="v0.2.7: nobody gets pulled into a Battle Dungeon any more, the potion ladder grows a top end, and four rewards that were quietly going missing come back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<style>
+  /* Lifted verbatim from the live site's css/style.css so this preview matches the
+     real page. Inlined because the artifact sandbox cannot fetch site assets. */
+  :root {
+    --color-bg: #0a0a0f;
+    --color-bg-alt: #12121a;
+    --color-surface: #1a1a2e;
+    --color-gold: #d4a853;
+    --color-gold-light: #f0d080;
+    --color-gold-dark: #a07830;
+    --color-text: #e0ddd5;
+    --color-text-muted: #8a8778;
+    --color-text-dim: #5a5850;
+    --font-display: 'Cinzel', 'Georgia', serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --max-width: 1200px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { color: var(--color-gold); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--color-gold-light); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+  }
+  .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+  /* --- Navbar --- */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 168, 83, 0.1);
+  }
+  .nav-container {
+    max-width: var(--max-width); margin: 0 auto; padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .nav-logo-img { height: 38px; width: auto; display: block; }
+  .nav-links { list-style: none; display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--color-text-muted); font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.04em; transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--color-gold); }
+  .nav-discord-link { color: var(--color-gold) !important; }
+
+  /* --- Patch hero (page-scoped block from the real 0.2.6 page) --- */
+  .patch-hero {
+    min-height: 46vh;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 120px 20px 60px;
+    background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.75)), url('images/hero-banner.webp') center/cover no-repeat;
+  }
+  .patch-tag {
+    display: inline-block; padding: 6px 18px;
+    border: 1px solid rgba(212, 175, 55, 0.6); border-radius: 999px;
+    color: #d4af37; font-family: var(--font-display); font-size: 0.85rem;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 700;
+    color: var(--color-gold); letter-spacing: 0.04em; margin-bottom: 16px;
+    text-shadow: 0 0 60px rgba(212, 168, 83, 0.3); text-wrap: balance;
+  }
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2.5vw, 1.5rem); color: var(--color-text);
+    font-weight: 400; margin-bottom: 16px; letter-spacing: 0.06em;
+    margin-top: 12px; text-wrap: balance;
+  }
+  .patch-date { color: rgba(255, 255, 255, 0.55); font-size: 0.95rem; margin-top: 14px; }
+  .patch-intro {
+    max-width: 780px; margin: 0 auto 10px; text-align: center;
+    color: rgba(255, 255, 255, 0.8); line-height: 1.7;
+  }
+  .patch-note-fine {
+    text-align: center; color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem; margin-top: 40px;
+  }
+
+  /* --- Sections --- */
+  .section { padding: 100px 0; }
+  .section-dark { background: var(--color-bg-alt); }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--color-gold);
+    text-align: center; margin-bottom: 16px; letter-spacing: 0.04em;
+    text-wrap: balance;
+  }
+  .section-subtitle {
+    text-align: center; color: var(--color-text-muted); font-size: 1.05rem;
+    margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;
+    text-wrap: balance;
+  }
+
+  /* --- Feature cards --- */
+  .feature-categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .feature-category {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px; padding: 28px 28px 24px;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s;
+  }
+  .feature-category.visible { opacity: 1; transform: translateY(0); }
+  .feature-category:nth-child(2) { transition-delay: 0.05s; }
+  .feature-category:nth-child(3) { transition-delay: 0.1s; }
+  .feature-category:nth-child(4) { transition-delay: 0.15s; }
+  .feature-category:hover { border-color: rgba(212, 168, 83, 0.3); }
+  .feature-category-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid rgba(212, 168, 83, 0.12);
+  }
+  .feature-category-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+  .feature-category-header h3 {
+    font-family: var(--font-display); font-size: 1.1rem;
+    color: var(--color-gold-light); letter-spacing: 0.03em; font-weight: 600;
+  }
+  .feature-list { list-style: none; margin: 0; padding: 0; }
+  .feature-list li {
+    color: var(--color-text-muted); font-size: 0.875rem; line-height: 1.6;
+    padding: 4px 0 4px 18px; position: relative;
+  }
+  .feature-list li::before {
+    content: ''; position: absolute; left: 0; top: 11px;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--color-gold-dark);
+  }
+  .feature-list li strong { color: var(--color-text); font-weight: 600; }
+
+  /* --- Buttons / archive / footer --- */
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
+  .btn {
+    display: inline-block; padding: 14px 32px; font-family: var(--font-body);
+    font-size: 0.9rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; border-radius: 4px; cursor: pointer; transition: all 0.3s;
+  }
+  .btn-secondary { background: transparent; color: var(--color-gold); border: 1px solid var(--color-gold-dark); }
+  .btn-secondary:hover { background: rgba(212, 168, 83, 0.1); border-color: var(--color-gold); transform: translateY(-2px); }
+  .btn-play {
+    background: linear-gradient(135deg, #2a7a3a, #3da64e); color: #fff; border: none;
+    font-size: 1.15rem; padding: 1rem 2.5rem; letter-spacing: 0.5px;
+  }
+  .btn-play:hover {
+    background: linear-gradient(135deg, #3da64e, #4ebd5f); color: #fff;
+    transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61, 166, 78, 0.35);
+  }
+  .archive-link { font-size: 0.9rem; letter-spacing: 0.03em; }
+
+  .footer { background: var(--color-bg); border-top: 1px solid rgba(212, 168, 83, 0.1); padding: 48px 0 24px; }
+  .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; gap: 24px; flex-wrap: wrap; }
+  .footer-brand h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-gold); margin-bottom: 4px; }
+  .footer-brand p { color: var(--color-text-dim); font-size: 0.85rem; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: var(--color-text-muted); font-size: 0.85rem; }
+  .footer-links a:hover { color: var(--color-gold); }
+  .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 24px; text-align: center; }
+  .footer-bottom p { color: var(--color-text-dim); font-size: 0.8rem; }
+
+  @media (max-width: 860px) {
+    .feature-categories { grid-template-columns: 1fr; }
+    .section { padding: 64px 0; }
+    .nav-links { gap: 16px; }
+    .footer-content { flex-direction: column; align-items: flex-start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .feature-category { opacity: 1; transform: none; transition: border-color 0.3s; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#classes">Classes</a></li>
+      <li><a href="index.html#world">World</a></li>
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="patch-notes-0.2.7.html" class="active">Patch Notes</a></li>
+      <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Patch Hero -->
+<header class="patch-hero">
+  <div>
+    <div class="patch-tag">Update v0.2.7</div>
+    <h1 class="hero-title">The Party Decides</h1>
+    <p class="hero-subtitle">Nobody gets pulled into a Battle Dungeon any more.</p>
+    <p class="patch-date">Released August 23, 2026</p>
+  </div>
+</header>
+
+<!-- Overview -->
+<section class="section" id="overview">
+  <div class="container">
+    <p class="patch-intro">Until now, opening a Battle Dungeon was something that happened <em>to</em> you. The leader spent a key and everyone was pulled into a fifteen-minute boss fight without being asked &mdash; including anyone who had already used up their rewards for the day and would walk out with nothing. That is finished. Alongside it: the potion ladder finally grew a top end, and a long list of things that were quietly costing you rewards you had already earned.</p>
+  </div>
+</section>
+
+<!-- The vote -->
+<section class="section section-dark" id="battle-dungeon">
+  <div class="container">
+    <h2 class="section-title">The Battle Dungeon Asks First</h2>
+    <p class="section-subtitle">Anyone in the party can open one now &mdash; and nobody goes in without saying yes.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128273;</span>
+          <h3>Anyone Can Open One</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Any member of the party can spend a key</strong> &mdash; it is no longer the leader's decision alone</li>
+          <li>The prompt names <strong>who used the key</strong>, so nobody is guessing where the run came from</li>
+          <li>Whoever spent the key now runs the fight, rather than the party leader</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#10004;</span>
+          <h3>Everyone Has To Accept</h3>
+        </div>
+        <ul class="feature-list">
+          <li>The moment a key is used, <strong>everyone in the party gets the same prompt</strong></li>
+          <li>A check mark appears beside each member as they accept, so you can see who is still deciding</li>
+          <li><strong>Everyone has to accept before anyone goes in.</strong> One refusal, or one person who does not answer within 30 seconds, calls the run off</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128274;</span>
+          <h3>A Refused Run Costs Nothing</h3>
+        </div>
+        <ul class="feature-list">
+          <li>If the run is called off, <strong>the key is not spent</strong></li>
+          <li>It stays in the bag of whoever offered it, exactly as it was</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128337;</span>
+          <h3>See What A Run Is Worth</h3>
+        </div>
+        <ul class="feature-list">
+          <li>Your remaining reward claims sit on your own row in the invite, and <strong>turn red when you have none left</strong></li>
+          <li>A new <strong>Dungeons tab</strong> on your character screen shows the same count, with the time until it resets</li>
+          <li><strong>The cap is shared across your whole account</strong>, not per character &mdash; switching characters does not give you three more runs</li>
+          <li>Past the cap you still get the kill and the bestiary credit, just none of the rewards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Potions -->
+<section class="section" id="potions">
+  <div class="container">
+    <h2 class="section-title">The Potion Ladder Grew A Top</h2>
+    <p class="section-subtitle">The gold ladder used to stop at XL while the Lumina potions sat just above it. Both ends moved.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128167;</span>
+          <h3>Two New Tiers</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>XXL HP and XXL MP</strong> from the sundries merchant &mdash; 3,000 HP and 1,500 MP, 5,000 gold, Lv41</li>
+          <li><strong>Supreme HP and Supreme MP</strong> &mdash; 5,000 HP and 2,000 MP for 7 Lumina</li>
+          <li><strong>Lumina potions come off cooldown 30% faster</strong> than gold ones &mdash; 2.8 seconds instead of 4</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#9889;</span>
+          <h3>Three New Buffs</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Critical Damage, Skill Speed and Swiftness</strong> join the buff potions</li>
+          <li>They were previously impossible to buy at all &mdash; nothing stocked them. They are in the premium shop now</li>
+          <li>Sundering bosses drop <strong>bound HP and MP potions</strong> as ground loot</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128260;</span>
+          <h3>Easier To Actually Use</h3>
+        </div>
+        <ul class="feature-list">
+          <li>Potions in your bag now have an <strong>Auto-use toggle</strong>, with a badge on the slot so you can tell which one is set without opening it</li>
+          <li>Auto-Hunt shows you <strong>the potion it intends to drink as an icon</strong>, and XXL potions can be selected</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#9876;</span>
+          <h3>Loadouts</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Swapping in combat is only blocked when it changes your class.</strong> A loadout that differs by a pair of gloves is nothing but a run of ordinary equips</li>
+          <li>Changing class mid-fight is still refused &mdash; and the message now tells you that is the reason</li>
+          <li>Switching to another class's loadout used to carry <strong>your old class's shout buffs</strong> across with it. Those are cleared now</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Looting -->
+<section class="section section-dark" id="looting">
+  <div class="container">
+    <h2 class="section-title">One Press Picks It Up</h2>
+    <p class="section-subtitle">A Sundering boss scatters its drops across the arena so a group can share them. That is right &mdash; but it also meant clicking every single piece off the floor.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128176;</span>
+          <h3>Press E To Loot</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>E picks up the nearest item on the ground.</strong> One press takes one item, so press it again for the next</li>
+          <li>It reaches exactly as far as a click does &mdash; nothing new is lootable, it is just no longer a mouse hunt</li>
+          <li>It steps over loot still inside somebody else&rsquo;s claim window rather than stalling on it</li>
+          <li>Where there is nothing to pick up, E still talks to NPCs, uses waypoints and opens chests exactly as before</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The big fixes -->
+<section class="section" id="rewards">
+  <div class="container">
+    <h2 class="section-title">Rewards That Were Going Missing</h2>
+    <p class="section-subtitle">None of these announced themselves. They just made the game look stingier than it is.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127942;</span>
+          <h3>Boss Kills That Did Not Count</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Killing a boss on the Sundering continent did not count for anything.</strong> Not your bestiary, not boss quests, not daily objectives, not achievements</li>
+          <li>The kill registered, the loot dropped, the boss died &mdash; and every counter that should have moved sat still</li>
+          <li>It affected every boss on a hosted map, which is all of Sundering. The Forgotten One raid and Primordius were never affected</li>
+          <li>Credit now goes to everyone who actually damaged the boss</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128200;</span>
+          <h3>Daily Reward EXP</h3>
+        </div>
+        <ul class="feature-list">
+          <li>You would claim the daily completion bonus, watch the bar jump, and <strong>watch it fall right back down</strong></li>
+          <li>The reward was real &mdash; the next kill overwrote it with an older number</li>
+          <li>Every client-granted award rode the same path: daily bonuses, quest turn-ins, achievements, party share. <strong>Progress is never rolled backwards now</strong></li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128230;</span>
+          <h3>Sundering Boss Drops</h3>
+        </div>
+        <ul class="feature-list">
+          <li>Loot from a <strong>Sundering boss</strong> sometimes <strong>never appeared on the ground at all</strong> after a server restart</li>
+          <li>The loot existed the whole time &mdash; it was thrown away on arrival because a restarted server reuses drop numbers and your client mistook the new loot for something it already held</li>
+          <li>Sundering bosses are the ones that scatter their loot for the shared claim window, so they were the ones this could happen to</li>
+          <li>This looked exactly like a terrible drop rate, and it was not</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127919;</span>
+          <h3>Halved Drop Rates</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Bound boss potions and the Battle Dungeon Key were dropping at half their intended rate</strong> on every hosted map</li>
+          <li>An anti-farming rule meant only for crafting materials was being applied to them by mistake</li>
+          <li>The Key is back to its full rate from the Forgotten One</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Everything else -->
+<section class="section section-dark" id="fixes">
+  <div class="container">
+    <h2 class="section-title">Everything Else</h2>
+    <p class="section-subtitle">Smaller things, all of them things you could see.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128737;</span>
+          <h3>Out In The World</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Five seconds of protection</strong> when you first spawn after logging in &mdash; your gear and stats arrive in stages, and a hit landing before they settle could kill you at a fraction of your real health. Attacking ends it early</li>
+          <li><strong>Monsters no longer pile up.</strong> The Corrupted lands, the coast and Dark Woods filled with far more monsters than intended the longer a server had been running</li>
+          <li>A monster's health bar sat still for a moment after every hit instead of dropping as you hit it</li>
+          <li>Boss effects and arena hazards kept playing after the boss was dead</li>
+          <li>The Primordius arena turned see-through whenever the camera pulled back</li>
+          <li><strong>Elorite and Sunderite</strong> from Sundering bosses now fall as separate pickups instead of a single stack, so a group standing over a boss can share them</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128295;</span>
+          <h3>Interface And Odds And Ends</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>The Monsterpedia was telling you the wrong drop rates.</strong> It read the numbers the game shipped with rather than the ones actually in force, so a Sundering boss&rsquo;s Elorite showed 21% when it really drops at 80%. It reads the live rate now</li>
+          <li>A boss&rsquo;s bound potions filled the whole drop list. They collapse to a single <strong>Random Potion</strong> line, so the gem, the ore and the armour sets are visible again</li>
+          <li><strong>Skill Speed</strong> now shows on your character screen, beside Attack Speed</li>
+          <li><strong>Full translations across all supported languages</strong></li>
+          <li>Critical Damage and Move Speed buffs showed <strong>"+0" with no icon</strong>, and Skill Speed was wearing the Attack Speed bottle</li>
+          <li>Auto-potion drank Lumina potions you had pinned <strong>even with "Use Lumina Potions" switched off</strong></li>
+          <li>A Cleric could not heal a party member on the other side of the faction line</li>
+          <li>The Battle Dungeon daily quest could be given to players who had no key, leaving the day's set impossible to finish. It is out of the rotation</li>
+          <li>Gold in your inventory was abbreviated instead of shown in full</li>
+          <li>Bound potions and other bound loot showed a missing icon</li>
+          <li>The Warrior was missing a walking animation, and the <strong>Warrior's Void-Husk</strong> icon is in &mdash; completing The Corrupted collection set</li>
+        </ul>
+      </div>
+    </div>
+    <p class="patch-note-fine">Extra character slots are gone from the lobby. The purchase was retired a while ago and everyone who bought one was refunded &mdash; the button was still being drawn, which was misleading.</p>
+  </div>
+</section>
+
+<!-- Archive -->
+<section class="section">
+  <div class="container">
+    <a class="archive-link" href="patch-notes-0.2.6.html">&laquo; Previous update &mdash; Shoulder to Shoulder (v0.2.6)</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title">See you out there</h2>
+    <p class="section-subtitle">Ask the party. Someone always says yes.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+      <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Echoes of Creation</h3>
+        <p>A top-down 3D action RPG</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">Story</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#classes">Classes</a>
+        <a href="index.html#roadmap">Roadmap</a>
+        <a href="patch-notes-0.2.7.html">Patch Notes</a>
+        <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mirrors the scroll-reveal in the site's js/main.js so cards fade in as you reach them.
+  (function () {
+    var cards = document.querySelectorAll('.feature-category');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      cards.forEach(function (c) { c.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(function (c) { io.observe(c); });
+  })();
+</script>
