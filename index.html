@@ -508,6 +508,27 @@
 
   <!-- Media Section -->
   <section class="section" id="media">
+    <style>
+      /* Scoped to this section (shot-* names) so nothing can collide with style.css. */
+      .shot-heading { margin-top: 72px; }
+      .shot-grid {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+        max-width: 1100px; margin: 0 auto;
+      }
+      .shot-grid a {
+        display: block; border-radius: 8px; overflow: hidden; line-height: 0;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: border-color 0.3s, transform 0.3s;
+      }
+      .shot-grid a:hover { border-color: rgba(212, 168, 83, 0.45); transform: translateY(-3px); }
+      .shot-grid img { width: 100%; height: auto; display: block; }
+      .shot-note {
+        text-align: center; color: var(--color-text-dim, #5a5850);
+        font-size: 0.8rem; margin-top: 18px;
+      }
+      @media (max-width: 860px) { .shot-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 560px) { .shot-grid { grid-template-columns: 1fr; } }
+    </style>
     <div class="container">
       <h2 class="section-title">Media</h2>
       <p class="section-subtitle">See the game in action.</p>
@@ -524,6 +545,24 @@
         <div class="video-card">
           <div class="video-card-wrap">
             <video class="media-video" controls preload="metadata">
+              <source src="videos/primordius.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-label">Battle Dungeon &mdash; Primordius</p>
+        </div>
+        <div class="video-card">
+          <div class="video-card-wrap">
+            <video class="media-video" controls preload="metadata">
+              <source src="videos/sanctum.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-label">The Forgotten Sanctum</p>
+        </div>
+        <div class="video-card">
+          <div class="video-card-wrap">
+            <video class="media-video" controls preload="metadata">
               <source src="videos/vfx.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -531,6 +570,26 @@
           <p class="video-label">Boss VFX</p>
         </div>
       </div>
+
+      <h3 class="section-title shot-heading">Screenshots</h3>
+      <div class="shot-grid">
+        <a href="images/screenshots/steam-02.jpg" target="_blank" rel="noopener">
+          <img src="images/screenshots/steam-02-web.jpg" alt="The Reclaimed Dominion" loading="lazy" width="1280" height="721">
+        </a>
+        <a href="images/screenshots/steam-03.jpg" target="_blank" rel="noopener">
+          <img src="images/screenshots/steam-03-web.jpg" alt="A Sundering boss arena" loading="lazy" width="1280" height="723">
+        </a>
+        <a href="images/screenshots/steam-05.jpg" target="_blank" rel="noopener">
+          <img src="images/screenshots/steam-05-web.jpg" alt="Skills in the field" loading="lazy" width="1280" height="713">
+        </a>
+        <a href="images/screenshots/steam-01.jpg" target="_blank" rel="noopener">
+          <img src="images/screenshots/steam-01-web.jpg" alt="The talent tree" loading="lazy" width="1280" height="719">
+        </a>
+        <a href="images/screenshots/steam-04.jpg" target="_blank" rel="noopener">
+          <img src="images/screenshots/steam-04-web.jpg" alt="Gear and inventory" loading="lazy" width="1280" height="720">
+        </a>
+      </div>
+      <p class="shot-note">Click any screenshot for the full-size image.</p>
     </div>
   </section>
 
