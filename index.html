@@ -37,7 +37,7 @@
         <li><a href="#showcase">Showcase</a></li>
         <li><a href="#media">Media</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="patch-notes-0.2.8.html">Patch Notes</a></li>
+        <li><a href="#updates">Patch Notes</a></li>
         <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
       </ul>
     </div>
@@ -559,6 +559,78 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Update History -->
+  <section class="section" id="updates">
+    <style>
+      /* Scoped to this section (upd-* names) so nothing here can collide with style.css. */
+      .upd-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+      .upd-row {
+        display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+        padding: 18px 22px; border-radius: 8px; text-decoration: none;
+        background: var(--color-surface, #1a1a2e);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: border-color 0.3s, transform 0.3s, background 0.3s;
+      }
+      .upd-row:hover {
+        border-color: rgba(212, 168, 83, 0.45);
+        background: rgba(212, 168, 83, 0.05);
+        transform: translateX(4px);
+      }
+      .upd-row.upd-latest { border-color: rgba(212, 168, 83, 0.35); }
+      .upd-ver {
+        font-family: var(--font-display, Georgia, serif); font-size: 0.95rem; font-weight: 600;
+        color: var(--color-gold, #d4a853); letter-spacing: 0.06em; min-width: 72px;
+      }
+      .upd-name {
+        font-family: var(--font-display, Georgia, serif); font-size: 1.15rem;
+        color: var(--color-text, #e0ddd5); letter-spacing: 0.02em; flex: 1 1 auto;
+      }
+      .upd-pill {
+        font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+        color: #0a0a0f; background: var(--color-gold, #d4a853);
+        padding: 3px 9px; border-radius: 999px; font-weight: 700; align-self: center;
+      }
+      .upd-date { font-size: 0.85rem; color: var(--color-text-dim, #5a5850); white-space: nowrap; }
+      .upd-go { color: var(--color-gold-dark, #a07830); font-size: 1.1rem; }
+      @media (max-width: 620px) {
+        .upd-row { gap: 6px 14px; padding: 16px 18px; }
+        .upd-name { flex-basis: 100%; order: 3; font-size: 1.05rem; }
+        .upd-go { display: none; }
+      }
+    </style>
+    <div class="container">
+      <h2 class="section-title">Update History</h2>
+      <p class="section-subtitle">Every release, newest first. The game updates through Steam.</p>
+      <div class="upd-list">
+        <a class="upd-row upd-latest" href="patch-notes-0.2.8.html">
+          <span class="upd-ver">v0.2.8</span>
+          <span class="upd-name">Nothing Goes Missing</span>
+          <span class="upd-pill">Latest</span>
+          <span class="upd-date">August 24, 2026</span>
+          <span class="upd-go">&raquo;</span>
+        </a>
+        <a class="upd-row" href="patch-notes-0.2.7.html">
+          <span class="upd-ver">v0.2.7</span>
+          <span class="upd-name">The Party Decides</span>
+          <span class="upd-date">August 23, 2026</span>
+          <span class="upd-go">&raquo;</span>
+        </a>
+        <a class="upd-row" href="patch-notes-0.2.6.html">
+          <span class="upd-ver">v0.2.6</span>
+          <span class="upd-name">Shoulder to Shoulder</span>
+          <span class="upd-date">August 22, 2026</span>
+          <span class="upd-go">&raquo;</span>
+        </a>
+        <a class="upd-row" href="patch-notes.html">
+          <span class="upd-ver">v0.2.0</span>
+          <span class="upd-name">The Sundering</span>
+          <span class="upd-date">August 17, 2026</span>
+          <span class="upd-go">&raquo;</span>
+        </a>
       </div>
     </div>
   </section>
