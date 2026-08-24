@@ -648,8 +648,16 @@ a:hover {
 /* --- Classes --- */
 .classes-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Five classes since the Warrior shipped. Drops to 3 before the 2-col breakpoint so the
+     cards never squeeze below a readable width on a laptop. */
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
+}
+
+@media (max-width: 1180px) {
+  .classes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .class-card {
