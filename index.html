@@ -396,9 +396,25 @@
 
   <!-- World Section -->
   <section class="section section-dark" id="world">
+    <style>
+      /* Scoped (world-part-*) so nothing collides with style.css. */
+      .world-part-label {
+        font-family: var(--font-display, Georgia, serif);
+        font-size: 1.35rem; color: var(--color-gold, #d4a853);
+        letter-spacing: 0.06em; text-align: center; margin: 0 0 8px;
+      }
+      .world-part-sub {
+        text-align: center; color: var(--color-text-muted, #8a8778);
+        font-size: 0.95rem; max-width: 620px; margin: 0 auto 40px; text-wrap: balance;
+      }
+      .world-part-second { margin-top: 88px; }
+    </style>
     <div class="container">
       <h2 class="section-title">Explore the World</h2>
-      <p class="section-subtitle">Journey through seven distinct zones, each with unique enemies, lore, and challenges.</p>
+      <p class="section-subtitle">Two continents, each with its own enemies, lore and challenges &mdash; and its own reasons to be there.</p>
+
+      <h3 class="world-part-label">Eloria</h3>
+      <p class="world-part-sub">The heartland, and the whole of the original journey. Peaceful ground: no player can attack you here.</p>
       <div class="world-timeline">
         <div class="world-zone">
           <div class="zone-level">Lv 1</div>
@@ -446,7 +462,54 @@
           <div class="zone-level">Lv 28-30</div>
           <div class="zone-info">
             <h3>Creator's Gate</h3>
-            <p>The final zone. Shadow sentinels guard The Forgotten One &mdash; defeat it to free the Light.</p>
+            <p>Shadow sentinels guard The Forgotten One &mdash; defeat it to free the Light.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="world-part-label world-part-second">The Sundering</h3>
+      <p class="world-part-sub">The continent that rose out of the wound, reached by crossing the land bridge. Pledge to a faction and its ground becomes your home.</p>
+      <div class="world-timeline">
+        <div class="world-zone">
+          <div class="zone-level">Lv 20-28</div>
+          <div class="zone-info">
+            <h3>Dawnfield Terraces</h3>
+            <p>The approach. Terraced farmland that belongs to no faction, and the first ground on the far side of the bridge.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Safe</div>
+          <div class="zone-info">
+            <h3>Dawnspire Bastion &middot; Umbral Hold &middot; The Wellspring</h3>
+            <p>The three faction capitals &mdash; Light, Dark and Creation. You respawn at your own, and no fight can follow you inside it.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 31-39</div>
+          <div class="zone-info">
+            <h3>The Reclaimed Dominion</h3>
+            <p>Light's field. Sun-bleached ruins held by Solarch the Fallen Dawn, the shielded Dawnwarden, and the Oracle of the First Light.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 31-39</div>
+          <div class="zone-info">
+            <h3>The Umbral Reach</h3>
+            <p>Dark's field. Ashen badlands under a permanent dusk, prowled by the Umbral Dreadlord and by Nightmaw, the Long Hunger.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 31-39</div>
+          <div class="zone-info">
+            <h3>The Nascent Wilds</h3>
+            <p>Creation's field. Ground still deciding what it wants to be, and the hunting range of the Thorn Titan.</p>
+          </div>
+        </div>
+        <div class="world-zone">
+          <div class="zone-level">Lv 42-50</div>
+          <div class="zone-info">
+            <h3>The Sundering Scar</h3>
+            <p>The crater itself. It belongs to no one &mdash; all three factions send expeditions down for the relics, and every relic answers to the same buried thing.</p>
           </div>
         </div>
       </div>
