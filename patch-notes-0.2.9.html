@@ -1,0 +1,417 @@
+<title>v0.2.9 &mdash; The Patron&rsquo;s Crest | Echoes of Creation</title>
+<meta name="description" content="v0.2.9: a 30-day pass built entirely out of convenience, a chat tab for your faction, and the crash that could take the game down on fast travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<style>
+  /* Lifted verbatim from the live site's css/style.css so this preview matches the
+     real page. Inlined because the artifact sandbox cannot fetch site assets. */
+  :root {
+    --color-bg: #0a0a0f;
+    --color-bg-alt: #12121a;
+    --color-surface: #1a1a2e;
+    --color-gold: #d4a853;
+    --color-gold-light: #f0d080;
+    --color-gold-dark: #a07830;
+    --color-text: #e0ddd5;
+    --color-text-muted: #8a8778;
+    --color-text-dim: #5a5850;
+    --font-display: 'Cinzel', 'Georgia', serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --max-width: 1200px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { color: var(--color-gold); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--color-gold-light); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+  }
+  .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+  /* --- Navbar --- */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 168, 83, 0.1);
+  }
+  .nav-container {
+    max-width: var(--max-width); margin: 0 auto; padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .nav-logo-img { height: 38px; width: auto; display: block; }
+  .nav-links { list-style: none; display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--color-text-muted); font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.04em; transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--color-gold); }
+  .nav-discord-link { color: var(--color-gold) !important; }
+
+  /* --- Patch hero (page-scoped block from the real 0.2.6 page) --- */
+  .patch-hero {
+    min-height: 46vh;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 120px 20px 60px;
+    background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.75)), url('images/hero-banner.webp') center/cover no-repeat;
+  }
+  .patch-tag {
+    display: inline-block; padding: 6px 18px;
+    border: 1px solid rgba(212, 175, 55, 0.6); border-radius: 999px;
+    color: #d4af37; font-family: var(--font-display); font-size: 0.85rem;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 700;
+    color: var(--color-gold); letter-spacing: 0.04em; margin-bottom: 16px;
+    text-shadow: 0 0 60px rgba(212, 168, 83, 0.3); text-wrap: balance;
+  }
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2.5vw, 1.5rem); color: var(--color-text);
+    font-weight: 400; margin-bottom: 16px; letter-spacing: 0.06em;
+    margin-top: 12px; text-wrap: balance;
+  }
+  .patch-date { color: rgba(255, 255, 255, 0.55); font-size: 0.95rem; margin-top: 14px; }
+  .patch-intro {
+    max-width: 780px; margin: 0 auto 10px; text-align: center;
+    color: rgba(255, 255, 255, 0.8); line-height: 1.7;
+  }
+  .patch-note-fine {
+    text-align: center; color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem; margin-top: 40px;
+  }
+
+  /* --- Sections --- */
+  .section { padding: 100px 0; }
+  .section-dark { background: var(--color-bg-alt); }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--color-gold);
+    text-align: center; margin-bottom: 16px; letter-spacing: 0.04em;
+    text-wrap: balance;
+  }
+  .section-subtitle {
+    text-align: center; color: var(--color-text-muted); font-size: 1.05rem;
+    margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;
+    text-wrap: balance;
+  }
+
+  /* --- Feature cards --- */
+  .feature-categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .feature-category {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px; padding: 28px 28px 24px;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s;
+  }
+  .feature-category.visible { opacity: 1; transform: translateY(0); }
+  .feature-category:nth-child(2) { transition-delay: 0.05s; }
+  .feature-category:nth-child(3) { transition-delay: 0.1s; }
+  .feature-category:nth-child(4) { transition-delay: 0.15s; }
+  .feature-category:hover { border-color: rgba(212, 168, 83, 0.3); }
+  .feature-category-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid rgba(212, 168, 83, 0.12);
+  }
+  .feature-category-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+  .feature-category-header h3 {
+    font-family: var(--font-display); font-size: 1.1rem;
+    color: var(--color-gold-light); letter-spacing: 0.03em; font-weight: 600;
+  }
+  .feature-list { list-style: none; margin: 0; padding: 0; }
+  .feature-list li {
+    color: var(--color-text-muted); font-size: 0.875rem; line-height: 1.6;
+    padding: 4px 0 4px 18px; position: relative;
+  }
+  .feature-list li::before {
+    content: ''; position: absolute; left: 0; top: 11px;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--color-gold-dark);
+  }
+  .feature-list li strong { color: var(--color-text); font-weight: 600; }
+
+  /* --- Buttons / archive / footer --- */
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
+  .btn {
+    display: inline-block; padding: 14px 32px; font-family: var(--font-body);
+    font-size: 0.9rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; border-radius: 4px; cursor: pointer; transition: all 0.3s;
+  }
+  .btn-secondary { background: transparent; color: var(--color-gold); border: 1px solid var(--color-gold-dark); }
+  .btn-secondary:hover { background: rgba(212, 168, 83, 0.1); border-color: var(--color-gold); transform: translateY(-2px); }
+  .btn-play {
+    background: linear-gradient(135deg, #2a7a3a, #3da64e); color: #fff; border: none;
+    font-size: 1.15rem; padding: 1rem 2.5rem; letter-spacing: 0.5px;
+  }
+  .btn-play:hover {
+    background: linear-gradient(135deg, #3da64e, #4ebd5f); color: #fff;
+    transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61, 166, 78, 0.35);
+  }
+  .archive-link { font-size: 0.9rem; letter-spacing: 0.03em; }
+
+  .footer { background: var(--color-bg); border-top: 1px solid rgba(212, 168, 83, 0.1); padding: 48px 0 24px; }
+  .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; gap: 24px; flex-wrap: wrap; }
+  .footer-brand h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-gold); margin-bottom: 4px; }
+  .footer-brand p { color: var(--color-text-dim); font-size: 0.85rem; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: var(--color-text-muted); font-size: 0.85rem; }
+  .footer-links a:hover { color: var(--color-gold); }
+  .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 24px; text-align: center; }
+  .footer-bottom p { color: var(--color-text-dim); font-size: 0.8rem; }
+
+  @media (max-width: 860px) {
+    .feature-categories { grid-template-columns: 1fr; }
+    .section { padding: 64px 0; }
+    .nav-links { gap: 16px; }
+    .footer-content { flex-direction: column; align-items: flex-start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .feature-category { opacity: 1; transform: none; transition: border-color 0.3s; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#classes">Classes</a></li>
+      <li><a href="index.html#world">World</a></li>
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="patch-notes-0.2.9.html" class="active">Patch Notes</a></li>
+      <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Patch Hero -->
+<header class="patch-hero">
+  <div>
+    <div class="patch-tag">Update v0.2.9</div>
+    <h1 class="hero-title">The Patron&rsquo;s Crest</h1>
+    <p class="hero-subtitle">A pass built entirely out of convenience &mdash; and a place for your faction to talk.</p>
+    <p class="patch-date">Released August 25, 2026</p>
+  </div>
+</header>
+
+<!-- Overview -->
+<section class="section" id="overview">
+  <div class="container">
+    <p class="patch-intro">This update adds the first thing in Echoes of Creation you can buy that is not an item: a 30-day pass made of convenience. No power you cannot earn, no stat you cannot reach, and nothing that renews itself behind your back. Alongside it, your pledge gets its own chat tab &mdash; and a crash that could take the game down on fast travel is closed.</p>
+  </div>
+</section>
+
+<!-- Crest -->
+<section class="section section-dark" id="crest">
+  <div class="container">
+    <h2 class="section-title">The Patron&rsquo;s Crest</h2>
+    <p class="section-subtitle">Bought in days. The days stack. It never renews itself.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128509;</span>
+          <h3>It Saves You The Walk</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Your account storage, from anywhere.</strong> No more running back to town mid-hunt to make room</li>
+          <li><strong>The blacksmith&rsquo;s upgrade bench, from anywhere.</strong> Push a piece one level higher where you stand</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#9878;</span>
+          <h3>It Saves You The Grind Tax</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>+50 kg carry capacity</strong> &mdash; fewer trips, longer hunts</li>
+          <li><strong>+25% EXP</strong>, and 75% stacked with an EXP Boost Potion</li>
+          <li>Room for <strong>10 Scrolls of Protection</strong> instead of 5</li>
+          <li><strong>30 marketplace listings</strong> instead of 20</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#8987;</span>
+          <h3>Every Day, Every Month</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Respawn on the spot 10 times a day</strong>, instead of walking back</li>
+          <li><strong>One free talent respec a day</strong> &mdash; try the build instead of theorising about it</li>
+          <li><strong>One free faction change a month</strong></li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127873;</span>
+          <h3>Yours, And Giftable</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>A separate Patron loadout slot</strong> that sits above your own. If the Crest lapses that build is untouched, and it is waiting for you if you come back</li>
+          <li><strong>Gift one to a friend.</strong> They get the days straight away, with a mail saying who it came from</li>
+          <li>No auto-renew, no card on file, and nothing you earned leaves with it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Faction chat -->
+<section class="section" id="faction-chat">
+  <div class="container">
+    <h2 class="section-title">Faction Chat</h2>
+    <p class="section-subtitle">A fourth tab, named after your pledge.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128172;</span>
+          <h3>Everyone Who Stands With You</h3>
+        </div>
+        <ul class="feature-list">
+          <li>Sits beside Map, Global and Guild, and reaches everyone who shares your faction &mdash; wherever in the world they happen to be</li>
+          <li><strong>It works whether or not the war is running.</strong> It is a place to talk, not a war room</li>
+          <li>Drop notices and system lines stay out of it, the same as Guild and whispers</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128260;</span>
+          <h3>Tied To Your Current Pledge</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Change factions and you arrive to a clean channel.</strong> Going back later does not restore what was said before you left</li>
+          <li>What your old faction says stays with your old faction</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128276;</span>
+          <h3>And A Dot You Were Missing</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Map and Global now show an unread dot</strong> when you are not watching them. Only Guild did before, which is why quiet conversations in Global were easy to miss</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fixed -->
+<section class="section section-dark" id="fixed">
+  <div class="container">
+    <h2 class="section-title">Fixed</h2>
+    <p class="section-subtitle">One of these could end your session outright.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128736;</span>
+          <h3>Crashes And Transitions</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Fast travel could take the game down.</strong> Opening the world map and travelling would sometimes close the client outright on arrival. One engine-timing fault was behind it, and it is now closed everywhere it could happen &mdash; not just on the route that reported it</li>
+          <li><strong>Missing effects are back.</strong> The Warrior&rsquo;s dark greatsword strike, and the arrow and leaf hit effects, were failing to load and simply never appeared</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127749;</span>
+          <h3>Out In The World</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Solarch returns every 3 hours again.</strong> He had been coming back every 15 minutes</li>
+          <li><strong>Everyone who damaged a Sundering boss shares its loot window.</strong> The killing blow no longer decides who gets first claim</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127890;</span>
+          <h3>Interface And Storage</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>An old chat line stopped following you.</strong> The last thing you ever typed in map chat popped up over your head every time you logged in &mdash; sometimes a message weeks old</li>
+          <li><strong>A bound potion on your hotbar draws its icon</strong> instead of sitting there as an empty slot</li>
+          <li><strong>The warehouse tells you the truth.</strong> A refused deposit says why, a withdrawal reports the real reason instead of failing silently, and it retries when it cannot load rather than staying empty for the rest of your session</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <a class="archive-link" href="patch-notes-0.2.8.html">&laquo; Previous update &mdash; Nothing Goes Missing (v0.2.8)</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title">See you out there</h2>
+    <p class="section-subtitle">Find your faction. Say something.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+      <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Echoes of Creation</h3>
+        <p>A top-down 3D action RPG</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">Story</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#classes">Classes</a>
+        <a href="index.html#roadmap">Roadmap</a>
+        <a href="patch-notes-0.2.9.html">Patch Notes</a>
+        <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mirrors the scroll-reveal in the site's js/main.js so cards fade in as you reach them.
+  (function () {
+    var cards = document.querySelectorAll('.feature-category');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      cards.forEach(function (c) { c.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(function (c) { io.observe(c); });
+  })();
+</script>
