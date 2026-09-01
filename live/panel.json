@@ -18,8 +18,35 @@
     "patch_notes[] — rows in the panel's Patch Notes section, newest first. Each opens 'url' in",
     "  the player's browser. Only list versions that actually have a page on the site."
   ],
-  "updated": "2026-08-31",
-  "events": [],
+  "updated": "2026-09-01",
+  "events": [
+    {
+      "id": "exp_rush_hour",
+      "name": "EXP Rush Hour",
+      "color": "#3b5bdb",
+      "focus_y": 0.4,
+      "time": "Daily — 3 sessions",
+      "blurb": "Double EXP from every kill, one hour at a time.",
+      "description": "Three times a day, every monster in Eloria gives twice the EXP for one hour.\n\nThe sessions run at 00:00, 10:00 and 17:00 UTC — the panel shows them in your own timezone above, with a countdown to the next one.\n\nEloria's Favor stacks on top, so a Favor kill during a power hour is worth four times the usual EXP. Nothing to claim and nothing to sign up for: be online, be killing things.",
+      "schedule": {
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "duration_min": 60,
+        "sessions_utc": [
+          "00:00",
+          "10:00",
+          "17:00"
+        ]
+      }
+    }
+  ],
   "patch_notes": [
     {
       "version": "0.2.12",
