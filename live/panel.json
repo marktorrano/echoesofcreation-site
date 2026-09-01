@@ -19,45 +19,49 @@
     "  the player's browser. Only list versions that actually have a page on the site."
   ],
   "updated": "2026-08-31",
-
   "events": [],
-
   "patch_notes": [
     {
       "version": "0.2.12",
       "name": "Nothing Left to Guess",
-      "date": "2026-08-31",
+      "date": "August 31, 2026",
       "url": "https://echoesofcreation.net/patch-notes-0.2.12.html"
     },
     {
       "version": "0.2.10",
       "name": "Mage: The Sixth Class",
-      "date": "2026-08-28",
+      "date": "August 28, 2026",
       "url": "https://echoesofcreation.net/patch-notes-0.2.10.html"
     },
     {
       "version": "0.2.9",
-      "name": "The Patron's Crest",
-      "date": "2026-08-24",
+      "name": "The Patron’s Crest",
+      "date": "August 25, 2026",
       "url": "https://echoesofcreation.net/patch-notes-0.2.9.html"
     },
     {
       "version": "0.2.8",
       "name": "Nothing Goes Missing",
-      "date": "2026-08-24",
+      "date": "August 24, 2026",
       "url": "https://echoesofcreation.net/patch-notes-0.2.8.html"
     },
     {
       "version": "0.2.7",
       "name": "The Party Decides",
-      "date": "2026-08-23",
+      "date": "August 23, 2026",
       "url": "https://echoesofcreation.net/patch-notes-0.2.7.html"
     },
     {
       "version": "0.2.6",
       "name": "Shoulder to Shoulder",
-      "date": "2026-08-22",
+      "date": "August 22, 2026",
       "url": "https://echoesofcreation.net/patch-notes-0.2.6.html"
+    },
+    {
+      "version": "0.2.0",
+      "name": "The Sundering",
+      "date": "August 17, 2026",
+      "url": "https://echoesofcreation.net/patch-notes.html"
     }
   ]
 }
