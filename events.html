@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - Echoes of Creation</title>
+  <meta name="description" content="What is running in Eloria right now, and what is coming next. Live and upcoming in-game events, with the times shown in your own timezone.">
+  <meta property="og:title" content="Events - Echoes of Creation">
+  <meta property="og:description" content="What is running in Eloria right now, and what is coming next.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://echoesofcreation.net/events.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Events page. Everything below is driven by live/panel.json at runtime — the same
+       feed the in-game Events panel reads — so publishing an event updates the site and
+       the game together and this page never needs editing. */
+    .ev-hero{padding:140px 0 48px;text-align:center}
+    .ev-hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.4rem);color:var(--color-gold-light);margin:0 0 12px}
+    .ev-hero p{color:var(--color-text-muted);max-width:60ch;margin:0 auto}
+    .ev-tz{color:var(--color-text-dim);font-size:.85rem;margin-top:14px}
+
+    .ev-group{margin:0 0 56px}
+    .ev-grouphead{display:flex;align-items:baseline;gap:14px;margin:0 0 20px;
+                  border-bottom:1px solid rgba(212,168,83,.2);padding-bottom:10px}
+    .ev-grouphead h2{font-family:var(--font-display);font-size:1.5rem;color:var(--color-gold);margin:0}
+    .ev-count{color:var(--color-text-dim);font-size:.85rem}
+
+    .ev-list{display:grid;gap:20px}
+    .ev-card{position:relative;display:block;min-height:260px;border-radius:14px;overflow:hidden;
+             background:var(--color-surface);border:1px solid rgba(212,168,83,.16)}
+    .ev-card.is-soon{opacity:.9}
+    .ev-art{position:absolute;inset:0;background-size:cover;background-position:50% 45%}
+    .ev-scrim{position:absolute;inset:0;
+              background:linear-gradient(to bottom,rgba(10,10,15,.15) 0%,rgba(10,10,15,.55) 45%,rgba(10,10,15,.94) 100%)}
+    .ev-body{position:relative;padding:26px 26px 24px;display:flex;flex-direction:column;
+             justify-content:flex-end;min-height:260px}
+    .ev-name{font-family:var(--font-display);font-size:1.7rem;color:#fff;margin:0 0 6px;
+             text-shadow:0 2px 8px rgba(0,0,0,.8)}
+    .ev-when{font-size:.9rem;font-weight:500;margin:0 0 8px;text-shadow:0 1px 4px rgba(0,0,0,.9)}
+    .ev-when.live{color:#7ee89a}
+    .ev-when.soon{color:var(--color-gold-light)}
+    .ev-blurb{color:#e6e2d8;margin:0;max-width:64ch;text-shadow:0 1px 5px rgba(0,0,0,.9)}
+    .ev-desc{color:var(--color-text-muted);margin:14px 0 0;max-width:70ch;white-space:pre-line;
+             font-size:.94rem;text-shadow:0 1px 5px rgba(0,0,0,.9)}
+    .ev-pill{position:absolute;top:18px;right:18px;font-size:.7rem;letter-spacing:.12em;
+             text-transform:uppercase;font-weight:600;padding:6px 12px;border-radius:999px}
+    .ev-pill.live{background:#7ee89a;color:#08210f}
+    .ev-pill.soon{background:rgba(212,168,83,.16);color:var(--color-gold-light);
+                  border:1px solid rgba(212,168,83,.45)}
+    .ev-sessions{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+    .ev-slot{font-size:.8rem;color:var(--color-text);background:rgba(10,10,15,.6);
+             border:1px solid rgba(212,168,83,.25);border-radius:8px;padding:5px 11px;
+             font-variant-numeric:tabular-nums}
+    .ev-empty{color:var(--color-text-muted);background:var(--color-bg-alt);border-radius:12px;
+              padding:28px;text-align:center}
+    @media (max-width:640px){
+      .ev-body{padding:20px 18px 18px}
+      .ev-name{font-size:1.35rem}
+      .ev-pill{top:12px;right:12px}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="index.html#updates">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="ev-hero">
+    <div class="container">
+      <h1>Events</h1>
+      <p>What is running in Eloria right now, and what is coming next. The same list your Events panel shows in game.</p>
+      <p class="ev-tz" id="tz-note"></p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div id="ev-root">
+        <div class="ev-empty">Loading events&hellip;</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A top-down 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="events.html">Events</a>
+          <a href="patch-notes-0.2.12.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function () {
+  var WEEKDAY = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var root = document.getElementById('ev-root');
+
+  // Same 5-minute cache bucket the game client uses, so the CDN serves one copy per
+  // window rather than being hit per visitor.
+  function feedUrl() {
+    return 'live/panel.json?t=' + Math.floor(Date.now() / 1000 / 300);
+  }
+
+  // Feed dates are UTC with no offset ("2026-09-02T02:00:00"); Safari will not parse that
+  // as UTC without the Z, so add one rather than letting it fall back to local time.
+  function parseUTC(s) {
+    if (!s) return null;
+    var t = String(s).trim();
+    if (t.indexOf('T') === -1) t += 'T00:00:00';
+    if (!/[Zz]|[+-]\d\d:?\d\d$/.test(t)) t += 'Z';
+    var d = new Date(t);
+    return isNaN(d.getTime()) ? null : d;
+  }
+
+  function fmtDate(d) {
+    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+  }
+  function fmtDateTime(d) {
+    return d.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  }
+  function fmtGap(ms) {
+    var m = Math.max(0, Math.round(ms / 60000));
+    var dY = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mm = m % 60;
+    if (dY > 0) return dY + 'd ' + h + 'h';
+    if (h > 0) return h + 'h ' + mm + 'm';
+    return mm + 'm';
+  }
+
+  // A daily session block rendered in the visitor's own timezone. sessions_utc are UTC
+  // "HH:MM" starts; duration_min is how long each runs.
+  function sessionChips(sched) {
+    if (!sched || !sched.sessions_utc || !sched.sessions_utc.length) return '';
+    var dur = Number(sched.duration_min) || 0;
+    var out = sched.sessions_utc.map(function (hhmm) {
+      var p = String(hhmm).split(':');
+      var start = new Date();
+      start.setUTCHours(Number(p[0]) || 0, Number(p[1]) || 0, 0, 0);
+      var end = new Date(start.getTime() + dur * 60000);
+      var f = { hour: 'numeric', minute: '2-digit' };
+      return '<span class="ev-slot">' + start.toLocaleTimeString(undefined, f) +
+             ' &ndash; ' + end.toLocaleTimeString(undefined, f) + '</span>';
+    }).join('');
+    return '<div class="ev-sessions">' + out + '</div>';
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function card(ev, state, from, to) {
+    var now = Date.now();
+    var when, pill;
+    if (state === 'live') {
+      when = '<span class="ev-when live">Running now &middot; ends ' + fmtDateTime(to) +
+             ' (' + fmtGap(to - now) + ' left)</span>';
+      pill = '<span class="ev-pill live">Live</span>';
+    } else {
+      when = '<span class="ev-when soon">Starts ' + fmtDateTime(from) +
+             ' &middot; in ' + fmtGap(from - now) + '</span>';
+      pill = '<span class="ev-pill soon">' + fmtDate(from) + '</span>';
+    }
+    var art = 'images/events/' + ev.id + '.jpg';
+    var focus = Math.round((typeof ev.focus_y === 'number' ? ev.focus_y : 0.45) * 100);
+    return '<article class="ev-card' + (state === 'live' ? '' : ' is-soon') + '">' +
+      '<div class="ev-art" style="background-image:url(' + art + ');background-position:50% ' + focus + '%"></div>' +
+      '<div class="ev-scrim"></div>' + pill +
+      '<div class="ev-body">' +
+        '<h3 class="ev-name">' + esc(ev.name) + '</h3>' + when +
+        '<p class="ev-blurb">' + esc(ev.blurb) + '</p>' +
+        sessionChips(ev.schedule) +
+        (ev.description ? '<p class="ev-desc">' + esc(ev.description) + '</p>' : '') +
+      '</div></article>';
+  }
+
+  function render(events) {
+    var now = Date.now(), live = [], soon = [];
+    events.forEach(function (ev) {
+      if (!ev || ev.hidden) return;
+      var r = ev.runs || {};
+      var from = parseUTC(r.from), to = parseUTC(r.to);
+      // No window at all means a standing event: always current.
+      if (!from && !to) { live.push(card(ev, 'live', null, null)); return; }
+      if (to && now >= to.getTime()) return;                      // finished
+      if (from && now < from.getTime()) { soon.push({ t: from.getTime(), h: card(ev, 'soon', from, to) }); return; }
+      live.push(card(ev, 'live', from, to));
+    });
+    soon.sort(function (a, b) { return a.t - b.t; });
+
+    var html = '';
+    html += '<div class="ev-group"><div class="ev-grouphead"><h2>Happening now</h2>' +
+            '<span class="ev-count">' + live.length + '</span></div>' +
+            (live.length ? '<div class="ev-list">' + live.join('') + '</div>'
+                         : '<div class="ev-empty">Nothing is running at the moment &mdash; check what is coming up below.</div>') +
+            '</div>';
+    if (soon.length) {
+      html += '<div class="ev-group"><div class="ev-grouphead"><h2>Coming up</h2>' +
+              '<span class="ev-count">' + soon.length + '</span></div>' +
+              '<div class="ev-list">' + soon.map(function (s) { return s.h; }).join('') + '</div></div>';
+    }
+    root.innerHTML = html;
+  }
+
+  try {
+    document.getElementById('tz-note').textContent =
+      'All times shown in your local timezone (' +
+      (Intl.DateTimeFormat().resolvedOptions().timeZone || 'local') + ').';
+  } catch (e) {}
+
+  fetch(feedUrl(), { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) { render((d && d.events) || []); })
+    .catch(function () {
+      root.innerHTML = '<div class="ev-empty">Could not load the event list right now. ' +
+                       'Please try again shortly, or check the Events panel in game.</div>';
+    });
+})();
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
