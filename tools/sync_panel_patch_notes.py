@@ -16,6 +16,10 @@ import io, json, os, re, html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://echoesofcreation.net/"
+# How many releases the in-game panel lists. The panel is a narrow side panel, not an
+# archive -- its "All patch notes" row always links to the full history, so this only
+# decides how many get a shortcut. Change it and re-run; it needs no client build.
+LIMIT = 3
 ROW = re.compile(r'<a class="upd-row[^"]*"\s+href="([^"]+)"(.*?)</a>', re.S)
 
 
@@ -39,6 +43,7 @@ def main():
         })
     if not rows:
         raise SystemExit("no upd-row entries found in index.html — did the markup change?")
+    rows = rows[:LIMIT]   # index.html is newest-first, so this is the latest LIMIT
 
     path = os.path.join(ROOT, "live", "panel.json")
     feed = json.load(io.open(path, encoding="utf-8"))
@@ -46,7 +51,7 @@ def main():
     feed["patch_notes"] = rows
     io.open(path, "w", encoding="utf-8", newline="\n").write(
         json.dumps(feed, indent=2, ensure_ascii=False) + "\n")
-    print("patch_notes: %d -> %d" % (before, len(rows)))
+    print("patch_notes: %d -> %d (newest %d of the site's list)" % (before, len(rows), LIMIT))
     for r in rows:
         print("  v%-8s %-28s %s" % (r["version"], r["name"], r["date"]))
 
