@@ -12,8 +12,9 @@
     "    color       hex, used for the card gradient when there is no hero art",
     "    hidden      true retires an event, including a bundled one",
     "  Hero art is OPTIONAL and must ship in the build (assets/sprites/events/event_<id>.png).",
-    "  Without it the card falls back to the colour gradient, which is why a remote-only event",
-    "  should always set a good 'color'.",
+    "  Without it the card falls back to the colour gradient. Art ALREADY SHIPS for these ids,",
+    "  so reusing one gets a banner with no build: sanctum_rush_hour, exp_rush, playtime_wings,",
+    "  supporter_chest. Any other id shows the gradient, which is why 'color' always matters.",
     "",
     "patch_notes[] — rows in the panel's Patch Notes section, newest first. Each opens 'url' in",
     "  the player's browser. Only list versions that actually have a page on the site."
@@ -21,30 +22,13 @@
   "updated": "2026-09-01",
   "events": [
     {
-      "id": "exp_rush_hour",
+      "id": "exp_rush",
       "name": "EXP Rush Hour",
-      "color": "#3b5bdb",
+      "color": "#3fb950",
       "focus_y": 0.4,
-      "time": "Daily — 3 sessions",
-      "blurb": "Double EXP from every kill, one hour at a time.",
-      "description": "Three times a day, every monster in Eloria gives twice the EXP for one hour.\n\nThe sessions run at 00:00, 10:00 and 17:00 UTC — the panel shows them in your own timezone above, with a countdown to the next one.\n\nEloria's Favor stacks on top, so a Favor kill during a power hour is worth four times the usual EXP. Nothing to claim and nothing to sign up for: be online, be killing things.",
-      "schedule": {
-        "days": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
-        "duration_min": 60,
-        "sessions_utc": [
-          "00:00",
-          "10:00",
-          "17:00"
-        ]
-      }
+      "time": "Daily · 00:00 / 10:00 / 17:00 UTC",
+      "blurb": "x2 EXP three times a day — and x4 while Eloria's Favor is active.",
+      "description": "For one hour, three times a day, every kill earns DOUBLE EXP.\n\nIt stacks with Eloria's Favor: keep Favor active during a power hour and each kill grants x4 EXP instead of the usual x3.\n\nPower hours run at 00:00, 10:00 and 17:00 UTC — the hour just before Sanctum Rush Hour at the weekend."
     }
   ],
   "patch_notes": [
