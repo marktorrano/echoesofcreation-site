@@ -1,0 +1,63 @@
+{
+  "_howto": [
+    "This file drives the in-game Events panel. Edit it, commit, push — the site auto-deploys and",
+    "the game picks it up within ~5 minutes. NO client build is needed for anything in here.",
+    "",
+    "events[]  — same shape as the game's data/events.json. Fields:",
+    "    id          required, unique. Reusing a bundled id OVERRIDES that bundled event.",
+    "    name        title on the card",
+    "    blurb       one line shown on the card",
+    "    description full text in the detail view ( \n\n between paragraphs )",
+    "    time        descriptive schedule line, e.g. 'Sat & Sun - 3 sessions daily'",
+    "    color       hex, used for the card gradient when there is no hero art",
+    "    hidden      true retires an event, including a bundled one",
+    "  Hero art is OPTIONAL and must ship in the build (assets/sprites/events/event_<id>.png).",
+    "  Without it the card falls back to the colour gradient, which is why a remote-only event",
+    "  should always set a good 'color'.",
+    "",
+    "patch_notes[] — rows in the panel's Patch Notes section, newest first. Each opens 'url' in",
+    "  the player's browser. Only list versions that actually have a page on the site."
+  ],
+  "updated": "2026-08-31",
+
+  "events": [],
+
+  "patch_notes": [
+    {
+      "version": "0.2.12",
+      "name": "Nothing Left to Guess",
+      "date": "2026-08-31",
+      "url": "https://echoesofcreation.net/patch-notes-0.2.12.html"
+    },
+    {
+      "version": "0.2.10",
+      "name": "Mage: The Sixth Class",
+      "date": "2026-08-28",
+      "url": "https://echoesofcreation.net/patch-notes-0.2.10.html"
+    },
+    {
+      "version": "0.2.9",
+      "name": "The Patron's Crest",
+      "date": "2026-08-24",
+      "url": "https://echoesofcreation.net/patch-notes-0.2.9.html"
+    },
+    {
+      "version": "0.2.8",
+      "name": "Nothing Goes Missing",
+      "date": "2026-08-24",
+      "url": "https://echoesofcreation.net/patch-notes-0.2.8.html"
+    },
+    {
+      "version": "0.2.7",
+      "name": "The Party Decides",
+      "date": "2026-08-23",
+      "url": "https://echoesofcreation.net/patch-notes-0.2.7.html"
+    },
+    {
+      "version": "0.2.6",
+      "name": "Shoulder to Shoulder",
+      "date": "2026-08-22",
+      "url": "https://echoesofcreation.net/patch-notes-0.2.6.html"
+    }
+  ]
+}
