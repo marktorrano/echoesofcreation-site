@@ -648,16 +648,11 @@ a:hover {
 /* --- Classes --- */
 .classes-grid {
   display: grid;
-  /* Five classes since the Warrior shipped. Drops to 3 before the 2-col breakpoint so the
-     cards never squeeze below a readable width on a laptop. */
-  grid-template-columns: repeat(5, 1fr);
+  /* Six classes since the Mage shipped, laid out 3x2. Six across would leave each card ~172px
+     wide inside the 1200px container, which breaks "Two-Handed Greatstaff" over three lines —
+     so the single row was given up rather than the readable width. Drops to 2 at 1024, 1 below. */
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-}
-
-@media (max-width: 1180px) {
-  .classes-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .class-card {
