@@ -20,17 +20,7 @@
     "  the player's browser. Only list versions that actually have a page on the site."
   ],
   "updated": "2026-09-01",
-  "events": [
-    {
-      "id": "exp_rush",
-      "name": "EXP Rush Hour",
-      "color": "#3fb950",
-      "focus_y": 0.4,
-      "time": "Daily · 00:00 / 10:00 / 17:00 UTC",
-      "blurb": "x2 EXP three times a day — and x4 while Eloria's Favor is active.",
-      "description": "For one hour, three times a day, every kill earns DOUBLE EXP.\n\nIt stacks with Eloria's Favor: keep Favor active during a power hour and each kill grants x4 EXP instead of the usual x3.\n\nPower hours run at 00:00, 10:00 and 17:00 UTC — the hour just before Sanctum Rush Hour at the weekend."
-    }
-  ],
+  "events": [],
   "patch_notes": [
     {
       "version": "0.2.12",
