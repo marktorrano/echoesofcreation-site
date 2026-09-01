@@ -32,9 +32,9 @@
       "name": "EXP Rush Hour",
       "color": "#3fb950",
       "focus_y": 0.4,
-      "time": "This week · daily 00:00 / 10:00 / 17:00 UTC",
-      "blurb": "x2 EXP three times a day — and x4 while Eloria's Favor is active.",
-      "description": "For one hour, three times a day, every kill earns DOUBLE EXP.\n\nIt stacks with Eloria's Favor: keep Favor active during a power hour and each kill grants x4 EXP instead of the usual x3.\n\nPower hours run at 00:00, 10:00 and 17:00 UTC. Watch for the banner at the top of your screen — when it is up, the hour has started.",
+      "time": "Daily · 00:00 / 10:00 / 17:00 UTC · 3 hours each",
+      "blurb": "x2 EXP in three daily windows — and x4 while Eloria's Favor is active.",
+      "description": "Three times a day, for three hours at a time, every kill earns DOUBLE EXP.\n\nIt stacks with Eloria's Favor: keep Favor active during a window and each kill grants x4 EXP instead of the usual x3.\n\nThe times above are shown in your own timezone, with a countdown to the next one. A banner appears at the top of your screen while a window is open.",
       "runs": {
         "from": "2026-09-02T02:00:00",
         "to": "2026-09-09T02:00:00"
@@ -49,7 +49,7 @@
           5,
           6
         ],
-        "duration_min": 60,
+        "duration_min": 180,
         "sessions_utc": [
           "00:00",
           "10:00",
@@ -62,9 +62,9 @@
       "name": "Guild Contribution ×2",
       "color": "#2f4fb0",
       "focus_y": 0.35,
-      "time": "This week · all week",
+      "time": "This week · all week, every hour",
       "blurb": "Every Guild Order you finish is worth double contribution.",
-      "description": "All week, completing a Guild Order awards DOUBLE contribution — to your own Grade and to your guild's pool.\n\nYour daily ceiling doubles with it, so the extra points are real rather than being swallowed by the cap. Five orders a day, twice the value.\n\nThe best week of the month to push a Grade, or to bank the pool toward a guild buff. Bring your guild.",
+      "description": "All week, completing a Guild Order awards DOUBLE contribution — to your own Grade and to your guild's pool.\n\nYour daily ceiling doubles with it, so the extra points are real rather than being swallowed by the cap. Five orders a day, twice the value — and unlike the other weeks this one runs around the clock, so it never matters what hour you play.\n\nThe best week of the month to push a Grade, or to bank the pool toward a guild buff. Bring your guild.",
       "runs": {
         "from": "2026-09-09T02:00:00",
         "to": "2026-09-16T02:00:00"
@@ -75,12 +75,29 @@
       "name": "Collector's Week",
       "color": "#2f8f5b",
       "focus_y": 0.45,
-      "time": "This week · all week",
-      "blurb": "Collection and crafting materials drop at double rate.",
-      "description": "All week, every collection material and every crafting material drops at DOUBLE its usual rate.\n\nThis is the week to close out a Collection you have been chipping away at for a month, or to bank materials before the next upgrade push.\n\nNothing to claim and nothing to sign up for — just go and kill the things that drop what you need. The Monsterpedia will tell you where.",
+      "time": "Daily · 00:00 / 10:00 / 17:00 UTC · 3 hours each",
+      "blurb": "Collection and crafting materials drop at double rate, three times a day.",
+      "description": "Three times a day, for three hours at a time, every collection material and every crafting material drops at DOUBLE its usual rate.\n\nThis is the week to close out a Collection you have been chipping away at, or to bank materials before the next upgrade push. The Monsterpedia will tell you which monster drops what, and where to find it.\n\nThe times above are shown in your own timezone, with a countdown to the next window.",
       "runs": {
         "from": "2026-09-16T02:00:00",
         "to": "2026-09-23T02:00:00"
+      },
+      "schedule": {
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "duration_min": 180,
+        "sessions_utc": [
+          "00:00",
+          "10:00",
+          "17:00"
+        ]
       }
     },
     {
@@ -88,12 +105,29 @@
       "name": "Forge Week",
       "color": "#c8622a",
       "focus_y": 0.5,
-      "time": "This week · all week",
-      "blurb": "Sunderite and Elorite drop at double rate.",
-      "description": "All week, Sunderite and Elorite — the materials that carry your gear upgrades — drop at DOUBLE their usual rate.\n\nUpgrade materials are the real ceiling on gear progress, so this is the week to stockpile and push a piece further than you normally could.\n\nHunt anywhere they drop; the bonus applies across every zone.",
+      "time": "Daily · 00:00 / 10:00 / 17:00 UTC · 3 hours each",
+      "blurb": "Sunderite and Elorite drop at double rate, three times a day.",
+      "description": "Three times a day, for three hours at a time, Sunderite and Elorite — the materials that carry your gear upgrades — drop at DOUBLE their usual rate.\n\nUpgrade materials are the real ceiling on gear progress, so these are the windows to stockpile in and push a piece further than you normally could. The bonus applies in every zone they drop.\n\nThe times above are shown in your own timezone, with a countdown to the next window.",
       "runs": {
         "from": "2026-09-23T02:00:00",
         "to": "2026-09-30T02:00:00"
+      },
+      "schedule": {
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "duration_min": 180,
+        "sessions_utc": [
+          "00:00",
+          "10:00",
+          "17:00"
+        ]
       }
     }
   ],
