@@ -133,6 +133,12 @@
   ],
   "patch_notes": [
     {
+      "version": "0.2.13",
+      "name": "Worth Belonging To",
+      "date": "September 2, 2026",
+      "url": "https://echoesofcreation.net/patch-notes-0.2.13.html"
+    },
+    {
       "version": "0.2.12",
       "name": "Nothing Left to Guess",
       "date": "August 31, 2026",
@@ -143,12 +149,6 @@
       "name": "Mage: The Sixth Class",
       "date": "August 28, 2026",
       "url": "https://echoesofcreation.net/patch-notes-0.2.10.html"
-    },
-    {
-      "version": "0.2.9",
-      "name": "The Patron’s Crest",
-      "date": "August 25, 2026",
-      "url": "https://echoesofcreation.net/patch-notes-0.2.9.html"
     }
   ]
 }
