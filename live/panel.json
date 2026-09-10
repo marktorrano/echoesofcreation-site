@@ -25,7 +25,7 @@
     "patch_notes[] — rows in the panel's Patch Notes section, newest first. Each opens 'url' in",
     "  the player's browser. Only list versions that actually have a page on the site."
   ],
-  "updated": "2026-09-01",
+  "updated": "2026-09-10",
   "events": [
     {
       "id": "exp_rush",
@@ -132,6 +132,12 @@
     }
   ],
   "patch_notes": [
+    {
+      "version": "0.2.14",
+      "name": "The Maker’s Arts",
+      "date": "September 10, 2026",
+      "url": "https://echoesofcreation.net/patch-notes-0.2.14.html"
+    },
     {
       "version": "0.2.13",
       "name": "Worth Belonging To",
