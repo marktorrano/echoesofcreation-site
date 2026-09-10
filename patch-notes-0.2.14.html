@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Maker’s Arts</title>
+<meta name="description" content="v0.2.14: six new skills that have nothing to do with killing anything. Mine, chop, forage, fish, cook and build — then spend what you gather on Potential, and on the five towers your guild raises in a hall of its own.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<style>
+  /* Lifted verbatim from the live site's css/style.css so this preview matches the
+     real page. Inlined because the artifact sandbox cannot fetch site assets. */
+  :root {
+    --color-bg: #0a0a0f;
+    --color-bg-alt: #12121a;
+    --color-surface: #1a1a2e;
+    --color-gold: #d4a853;
+    --color-gold-light: #f0d080;
+    --color-gold-dark: #a07830;
+    --color-text: #e0ddd5;
+    --color-text-muted: #8a8778;
+    --color-text-dim: #5a5850;
+    --font-display: 'Cinzel', 'Georgia', serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --max-width: 1200px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { color: var(--color-gold); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--color-gold-light); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+  }
+  .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+  /* --- Navbar --- */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 168, 83, 0.1);
+  }
+  .nav-container {
+    max-width: var(--max-width); margin: 0 auto; padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .nav-logo-img { height: 38px; width: auto; display: block; }
+  .nav-links { list-style: none; display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--color-text-muted); font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.04em; transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--color-gold); }
+  .nav-discord-link { color: var(--color-gold) !important; }
+
+  /* --- Patch hero (page-scoped block from the real 0.2.6 page) --- */
+  .patch-hero {
+    min-height: 46vh;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 120px 20px 60px;
+    background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.75)), url('images/hero-banner.webp') center/cover no-repeat;
+  }
+  .patch-tag {
+    display: inline-block; padding: 6px 18px;
+    border: 1px solid rgba(212, 175, 55, 0.6); border-radius: 999px;
+    color: #d4af37; font-family: var(--font-display); font-size: 0.85rem;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 700;
+    color: var(--color-gold); letter-spacing: 0.04em; margin-bottom: 16px;
+    text-shadow: 0 0 60px rgba(212, 168, 83, 0.3); text-wrap: balance;
+  }
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2.5vw, 1.5rem); color: var(--color-text);
+    font-weight: 400; margin-bottom: 16px; letter-spacing: 0.06em;
+    margin-top: 12px; text-wrap: balance;
+  }
+  .patch-date { color: rgba(255, 255, 255, 0.55); font-size: 0.95rem; margin-top: 14px; }
+  .patch-intro {
+    max-width: 780px; margin: 0 auto 10px; text-align: center;
+    color: rgba(255, 255, 255, 0.8); line-height: 1.7;
+  }
+  .patch-note-fine {
+    text-align: center; color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem; margin-top: 40px;
+  }
+
+  /* --- Sections --- */
+  .section { padding: 100px 0; }
+  .section-dark { background: var(--color-bg-alt); }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--color-gold);
+    text-align: center; margin-bottom: 16px; letter-spacing: 0.04em;
+    text-wrap: balance;
+  }
+  .section-subtitle {
+    text-align: center; color: var(--color-text-muted); font-size: 1.05rem;
+    margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;
+    text-wrap: balance;
+  }
+
+  /* --- Feature cards --- */
+  .feature-categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .feature-category {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px; padding: 28px 28px 24px;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s;
+  }
+  .feature-category.visible { opacity: 1; transform: translateY(0); }
+  .feature-category:nth-child(2) { transition-delay: 0.05s; }
+  .feature-category:nth-child(3) { transition-delay: 0.1s; }
+  .feature-category:nth-child(4) { transition-delay: 0.15s; }
+  .feature-category:hover { border-color: rgba(212, 168, 83, 0.3); }
+  .feature-category-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid rgba(212, 168, 83, 0.12);
+  }
+  .feature-category-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+  .feature-category-header h3 {
+    font-family: var(--font-display); font-size: 1.1rem;
+    color: var(--color-gold-light); letter-spacing: 0.03em; font-weight: 600;
+  }
+  .feature-list { list-style: none; margin: 0; padding: 0; }
+  .feature-list li {
+    color: var(--color-text-muted); font-size: 0.875rem; line-height: 1.6;
+    padding: 4px 0 4px 18px; position: relative;
+  }
+  .feature-list li::before {
+    content: ''; position: absolute; left: 0; top: 11px;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--color-gold-dark);
+  }
+  .feature-list li strong { color: var(--color-text); font-weight: 600; }
+
+  /* --- Buttons / archive / footer --- */
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
+  .btn {
+    display: inline-block; padding: 14px 32px; font-family: var(--font-body);
+    font-size: 0.9rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; border-radius: 4px; cursor: pointer; transition: all 0.3s;
+  }
+  .btn-secondary { background: transparent; color: var(--color-gold); border: 1px solid var(--color-gold-dark); }
+  .btn-secondary:hover { background: rgba(212, 168, 83, 0.1); border-color: var(--color-gold); transform: translateY(-2px); }
+  .btn-play {
+    background: linear-gradient(135deg, #2a7a3a, #3da64e); color: #fff; border: none;
+    font-size: 1.15rem; padding: 1rem 2.5rem; letter-spacing: 0.5px;
+  }
+  .btn-play:hover {
+    background: linear-gradient(135deg, #3da64e, #4ebd5f); color: #fff;
+    transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61, 166, 78, 0.35);
+  }
+  .archive-link { font-size: 0.9rem; letter-spacing: 0.03em; }
+
+  .footer { background: var(--color-bg); border-top: 1px solid rgba(212, 168, 83, 0.1); padding: 48px 0 24px; }
+  .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; gap: 24px; flex-wrap: wrap; }
+  .footer-brand h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-gold); margin-bottom: 4px; }
+  .footer-brand p { color: var(--color-text-dim); font-size: 0.85rem; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: var(--color-text-muted); font-size: 0.85rem; }
+  .footer-links a:hover { color: var(--color-gold); }
+  .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 24px; text-align: center; }
+  .footer-bottom p { color: var(--color-text-dim); font-size: 0.8rem; }
+
+  @media (max-width: 860px) {
+    .feature-categories { grid-template-columns: 1fr; }
+    .section { padding: 64px 0; }
+    .nav-links { gap: 16px; }
+    .footer-content { flex-direction: column; align-items: flex-start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .feature-category { opacity: 1; transform: none; transition: border-color 0.3s; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#classes">Classes</a></li>
+      <li><a href="index.html#world">World</a></li>
+        <li><a href="events.html">Events</a></li>
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="patch-notes-0.2.14.html" class="active">Patch Notes</a></li>
+      <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Patch Hero -->
+<header class="patch-hero">
+  <div>
+    <div class="patch-tag">Update v0.2.14</div>
+    <h1 class="hero-title">The Maker&rsquo;s Arts</h1>
+    <p class="hero-subtitle">Six new skills that have nothing to do with killing anything.</p>
+    <p class="patch-date">Released September 2026</p>
+  </div>
+</header>
+
+<!-- Overview -->
+<section class="section" id="overview">
+  <div class="container">
+    <p class="patch-intro">Everything you have ever owned in Eloria came off something you killed. From this update, the land gives as well. You can mine, chop, forage, fish, cook and build &mdash; six skills with their own levels, their own gear and their own reason to walk somewhere you would otherwise ride past. What you bring back does not just sit in a bag: it refines into <strong>Potential</strong>, a permanent power track that runs long past level 45, and it raises the five towers of your guild&rsquo;s own hall. This is the largest single update since the Sundering, and none of it is a fight.</p>
+  </div>
+</section>
+
+<section class="section section-dark" id="life-skills">
+  <div class="container">
+    <h2 class="section-title">Six Life Skills</h2>
+    <p class="section-subtitle">Four to gather with, two to make with. Every one of them levels to 45 on its own.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#9935;</span>
+          <h3>Gathering</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Mining, Woodcutting, Foraging and Fishing.</strong> Walk up to a vein, a tree, a herb or a fishing stone and press <strong>E</strong> &mdash; your character swings, casts or kneels, and the yield lands in your satchel</li>
+          <li><strong>Twenty-seven things to gather,</strong> from copper and birchwood up through voidglass, weavewood, dawnthistle and abysspike. They are tiered by zone, so a long walk into a dangerous place is worth making</li>
+          <li><strong>Every skill has its own tool and its own animation.</strong> A pickaxe for ore, an axe for wood, a rod for the water &mdash; and the chop no longer sounds like mining</li>
+          <li><strong>Nodes are marked on the panel,</strong> which tells you which zone each one grows in rather than making you comb the map</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127858;</span>
+          <h3>Cooking</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Fish and herbs become food that buffs you</strong> &mdash; skewers, stews, chowder, broth, teas, grog, emberwine and tonics</li>
+          <li><strong>A dish reads and auto-uses exactly like a potion,</strong> so it slots into the routine you already have</li>
+          <li><strong>Every recipe card says what the dish does,</strong> not just what it costs, before you spend anything on it</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128296;</span>
+          <h3>Construction</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Logs and ore become Cut Blocks, Reinforced Beams and Iron Braces,</strong> in three grades each</li>
+          <li><strong>Those parts build the guild towers</strong> &mdash; construction is the one life skill whose output is spent by the whole guild rather than by you</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128200;</span>
+          <h3>Levels and Milestones</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Each skill levels to 45 independently,</strong> with milestones along the way at 5, 10, 20, 25, 30, 40 and 45</li>
+          <li><strong>They unlock deeper node bands, faster gathers, double yields, rare finds and a wider harvest radius</strong> &mdash; and at 45, a title and a tool skin</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#9889;</span>
+          <h3>Stamina</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>One pool, shared by every life skill.</strong> A gather costs 1, refining costs more, and the bar sits on your player card so you can see it without opening anything</li>
+          <li><strong>It banks rather than resets</strong> &mdash; up to 1,000, topped up by 100 a day. A week away is not punished twice</li>
+          <li><strong>Refining Charges restore 25,</strong> and burning Eloria&rsquo;s Favor credits stamina one for one</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128737;</span>
+          <h3>The Panel</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>The Maker&rsquo;s Arts is one screen,</strong> with a tab per skill, the gathering ones above the crafting ones and Refining sitting beside the skills that feed it</li>
+          <li><strong>Twenty new icons and twelve new sounds,</strong> and a strike that lands &mdash; hitstop, recoil, flying chips and a shake on every swing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="potential">
+  <div class="container">
+    <h2 class="section-title">Potential</h2>
+    <p class="section-subtitle">Where the ore goes, and what carries on after the level cap.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128142;</span>
+          <h3>A Board, Not a Bar</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Four pages &mdash; Awakening, Tempering, Deepening and Creation</strong> &mdash; each offering three tracks: Might, Ward and Precision</li>
+          <li><strong>Thirty nodes to a track,</strong> and every node filled is a permanent stat grant and 40 Combat Power that no one can take off you</li>
+          <li><strong>You fill a node by rolling a gauge to 100.</strong> A bad run is not a dead end &mdash; the twelfth attempt on a node is guaranteed</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128293;</span>
+          <h3>Refining</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Raw ore refines into Latent Shards and Creator Sparks,</strong> which are what the board actually spends. Mining is the supply line; Potential is the sink</li>
+          <li><strong>A breakthrough takes three seconds and shows you the roll,</strong> rather than resolving silently and telling you afterwards</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127919;</span>
+          <h3>Held Within Reason</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Potential can grant at most +15% critical rate and +50% critical damage</strong> across the whole board &mdash; it is a long climb, not a second character</li>
+          <li><strong>Your combat stat breakdown now names Potential and Guild by name,</strong> so you can see exactly where a number came from</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="guild-hall">
+  <div class="container">
+    <h2 class="section-title">A Hall of Your Own</h2>
+    <p class="section-subtitle">Warden Rook has been holding the door for a while now.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127984;</span>
+          <h3>The Guild Hall</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Every guild gets a room of its own,</strong> entered through Warden Rook in the village and shared by the whole roster</li>
+          <li><strong>It starts empty and fills as you build.</strong> A tower you have raised is a model standing in the hall, and it grows through three tiers as its level climbs</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127983;</span>
+          <h3>Five Towers, Ten Levels</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Beacon of Learning</strong> &mdash; up to +12% EXP from kills</li>
+          <li><strong>Coinspire</strong> &mdash; up to +18% gold from kills</li>
+          <li><strong>Reliquary</strong> &mdash; up to +9% item drop rate</li>
+          <li><strong>Wrights&rsquo; Hall</strong> &mdash; up to +15% life-skill EXP and gather yield</li>
+          <li><strong>Hearthstone</strong> &mdash; food and drink buffs last up to 30% longer</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128736;</span>
+          <h3>Building Them</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>One tower at a time,</strong> paid for in construction parts <em>and</em> guild contribution &mdash; so a guild has to gather together and give together</li>
+          <li><strong>The buffs reach every member,</strong> and stack with the guild buffs bought in 0.2.13</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#11088;</span>
+          <h3>Officers</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>A guild may appoint three officers.</strong> The star was the only thing saying who was one &mdash; the roster now spells the role out in words</li>
+          <li><strong>Promote greys out at the cap</strong> and tells you why, instead of failing at the last step. Guilds already over three keep everyone</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="market">
+  <div class="container">
+    <h2 class="section-title">The Market Opens</h2>
+    <p class="section-subtitle">Three things that were never meant to be unsellable.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128176;</span>
+          <h3>Upgrade Ore</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Elorite and Sunderite can be listed and bought.</strong> Reinforcement no longer depends entirely on your own luck</li>
+          <li><strong>Sunderite carries the highest price ceiling in the game,</strong> because it is the rarest material in it &mdash; 0.15% on field monsters, and the only route to weapon reinforcement</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128737;</span>
+          <h3>Armour You Have Worn</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>The ten Abyssal pieces are tradeable</strong> &mdash; the Dark Tide set is no longer a dead end for the person who does not need it</li>
+          <li><strong>So is the 36-piece Sundering weave set.</strong> It was opened to trade a month ago and quietly stayed shut: wearing a piece stamped it bound, and bound beat the permission. It reads as soulbound armour rather than as a bug, which is why nobody reported it. It is fixed, and it is one-way &mdash; a piece that has changed hands stays tradeable</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="looks">
+  <div class="container">
+    <h2 class="section-title">Looks Better, Runs Better</h2>
+    <p class="section-subtitle">A real pass over the renderer, and a large amount of memory handed back.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127774;</span>
+          <h3>Light and Colour</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Filmic tone mapping across the open world.</strong> Bright skies stop clipping to flat white and colour holds together in daylight &mdash; the outdoor maps were still rendering linear</li>
+          <li><strong>Ambient occlusion,</strong> so props and terrain sit in contact shadow instead of floating on the ground</li>
+          <li><strong>Brightness and Contrast sliders in Video options,</strong> plus an ambient occlusion setting you can turn down or off</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128421;</span>
+          <h3>Performance</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Around 16 GB of video memory reclaimed,</strong> by resizing the textures baked into 272 models and capping every inventory icon. This is the single biggest cause of stutter on 6&ndash;8 GB cards</li>
+          <li><strong>Shadows on every map now cost what the village&rsquo;s cost,</strong> which was already the cheapest in the game</li>
+          <li><strong>Forest Path monsters rebuilt</strong> at a fraction of their old triangle count, at the same size and silhouette</li>
+          <li><strong>Veins and trees draw at distance</strong> rather than popping in at your feet</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#10024;</span>
+          <h3>Effects You Can See Past</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Combat Effects is now a three-way choice</strong> &mdash; All, Only my own, or None. In a crowded boss room you can turn everyone else&rsquo;s spells off and keep your own</li>
+          <li><strong>Arrows trail a rippling streak,</strong> coloured by the gems socketed in your bow</li>
+          <li><strong>The side menu holds six columns,</strong> so nothing hangs off the panel edge any more</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="combat">
+  <div class="container">
+    <h2 class="section-title">Combat</h2>
+    <p class="section-subtitle">Several projectiles have been flying at a fraction of their intended speed for a long time.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127993;</span>
+          <h3>Speed</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>The Ranger&rsquo;s basic bow shot flew at a fifth the speed of the Ranger&rsquo;s own skills.</strong> It now matches them</li>
+          <li><strong>Single Strike and Double Strike travelled at a third of the speed of an ordinary auto-attack.</strong> Fixed</li>
+          <li><strong>Arcane Bolt and Frost Lance land about twice as fast</strong> &mdash; the Mage&rsquo;s two workhorse spells felt sluggish next to everything else the class does</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128481;</span>
+          <h3>Skills and Weapons</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>A skill with no effect art of its own now fires your weapon&rsquo;s projectile</strong> instead of firing nothing visible at all</li>
+          <li><strong>Corruption Volley leaps first and fires from the air,</strong> the way it was always described</li>
+          <li><strong>Power Slash, Arrow Rain and every additive glow in the game</strong> render correctly again &mdash; several were drawing as a black square once fog was switched on, and one was drawing at 1% opacity in the wrong colour</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="fixed">
+  <div class="container">
+    <h2 class="section-title">Fixed</h2>
+    <p class="section-subtitle">The ones worth naming.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128682;</span>
+          <h3>Getting Stuck</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Logging out inside the guild hall left you in an empty world</strong> on the way back in. Both routes out of the hall now clean up after themselves</li>
+          <li><strong>A saved position outside the bounds of its own map no longer strands you</strong> &mdash; you are placed at the map&rsquo;s spawn instead</li>
+          <li><strong>You can stand on props in the open world at all now.</strong> The terrain height check was overruling everything you tried to climb onto</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#128179;</span>
+          <h3>Items and Numbers</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Spending Elorite on a gear upgrade charged the ledger but not the warehouse copy,</strong> so your held total quietly drifted above what you actually owned</li>
+          <li><strong>A two-hander&rsquo;s gems were counted twice toward leaderboard Combat Power</strong></li>
+          <li><strong>Spirit Essence disagreed with itself</strong> &mdash; the pet screen said you had enough while the confirm said you did not</li>
+          <li><strong>Opening an item on a storage card that had just been closed</strong> crashed the game</li>
+        </ul>
+      </div>
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#129513;</span>
+          <h3>World and Interface</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Dawnspire&rsquo;s gate guards were greeting level 1&ndash;5 players in Forest Path,</strong> a continent away from the gate they guard</li>
+          <li><strong>Monsters and other players could share a single animation set,</strong> which crashed the game outright</li>
+          <li><strong>The guild panel&rsquo;s titles were unreadable</strong> and contribution was somewhere nobody could find it</li>
+          <li><strong>The Events panel links straight out to the calendar on the website</strong></li>
+          <li><strong>Full translations</strong> across every supported language, including all of the new life-skill and guild wording</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title">Go and make something</h2>
+    <p class="section-subtitle">The pickaxe is cheap. The rest is a long walk.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+      <a href="events.html" class="btn btn-secondary">See what&rsquo;s running</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Echoes of Creation</h3>
+        <p>A top-down 3D action RPG</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">Story</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#classes">Classes</a>
+        <a href="index.html#roadmap">Roadmap</a>
+        <a href="patch-notes-0.2.14.html">Patch Notes</a>
+        <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mirrors the scroll-reveal in the site's js/main.js so cards fade in as you reach them.
+  (function () {
+    var cards = document.querySelectorAll('.feature-category');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      cards.forEach(function (c) { c.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(function (c) { io.observe(c); });
+  })();
+</script>
+</body>
+</html>
