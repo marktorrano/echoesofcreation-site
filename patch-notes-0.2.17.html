@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solid Ground</title>
-<meta name="description" content="v0.2.16: an Unstuck button, life skills that work on every character, ore counts that agree with the ledger, and the monster cadence and corrupted-zone fixes.">
+<title>Five Into One</title>
+<meta name="description" content="v0.2.17: Reforging &mdash; fuse 5 copies of the same Legend or Genesis piece into 1 fresh copy with a chance of 4&ndash;7 sockets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -206,7 +206,7 @@
       <li><a href="index.html#world">World</a></li>
         <li><a href="events.html">Events</a></li>
       <li><a href="index.html#roadmap">Roadmap</a></li>
-      <li><a href="patch-notes-0.2.16.html" class="active">Patch Notes</a></li>
+      <li><a href="patch-notes-0.2.17.html" class="active">Patch Notes</a></li>
       <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
     </ul>
   </div>
@@ -215,9 +215,9 @@
 <!-- Patch Hero -->
 <header class="patch-hero">
   <div>
-    <div class="patch-tag">Update v0.2.16</div>
-    <h1 class="hero-title">Solid Ground</h1>
-    <p class="hero-subtitle">Life skills that work on every character, a way out of the floor &mdash; and the fixes you asked for by name.</p>
+    <div class="patch-tag">Update v0.2.17</div>
+    <h1 class="hero-title">Five Into One</h1>
+    <p class="hero-subtitle">Reforging &mdash; turn the duplicates gathering dust in your warehouse into one piece worth keeping.</p>
     <p class="patch-date">Released September 2026</p>
   </div>
 </header>
@@ -225,155 +225,84 @@
 <!-- Overview -->
 <section class="section" id="overview">
   <div class="container">
-    <p class="patch-intro">A shorter update than the last one, and most of it is fixes you asked for by name. Alts can mine again, the guild tower that promised life-skill XP finally pays it, ore counts stop lying, and if the world swallows you there is now a button for that. <strong>This is a required update</strong> &mdash; you will be asked to restart before you can log in.</p>
+    <p class="patch-intro">One new system this time, and it is for everyone who has ever looked at five copies of the same boots and sighed. Reforging fuses them into a single fresh piece with a chance of 4&ndash;7 sockets, and it always succeeds. <strong>This is a required update</strong> &mdash; restart Steam if it has not downloaded yet.</p>
   </div>
 </section>
 
-<section class="section section-dark" id="unstuck">
+<section class="section section-dark" id="reforging">
   <div class="container">
-    <h2 class="section-title">A Way Out of the Floor</h2>
-    <p class="section-subtitle">One button, in Options, for the moment the world swallows you.</p>
+    <h2 class="section-title">Reforging</h2>
+    <p class="section-subtitle">Five copies in, one fresh piece out.</p>
     <div class="feature-categories">
       <div class="feature-category">
         <div class="feature-category-header">
-          <span class="feature-category-icon">&#129517;</span>
-          <h3>Unstuck</h3>
+          <span class="feature-category-icon">&#9874;</span>
+          <h3>How It Works</h3>
         </div>
         <ul class="feature-list">
-          <li><strong>Options now has an Unstuck button.</strong> Fallen through the floor or wedged into a rock? It sets you back on the ground you are standing over, in the zone you are already in</li>
-          <li><strong>Five-minute cooldown.</strong> Until now the only way out was a relog</li>
-          <li><strong>It is not a trip home</strong> &mdash; the walk back is still yours</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="life">
-  <div class="container">
-    <h2 class="section-title">Life Skills That Work on Every Character</h2>
-    <p class="section-subtitle">The reports that came in by name, closed by name.</p>
-    <div class="feature-categories">
-      <div class="feature-category">
-        <div class="feature-category-header">
-          <span class="feature-category-icon">&#9935;</span>
-          <h3>Alts Can Mine Again</h3>
-        </div>
-        <ul class="feature-list">
-          <li><strong>An alt on the same account could not mine, forage or fish</strong> &mdash; it swung the pick, spent nothing and got nothing, because it was reading the main character&rsquo;s skill levels. Each character now uses its own</li>
-          <li><strong>A lost race at login could gate a main at Mining 1</strong> (&ldquo;You need Mining 24&rdquo; at a character who is 24) until the Life Skills panel was opened. The skill fetch now retries</li>
+          <li><strong>Open Reforge from the Menu</strong> &mdash; or drag it onto your HUD bar with Customize HUD</li>
+          <li><strong>Fuse 5 copies of the same Legend or Genesis piece</strong> &mdash; a weapon, off-hand, armor piece or cape &mdash; into 1 fresh copy</li>
+          <li><strong>The new piece has a chance of 4&ndash;7 sockets</strong>, and a Reforge never fails</li>
+          <li>Accessories, wings and outfits never hold sockets, so they cannot be reforged</li>
         </ul>
       </div>
       <div class="feature-category">
         <div class="feature-category-header">
-          <span class="feature-category-icon">&#127959;</span>
-          <h3>Wrights&rsquo; Hall Pays</h3>
+          <span class="feature-category-icon">&#128269;</span>
+          <h3>Choose Your Pieces</h3>
         </div>
         <ul class="feature-list">
-          <li><strong>Wrights&rsquo; Hall now actually raises life-skill XP and gather yield</strong> by the percent it shows. It has been live since September 6 and paid nothing</li>
+          <li><strong>Pick exactly which copies go in</strong>, straight from a view that looks just like your bag &mdash; upgrade level, sockets and gems at a glance</li>
+          <li><strong>Auto-add</strong> fills the empty slots with your least-invested copies</li>
+          <li><strong>Filters:</strong> Ready to reforge (only pieces you hold enough copies of), Weapons, Off-Hand and Armor</li>
         </ul>
       </div>
       <div class="feature-category">
         <div class="feature-category-header">
-          <span class="feature-category-icon">&#9878;</span>
-          <h3>Ore Counts Stop Lying</h3>
+          <span class="feature-category-icon">&#9888;</span>
+          <h3>Know What You Give Up</h3>
         </div>
         <ul class="feature-list">
-          <li><strong>Refining showed Copper Ore 219/5 and refused every click.</strong> Ore spent while the overview was still loading was being handed back to the bag; the bag and your account ledger agree again</li>
-          <li><strong>Fresh drops and freshly mined ore vanished seconds after arriving</strong> (&ldquo;chat shows the fragment drop but no fragment&rdquo;). A policing check was trimming bags to your last cloud save. Fixed server-side on September 18</li>
-        </ul>
-      </div>
-      <div class="feature-category">
-        <div class="feature-category-header">
-          <span class="feature-category-icon">&#128142;</span>
-          <h3>A Real Patch in Creator&rsquo;s Gate</h3>
-        </div>
-        <ul class="feature-list">
-          <li><strong>16 nodes in one circle, 40 units from the waypoint:</strong> 10 voidglass veins (Mining 28) and 6 gloomcap (Foraging 15), instead of five veins scattered across the whole hall</li>
-          <li><strong>Gather nodes no longer spawn inside the Dark Woods fishing pond,</strong> and auto-harvest gives up on a vein it cannot reach instead of running at it forever</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" id="combat">
-  <div class="container">
-    <h2 class="section-title">Combat and Zones</h2>
-    <p class="section-subtitle">Two server fixes you will feel, and one you will see.</p>
-    <div class="feature-categories">
-      <div class="feature-category">
-        <div class="feature-category-header">
-          <span class="feature-category-icon">&#9876;</span>
-          <h3>Monster Cadence</h3>
-        </div>
-        <ul class="feature-list">
-          <li><strong>Monsters in hosted zones were attacking two to three times faster than intended</strong> since the morning of September 19 &mdash; Nightmotes and Sunmotes most of all. Cadence is back to normal</li>
-        </ul>
-      </div>
-      <div class="feature-category">
-        <div class="feature-category-header">
-          <span class="feature-category-icon">&#128128;</span>
-          <h3>Corrupted Zones Stay Up</h3>
-        </div>
-        <ul class="feature-list">
-          <li><strong>Corrupted zones no longer drop everyone every few hours.</strong> A mob respawning after the zone had already emptied was crashing the server</li>
-        </ul>
-      </div>
-      <div class="feature-category">
-        <div class="feature-category-header">
-          <span class="feature-category-icon">&#129346;</span>
-          <h3>Slimes Slam</h3>
-        </div>
-        <ul class="feature-list">
-          <li><strong>Slimes and jellies now wind up and body-slam when they attack</strong> instead of bumping into you</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="fixes">
-  <div class="container">
-    <h2 class="section-title">Fixes</h2>
-    <p class="section-subtitle">Smaller things, in the places you spend your time.</p>
-    <div class="feature-categories">
-      <div class="feature-category">
-        <div class="feature-category-header">
-          <span class="feature-category-icon">&#127942;</span>
-          <h3>Leaderboard</h3>
-        </div>
-        <ul class="feature-list">
-          <li><strong>The Level leaderboard ranks same-level players by experience again</strong> instead of by Combat Power</li>
+          <li><strong>Everything on the copies you use is lost</strong> &mdash; upgrade levels, socketed gems, enchants and Genesis innates. The new piece starts at +0 with empty sockets</li>
+          <li><strong>Before you confirm, Reforging lists exactly what it will destroy</strong>, piece by piece</li>
+          <li><strong>Locked pieces are never used</strong> &mdash; lock anything you want to keep safe</li>
         </ul>
       </div>
       <div class="feature-category">
         <div class="feature-category-header">
           <span class="feature-category-icon">&#10024;</span>
-          <h3>Eloria&rsquo;s Favor</h3>
+          <h3>Genesis and Bound Gear</h3>
         </div>
         <ul class="feature-list">
-          <li><strong>Favor is read from the save you are playing.</strong> Logging in on another PC no longer shows a stale total from that machine</li>
+          <li><strong>Reforged Genesis weapons roll a fresh innate and grade</strong></li>
+          <li><strong>If any copy you used was bound, the new piece is bound too</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="changed">
+  <div class="container">
+    <h2 class="section-title">Changed</h2>
+    <p class="section-subtitle">Two small things that came along with it.</p>
+    <div class="feature-categories">
+      <div class="feature-category">
+        <div class="feature-category-header">
+          <span class="feature-category-icon">&#127754;</span>
+          <h3>The Abyssal Forge</h3>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Nerissa the Tidewright&rsquo;s Abyssal reforging is now called the Abyssal Forge</strong>, so it is never confused with Reforging. It works exactly as before</li>
         </ul>
       </div>
       <div class="feature-category">
         <div class="feature-category-header">
-          <span class="feature-category-icon">&#128176;</span>
-          <h3>Lumina Shop</h3>
+          <span class="feature-category-icon">&#127760;</span>
+          <h3>Translations</h3>
         </div>
         <ul class="feature-list">
-          <li><strong>Outfits and wings are one-per-account</strong> and no longer show a quantity control; prices, controls and Buy line up within each row</li>
-          <li><strong>Wings and outfits bought there are now properly registered as gear,</strong> so they can be listed and are never mistaken for an unearned item</li>
-        </ul>
-      </div>
-      <div class="feature-category">
-        <div class="feature-category-header">
-          <span class="feature-category-icon">&#128205;</span>
-          <h3>Interface</h3>
-        </div>
-        <ul class="feature-list">
-          <li><strong>The map ping marker is royal blue,</strong> so it never reads as quest gold</li>
-          <li><strong>The side-menu footer no longer clips</strong> the game name and version</li>
+          <li><strong>The new text is translated into every supported language</strong></li>
         </ul>
       </div>
     </div>
