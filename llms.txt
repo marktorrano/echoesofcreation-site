@@ -1,0 +1,29 @@
+# Echoes of Creation
+
+> Echoes of Creation is a free-to-play online 3D action RPG for Windows, released on Steam in Early Access on May 29, 2026 by Torrano Dev. Players fight in real time, pick one of six classes at level 10, and follow the story of the Light and the Dark across two continents, Eloria and the Sundering.
+
+## Key facts
+
+- Genre: online 3D action RPG / MMORPG with real-time combat
+- Price: free to play; optional shop for Lumina, the premium currency
+- Platform: Windows PC via Steam (no Mac, Linux or console version)
+- Steam store page: https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/ (listed as "Echoes of Creation: Origin")
+- Developer and publisher: Torrano Dev
+- Community and support: https://discord.gg/JjrmEN9exb
+- Classes (chosen at level 10): Swordsman, Assassin, Ranger, Cleric, Warrior, Mage
+- Auto-combat: Hunt mode and Guard mode, with auto-potions and auto-cast skills
+- No death penalty
+- Multiplayer: always online; shared maps, parties, guilds, player marketplace, raid bosses, and faction PvP (Light, Dark, Creation) on the Sundering
+
+## World
+
+- Eloria (Lv 1-30): Eloria Village, Forest Path, Dark Woods, Goblin Hills, Cursed Caverns, Ancient Ruins, Creator's Gate (final boss: The Forgotten One)
+- The Sundering (Lv 20-50): Dawnfield Terraces, three faction capitals, The Reclaimed Dominion, The Umbral Reach, The Nascent Wilds, The Sundering Scar
+
+## Pages
+
+- [Home](https://echoesofcreation.net/): story, features, classes, world, media, roadmap and FAQ
+- [Patch notes](https://echoesofcreation.net/patch-notes.html): every release, newest first
+- [Events](https://echoesofcreation.net/events.html): current and upcoming in-game events
+- [EULA](https://echoesofcreation.net/eula.html)
+- [Privacy policy](https://echoesofcreation.net/privacy.html)
