@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controls Guide | Echoes of Creation</title>
+  <meta name="description" content="Controls guide for Echoes of Creation. W / A / S / D to move. Click on the ground to walk to that location. Your character follows the mouse path. F or Z to attack the nearest monster.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-controls.html">
+  <meta property="og:title" content="Controls Guide | Echoes of Creation">
+  <meta property="og:description" content="Controls guide for Echoes of Creation. W / A / S / D to move. Click on the ground to walk to that location. Your character follows the mouse path. F or Z to attack the nearest monster.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-controls.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Controls Guide",
+      "description": "Controls guide for Echoes of Creation. W / A / S / D to move. Click on the ground to walk to that location. Your character follows the mouse path. F or Z to attack the nearest monster.",
+      "url": "https://echoesofcreation.net/guide-controls.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Controls",
+          "item": "https://echoesofcreation.net/guide-controls.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Controls</div>
+      <h1 class="hero-title">Controls</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#movement">Movement</a></li><li><a href="#attack">Attack</a></li><li><a href="#interact">Interact</a></li><li><a href="#hotbar">Hotbar</a></li><li><a href="#ui-shortcuts">UI Shortcuts</a></li><li><a href="#customize-your-icon-bar">Customize Your Icon Bar</a></li><li><a href="#chat-commands">Chat Commands</a></li><li><a href="#translate-chat">Translate Chat</a></li><li><a href="#customizing-key-bindings">Customizing Key Bindings</a></li><li><a href="#camera">Camera</a></li><li><a href="#mobile-controls">Mobile Controls</a></li><li><a href="#ride-dismount">Ride / Dismount</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="movement">
+          <h2>Movement</h2>
+          <p>W / A / S / D to move.</p>
+<p>Click on the ground to walk to that location.</p>
+<p>Your character follows the mouse path.</p>
+        </section>
+        <section class="guide-entry" id="attack">
+          <h2>Attack</h2>
+          <p>F or Z to attack the nearest monster.</p>
+<p>Click on a monster to target it, then attack.</p>
+<p>TAB cycles through nearby targets.</p>
+<p>SPACE to jump.</p>
+        </section>
+        <section class="guide-entry" id="interact">
+          <h2>Interact</h2>
+          <p>E picks up the nearest item on the ground, and interacts with nearby NPCs, waypoints and chests.</p>
+<p><strong>Loot comes first:</strong> if a dropped item is in reach, E takes it — one item per press, so press again for the next one.</p>
+<p>You can also click loot, NPCs and chests directly.</p>
+        </section>
+        <section class="guide-entry" id="hotbar">
+          <h2>Hotbar</h2>
+          <p>Keys 1-9 activate the main hotbar slots.</p>
+<p>There&#x27;s also an extra top row (no keys) — click those slots to use them. Toggle it with the chevron next to the bar.</p>
+<p>Drag skills or items onto slots from the Skill (K) or Inventory (I) screens.</p>
+<p>Drag a skill out of a slot and drop it anywhere to unassign it (or right-click to clear).</p>
+<p>Right-click a slot to toggle auto-cast on/off.</p>
+        </section>
+        <section class="guide-entry" id="ui-shortcuts">
+          <h2>UI Shortcuts</h2>
+          <p>C - Character Stats</p>
+<p>I - Inventory</p>
+<p>K - Skills</p>
+<p>B - Monsterpedia</p>
+<p>U - Collection</p>
+<p>O - Options</p>
+<p>J - Quest Log</p>
+<p>M - World Map</p>
+<p>P - Party</p>
+<p>N - Daily Quests</p>
+<p>Y - Leaderboard</p>
+<p>L - Friends</p>
+<p>G - Guild</p>
+<p>V - Loot Feed (show/hide)</p>
+<p>Wardrobe - Menu (☰) → Wardrobe</p>
+<p>[ / ] - Rotate Camera</p>
+<p>F1 - This Help Menu</p>
+<p>` (Backtick) - Toggle Power Saving Mode (or the moon button beside Auto Hunt)</p>
+<p>Changelog - Open from the Menu (☰)</p>
+<p>Mail - Click the envelope icon in the icon bar (top-right)</p>
+<p>ESC - Untarget / Pause Menu</p>
+<p>Every icon in the top-right bar can be moved or removed — see &quot;Customize Your Icon Bar&quot; below.</p>
+        </section>
+        <section class="guide-entry" id="customize-your-icon-bar">
+          <h2>Customize Your Icon Bar</h2>
+          <p>The two rows of icons in the top-right corner are yours to arrange.</p>
+<p>Open it from the Menu (☰) → Customize HUD.</p>
+<p>Drag an icon into either row to put it on your HUD, or drag it down to the tray to take it off. Drop an icon between two others to change the order. If you&#x27;d rather not drag, double-click an icon and it moves for you.</p>
+<p>Each row holds up to 12 icons. Press Save to apply, Cancel to leave things as they were, or Reset to Default to put the bar back the way it shipped.</p>
+<p>The Menu (☰) icon is fixed in place and can&#x27;t be removed — it&#x27;s how you get back to this screen.</p>
+<p>Your arrangement is saved on this device, so it stays put between sessions and doesn&#x27;t affect your other characters.</p>
+<p>The arrow next to the bar still hides every icon except the Menu when you want a clear view.</p>
+        </section>
+        <section class="guide-entry" id="chat-commands">
+          <h2>Chat Commands</h2>
+          <p>Type these in the chat box:</p>
+<p>ENTER - Open chat / send message</p>
+<p>/w &lt;name&gt; &lt;message&gt; - Message a player privately (also /whisper, /msg)</p>
+<p>/r &lt;message&gt; - Reply to the last person who messaged you (also /reply)</p>
+<p>Each private conversation opens as its own tab in the chat box; click the ✕ on the tab to close it. See Multiplayer → Direct Messages.</p>
+        </section>
+        <section class="guide-entry" id="translate-chat">
+          <h2>Translate Chat</h2>
+          <p>Tap the 🌐 button on any chat message to translate it into your language — the translation appears under the original (which stays). Tap 🌐 again to hide or re-show it.</p>
+<p>Your language defaults to your device&#x27;s; change it in Options → Gameplay → &quot;Chat Translate To&quot;.</p>
+<p><strong>Note:</strong> translating a message sends its text to Google Translate to be translated.</p>
+        </section>
+        <section class="guide-entry" id="customizing-key-bindings">
+          <h2>Customizing Key Bindings</h2>
+          <p>Almost every key above can be remapped. Open Options (O or the side menu ☰) and select the Controls tab.</p>
+<p>Click a binding, then press the new key — Esc cancels. If the key is already used by another binding, you&#x27;ll be asked to confirm; accepting swaps the two so nothing is left unbound.</p>
+<p>Reset to Defaults restores the original layout. Bindings are saved on your device and shared across all characters.</p>
+<p><strong>Note:</strong> Esc (menu/cancel) and the camera-rotate keys ([ and ]) are fixed and can&#x27;t be remapped.</p>
+        </section>
+        <section class="guide-entry" id="camera">
+          <h2>Camera</h2>
+          <p>Mouse scroll wheel to zoom in/out.</p>
+<p>[ and ] to rotate the camera left/right.</p>
+<p>Pinch-to-zoom on mobile/touchscreen.</p>
+        </section>
+        <section class="guide-entry" id="mobile-controls">
+          <h2>Mobile Controls</h2>
+          <p>On mobile devices, touch controls appear automatically:</p>
+<ul><li><strong>Virtual Joystick (bottom-left):</strong> Drag to move your character.</li><li><strong>Attack Button (bottom-right):</strong> Tap or hold to attack. Hold for continuous attacks.</li><li><strong>Skill Buttons:</strong> 4 buttons around the attack button mapped to hotbar slots 1-4. Shows skill/item icons, cooldowns, and item quantities.</li><li>Tap an empty skill button or long-press any skill button to open the assignment picker. Choose from your learned skills or consumable items.</li><li>Tap the ground to walk to that location (same as click-to-move on desktop).</li><li>Pinch with two fingers to zoom in/out.</li></ul>
+        </section>
+        <section class="guide-entry" id="ride-dismount">
+          <h2>Ride / Dismount</h2>
+          <p>The Ride button on your shortcut bar calls your mount, and pressing it again sets you down.</p>
+<p>It is hidden until you own a mount. Like every other icon on that bar you can drag it somewhere else, or off it entirely, from Customize Interface.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-getting-started.html">&laquo; Getting Started</a><a href="guide-classes.html">Classes &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

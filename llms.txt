@@ -23,6 +23,7 @@
 ## Pages
 
 - [Home](https://echoesofcreation.net/): story, features, classes, world, media, roadmap and FAQ
+- [Player guides](https://echoesofcreation.net/guides.html): 43 guides covering classes, combat, auto-hunt, gear and upgrades, the marketplace, guilds, mounts, pets and life skills
 - [Patch notes](https://echoesofcreation.net/patch-notes.html): every release, newest first
 - [Events](https://echoesofcreation.net/events.html): current and upcoming in-game events
 - [EULA](https://echoesofcreation.net/eula.html)

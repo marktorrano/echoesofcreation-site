@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto-Combat Guide | Echoes of Creation</title>
+  <meta name="description" content="Auto-Combat guide for Echoes of Creation. A tutorial popup appears the first time you enter a combat zone, explaining all auto-hunt features step by step. Press Q to toggle auto-combat on/off.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-auto-combat.html">
+  <meta property="og:title" content="Auto-Combat Guide | Echoes of Creation">
+  <meta property="og:description" content="Auto-Combat guide for Echoes of Creation. A tutorial popup appears the first time you enter a combat zone, explaining all auto-hunt features step by step. Press Q to toggle auto-combat on/off.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-auto-combat.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Auto-Combat Guide",
+      "description": "Auto-Combat guide for Echoes of Creation. A tutorial popup appears the first time you enter a combat zone, explaining all auto-hunt features step by step. Press Q to toggle auto-combat on/off.",
+      "url": "https://echoesofcreation.net/guide-auto-combat.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Auto-Combat",
+          "item": "https://echoesofcreation.net/guide-auto-combat.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Auto-Combat</div>
+      <h1 class="hero-title">Auto-Combat</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#tutorial">Tutorial</a></li><li><a href="#toggle">Toggle</a></li><li><a href="#hunt-mode">Hunt Mode</a></li><li><a href="#guard-mode">Guard Mode</a></li><li><a href="#harvest-mode">Harvest Mode</a></li><li><a href="#choosing-what-to-gather">Choosing What to Gather</a></li><li><a href="#auto-hunt-settings">Auto-Hunt Settings</a></li><li><a href="#search-radius">Search Radius</a></li><li><a href="#break-on-move">Break on Move</a></li><li><a href="#target-priority">Target Priority</a></li><li><a href="#auto-potions">Auto-Potions</a></li><li><a href="#auto-buff">Auto-Buff</a></li><li><a href="#auto-hunt-safety">Auto-Hunt Safety</a></li><li><a href="#power-saving-mode">Power Saving Mode</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="tutorial">
+          <h2>Tutorial</h2>
+          <p>A tutorial popup appears the first time you enter a combat zone, explaining all auto-hunt features step by step.</p>
+        </section>
+        <section class="guide-entry" id="toggle">
+          <h2>Toggle</h2>
+          <p>Press Q to toggle auto-combat on/off.</p>
+<p>When active, your character fights automatically.</p>
+        </section>
+        <section class="guide-entry" id="hunt-mode">
+          <h2>Hunt Mode</h2>
+          <p>Press H to switch modes. In Hunt mode, your character chases the nearest monster within your search radius and attacks on contact. Great for grinding.</p>
+        </section>
+        <section class="guide-entry" id="guard-mode">
+          <h2>Guard Mode</h2>
+          <p>In Guard mode, your character anchors at the position where guard mode was activated and actively chases and attacks monsters within the search radius of that anchor point. Your character will not move beyond the search radius from the anchor.</p>
+        </section>
+        <section class="guide-entry" id="harvest-mode">
+          <h2>Harvest Mode</h2>
+          <p>Press H again to reach Harvest — the third auto-mode, and the only one that never fights. Your character walks to the nearest node it can work, gathers it, then moves on to the next.</p>
+<p>Harvest only appears in the H cycle once Life Skills is available, and the badge reads Harvest(H) while it is running.</p>
+<p>Every gather costs 1 stamina, exactly as it would by hand, and Harvest earns the baseline yield only — the Perfect bonus stays the reward for working the bar yourself.</p>
+<p>It stops when your satchel has no room for what the node gives, and says so.</p>
+<p>It only walks to nodes it can actually reach — anything up on a ledge or a cliff above you is skipped rather than walked at.</p>
+        </section>
+        <section class="guide-entry" id="choosing-what-to-gather">
+          <h2>Choosing What to Gather</h2>
+          <p>While you are in Harvest mode, the target medallion beside the Auto Hunt button opens Automatic Harvest — the same picker as the Automatic Attack list, but for nodes instead of monsters.</p>
+<p>It lists the node kinds around you right now, each with the skill level it needs. Leave &#x27;All Nodes&#x27; checked to take everything, or uncheck it and tick only what you want — so standing in mixed ground no longer means chopping wood when you came for ore.</p>
+<p>Nodes above your band are never walked to, whatever you tick. Unchecking everything leaves Harvest with nothing to do.</p>
+        </section>
+        <section class="guide-entry" id="auto-hunt-settings">
+          <h2>Auto-Hunt Settings</h2>
+          <p>Open the ESC menu and click &#x27;Auto-Hunt Settings&#x27; to configure all auto-combat options in a dedicated dialog.</p>
+        </section>
+        <section class="guide-entry" id="search-radius">
+          <h2>Search Radius</h2>
+          <p>Set the search radius in the Auto-Hunt Settings dialog.</p>
+<p><strong>Options:</strong> 5m, 7m, 10m, 15m, 20m, 25m, 30m (default 10m).</p>
+<p>In Hunt mode, targets within this radius of your character. In Guard mode, targets within this radius of your anchor point.</p>
+<p><strong>Harvest mode uses the same dial:</strong> nodes further away than this are left alone, so a smaller radius keeps your character working one patch instead of wandering.</p>
+        </section>
+        <section class="guide-entry" id="break-on-move">
+          <h2>Break on Move</h2>
+          <p>By default, moving manually — clicking the ground or using the movement keys — cancels auto-hunt (Break on Move: ON).</p>
+<p>Turn it OFF in Auto-Hunt Settings to reposition without stopping the hunt:</p>
+<ul><li><strong>Ground click:</strong> your character walks to the clicked spot (still attacking monsters in range along the way), then resumes hunting there. In Guard mode, your guard anchor moves to the destination when you arrive.</li><li><strong>Movement keys:</strong> you steer your character while the hunt keeps fighting anything in attack range.</li></ul>
+        </section>
+        <section class="guide-entry" id="target-priority">
+          <h2>Target Priority</h2>
+          <p>Configure which monsters to target first in Auto-Hunt Settings.</p>
+<ul><li><strong>Attackers:</strong> Monsters currently attacking you (highest priority)</li><li><strong>Quest:</strong> Monsters needed for active quests</li><li><strong>Hostile:</strong> Any monster in range</li></ul>
+<p>Toggle each on/off. Disabled priorities are skipped.</p>
+        </section>
+        <section class="guide-entry" id="auto-potions">
+          <h2>Auto-Potions</h2>
+          <p>Potions are used automatically when HP or MP drops below your set threshold.</p>
+<p>Configure in Auto-Hunt Settings:</p>
+<ul><li>Toggle HP/MP auto-potions on/off</li><li>Set threshold (10%-90%)</li><li><strong>Choose potion tier:</strong> Best (highest available), Small, Medium, or Large</li></ul>
+<p>Each potion type has its own 4-second cooldown (HP, MP, and each buff are independent), shared with manual drinking. A radial sweep + countdown shows it on the HP/MP slots and any potion on your hotbar.</p>
+<p>If your chosen potion is unavailable, it falls back to the best available.</p>
+        </section>
+        <section class="guide-entry" id="auto-buff">
+          <h2>Auto-Buff</h2>
+          <p>Toggle per-stat auto-buffing in Auto-Hunt Settings. When enabled, buff potions are used automatically when the buff expires and you have the potion in inventory.</p>
+        </section>
+        <section class="guide-entry" id="auto-hunt-safety">
+          <h2>Auto-Hunt Safety</h2>
+          <p>Auto-hunt is automatically disabled when:</p>
+<ul><li>Moving manually, by ground click or movement keys (unless Break on Move is OFF in Auto-Hunt Settings)</li><li>Changing maps (waypoints)</li><li>Your character dies</li><li>Logging out</li></ul>
+<p>Auto-hunt also prevents entering portals. You must re-enable it manually after these events.</p>
+        </section>
+        <section class="guide-entry" id="power-saving-mode">
+          <h2>Power Saving Mode</h2>
+          <p>Saves power while you&#x27;re away by dimming to a static overlay, dropping the frame rate to 10 FPS and lowering render resolution — cutting GPU load, heat and fan noise. Your character keeps fighting, looting and using potions the whole time; only rendering is throttled.</p>
+<p>Chat and the world-boss respawn countdown stay visible over the overlay, so you can still follow the conversation and see when the boss is about to return without leaving Power Saving.</p>
+<p>An idle summary in the top-left shows where you are (map and channel), how long you&#x27;ve been away, the EXP, gold, Lumina and items gained this session, your remaining HP potion stock, your bag weight, and any deaths — with what landed the last hit. When potions run low (10 or fewer) or your bag passes 90% weight, a warning also lands in chat so you can see it over the overlay — a full bag means new drops are left on the ground. A rotating tip cycles along the bottom of the screen while you are away.</p>
+<p>Two ways to use it:</p>
+<ul><li><strong>Automatic:</strong> enable Power Saving (Auto-Hunt) in Options (O) &gt; Video. While auto-combat is on, it engages after your chosen idle delay without input. Use the Idle Delay slider (appears below the toggle) to set that wait anywhere from 30 seconds to 3 minutes — handy if you only step away briefly and don&#x27;t want the screen dimming mid-fight.</li><li><strong>Manual:</strong> press ` (the backtick key, top-left below Esc) anytime to force it on or off instantly — no wait, and it works even when you&#x27;re not auto-hunting.</li></ul>
+<p>Press any key, or click and drag a short distance, to instantly resume at full frame rate. A plain mouse nudge or single click is ignored so it won&#x27;t dismiss by accident. The first input just wakes the screen; it won&#x27;t act in-game.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-combat.html">&laquo; Combat</a><a href="guide-status-effects.html">Status Effects &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

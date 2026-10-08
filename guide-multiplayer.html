@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplayer Guide | Echoes of Creation</title>
+  <meta name="description" content="Multiplayer guide for Echoes of Creation. When logged in, you can see other players on the same map. Their characters appear with name labels and animate in real time.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-multiplayer.html">
+  <meta property="og:title" content="Multiplayer Guide | Echoes of Creation">
+  <meta property="og:description" content="Multiplayer guide for Echoes of Creation. When logged in, you can see other players on the same map. Their characters appear with name labels and animate in real time.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-multiplayer.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Multiplayer Guide",
+      "description": "Multiplayer guide for Echoes of Creation. When logged in, you can see other players on the same map. Their characters appear with name labels and animate in real time.",
+      "url": "https://echoesofcreation.net/guide-multiplayer.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Multiplayer",
+          "item": "https://echoesofcreation.net/guide-multiplayer.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Multiplayer</div>
+      <h1 class="hero-title">Multiplayer</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#online-play">Online Play</a></li><li><a href="#chat">Chat</a></li><li><a href="#direct-messages-chat">Direct Messages (Chat)</a></li><li><a href="#pvp-duels">PvP Duels</a></li><li><a href="#guest-accounts">Guest Accounts</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="online-play">
+          <h2>Online Play</h2>
+          <p>When logged in, you can see other players on the same map. Their characters appear with name labels and animate in real time.</p>
+        </section>
+        <section class="guide-entry" id="chat">
+          <h2>Chat</h2>
+          <p>Open chat by pressing ENTER or clicking the Chat button in the top-right HUD. Type a message and press ENTER or click Send. Switch between Map chat (current zone only) and Global chat (all players) using the tabs. Each message shows a timestamp.</p>
+<p>Move the panel by dragging its header bar (or the grip handle at the top-left corner), and resize it by dragging the grip in the bottom-right corner — your position and size are saved.</p>
+<p>Visibility (top-right of the panel): the eye/pin button toggles between &#x27;always shown&#x27; and &#x27;fade when idle&#x27;, and the ✕ hides the panel completely (reopen it any time from the Chat button).</p>
+<p>Loot in chat (gear icon in the chat header): switch off whole categories — Gold, Materials, Equipment, Lumina, Pet, Gems — and set a Minimum item rarity so that farming only prints Rare and above (or Epic, or Legend). The rarity floor applies to items only: Gold, Lumina and EXP lines are never hidden by it. The Mounts switch hides new mount-result messages and Legend/Genesis summon announcements in chat; on-screen toasts still appear. Rare drops still pop their own on-screen toast whatever the filters say.</p>
+<p>The same popup has a Warnings section with Low potions and Bag almost full switches — turn either off if you don&#x27;t want that reminder while auto-hunting or idle.</p>
+<p>It also has a Life Skills section with a Gathering switch — turn it off and the &quot;Gathered — …&quot; line stops printing for every ore vein, tree, herb patch and fishing spot you work. Like the loot categories it only affects chat: the on-screen toast still tells you what the node gave you, and level-ups show either way.</p>
+        </section>
+        <section class="guide-entry" id="direct-messages-chat">
+          <h2>Direct Messages (Chat)</h2>
+          <p>Send a private message to any player by name:</p>
+<ul><li>Type /w &lt;name&gt; &lt;message&gt; in the chat box — e.g. /w Jack hey, want to party?</li><li>Or open the Friends panel (L) and click Chat on a friend&#x27;s row, or click a name on the Leaderboard or Guild roster and choose Chat.</li></ul>
+<p>Each conversation opens as its own tab in the chat box, right beside Map/Global/Guild — no floating windows to cover your screen. Use the ◀ ▶ arrows to scroll between tabs when you have several open. Close a conversation with the ✕ on its tab; if that person messages you again, the tab reappears with a • unread marker. Use /r &lt;message&gt; to quickly reply to the last person who messaged you.</p>
+<p>On login only Map, Global and Guild are shown — your direct-message tabs stay closed unless a conversation has a new unread message waiting (then it reopens automatically). Reopen any past conversation any time and its history is still there.</p>
+<p>While a DM tab is active, a 🗑 Clear button appears in the chat header — it wipes that one conversation&#x27;s history for you and keeps it cleared across logins (only messages sent after you clear will come back; it doesn&#x27;t affect the other person&#x27;s copy).</p>
+<p>Messages are private (only the two of you see them) and are saved on the server: your conversation history comes back when you log in again, and a message sent to someone who is offline is delivered the next time they log in — it is never lost. A red dot on the chat bubble shows when you have unread messages waiting while the chat box is closed.</p>
+<p>You can&#x27;t message yourself.</p>
+        </section>
+        <section class="guide-entry" id="pvp-duels">
+          <h2>PvP Duels</h2>
+          <p>Click on another player to send a duel request. If accepted, a 3-second countdown begins, then you fight! The loser&#x27;s HP is set to 1 (no death penalty). Stay within 500px of the start point or you forfeit. Auto-combat is disabled during duels.</p>
+        </section>
+        <section class="guide-entry" id="guest-accounts">
+          <h2>Guest Accounts</h2>
+          <p>You can play as a Guest with cloud saves and multiplayer. To keep your progress permanently, upgrade your guest account to a full account via email from the title screen.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-loot-history.html">&laquo; Loot History</a><a href="guide-party.html">Party &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace Guide | Echoes of Creation</title>
+  <meta name="description" content="Marketplace guide for Echoes of Creation. A global player marketplace where you can buy and sell items and gear to other players for Lumina.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-marketplace.html">
+  <meta property="og:title" content="Marketplace Guide | Echoes of Creation">
+  <meta property="og:description" content="Marketplace guide for Echoes of Creation. A global player marketplace where you can buy and sell items and gear to other players for Lumina.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-marketplace.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Marketplace Guide",
+      "description": "Marketplace guide for Echoes of Creation. A global player marketplace where you can buy and sell items and gear to other players for Lumina.",
+      "url": "https://echoesofcreation.net/guide-marketplace.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Marketplace",
+          "item": "https://echoesofcreation.net/guide-marketplace.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Marketplace</div>
+      <h1 class="hero-title">Marketplace</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#what-is-it">What Is It?</a></li><li><a href="#listing-items">Listing Items</a></li><li><a href="#buying-items">Buying Items</a></li><li><a href="#browsing-inspecting-gear">Browsing &amp; Inspecting Gear</a></li><li><a href="#pre-orders-the-wanted-tab">Pre-Orders (the Wanted tab)</a></li><li><a href="#selling-into-a-pre-order">Selling Into a Pre-Order</a></li><li><a href="#counter-offers">Counter-Offers</a></li><li><a href="#purchase-tax">Purchase Tax</a></li><li><a href="#cancelling-listings">Cancelling Listings</a></li><li><a href="#offline-sales">Offline Sales</a></li><li><a href="#limits">Limits</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="what-is-it">
+          <h2>What Is It?</h2>
+          <p>A global player marketplace where you can buy and sell items and gear to other players for Lumina. Open it two ways: the Market button in the top-right HUD shortcut row (available anywhere), or talk to Broker Thalia in the village.</p>
+        </section>
+        <section class="guide-entry" id="listing-items">
+          <h2>Listing Items</h2>
+          <p>Open the Sell tab, select an item from your inventory, set a Lumina price per unit, and click List Item. A 50% listing fee (in gold, based on your asking price) is deducted from your gold upfront and is non-refundable. Lumina-Shop items, vendor-bought goods, quest items, wings, and bound items can&#x27;t be listed — only player-found gear, materials, and gems/shards show up in the Sell list.</p>
+<p><strong>Shortcut:</strong> open your inventory, click an item, and press Sell in Market — this opens the marketplace straight to the Sell tab with the Register for Sale dialog already primed for that item. The button only appears on items the marketplace accepts.</p>
+<p>The Register for Sale dialog shows the current lowest price, the last traded price, and the next few cheapest live asks — so you can see whether you&#x27;re up against one stale listing or a wall of them. If there&#x27;s something to beat, an Undercut button sets your price 1 Lumina below the cheapest ask (never below the minimum list price).</p>
+<p>In the Register for Sale dialog you can type values with your keyboard as well as the on-screen numpad: number keys (or numpad) enter digits into the highlighted field, Backspace deletes a digit, Delete or C clears, Tab switches between Quantity and Price, and Enter registers the listing. Click either field (or press Tab) to choose which one you&#x27;re editing.</p>
+        </section>
+        <section class="guide-entry" id="buying-items">
+          <h2>Buying Items</h2>
+          <p>Browse active listings in the Browse tab. Filter by name, type, or tier, and sort by newest, price, or upgrade level. Click Buy to open the confirm dialog, then confirm — Lumina is deducted and the purchase waits in the Storage tab to claim.</p>
+<p><strong>Buying part of a bundle:</strong> when a listing is a stack of more than one (materials, gems, and other stackables), the confirm dialog shows a quantity stepper — use −/+, or the 1 and All buttons, to pick how many you want. The price updates live, and you only pay for what you take. The rest of the stack stays listed for other buyers. Gear is always sold one at a time.</p>
+        </section>
+        <section class="guide-entry" id="browsing-inspecting-gear">
+          <h2>Browsing &amp; Inspecting Gear</h2>
+          <p>Pick a category from the sidebar on the left (All, Weapons, Off-Hand, Armor, Accessories, Materials, Gems), then narrow it with the search box, tier, and sort. Enhanced gear is unique — each piece has its own upgrade level, sockets, and gems — so each listing is its own card with the +N upgrade and socket dots, and gear categories add Min Upgrade and Min Sockets filters. Click a gear listing to see its full stats, sockets, and socketed gems before you buy.</p>
+<p>That inspect card also compares the listing against whatever you have equipped in the slot it would fill — green numbers are gains, red are losses, counting both pieces&#x27; upgrade levels and gems. If the slot is empty there&#x27;s nothing to compare, so no line is shown.</p>
+        </section>
+        <section class="guide-entry" id="pre-orders-the-wanted-tab">
+          <h2>Pre-Orders (the Wanted tab)</h2>
+          <p>Nobody selling what you need? Place a PRE-ORDER and the market comes to you.</p>
+<p>Open the Wanted tab and press Place a Pre-Order, search for the item, then set how many you want and the most you will pay for one. Your Lumina is held up front the moment the order is placed — that is what makes the offer real to sellers, and it is why you cannot pre-order more than you can afford.</p>
+<p>You never pay more than the seller was asking. If someone lists below your maximum, you pay THEIR price and the difference comes straight back to you. Anything a standing listing can already satisfy is bought the instant you place the order.</p>
+<p>Gear can be pre-ordered too, with a quantity — and you can demand a minimum upgrade level and a minimum socket count so a plain copy cannot fill an order meant for a good one.</p>
+<p>Cancel any time from the Wanted tab and every Lumina still held comes back in full. Orders that go unfilled expire on their own after 14 days and refund the same way. Bought items wait in the Storage tab like any other purchase.</p>
+        </section>
+        <section class="guide-entry" id="selling-into-a-pre-order">
+          <h2>Selling Into a Pre-Order</h2>
+          <p>The Wanted tab also shows what everyone else is paying for. Rows you can actually fill are highlighted, and the Sell button opens the ordinary Register for Sale dialog with the price already set to that offer — list it and the sale happens immediately, no waiting for a buyer to come along.</p>
+<p>You do not have to use the Wanted tab to benefit. Any listing you register is checked against every open pre-order: if someone is offering at or above your asking price, it sells the moment it goes up. The Register for Sale dialog tells you before you commit, showing how many units are wanted and the best offer standing.</p>
+<p>A pre-order sale is a normal sale in every other way — the 5% tax applies, and your Lumina waits in the Sales Inbox if you are offline.</p>
+        </section>
+        <section class="guide-entry" id="counter-offers">
+          <h2>Counter-Offers</h2>
+          <p>Think a pre-order is priced too low? Press OFFER on it and name your price.</p>
+<p>An offer is just a number — there is no message attached, and neither side sees the other&#x27;s name. It has to be above what they are currently offering; at or below it you should simply list yours, because the order buys it instantly at that price anyway. It also cannot exceed what the item is allowed to sell for.</p>
+<p>An offer holds nothing. Your item stays in your bag and their Lumina stays in their order until they answer, so making one costs you nothing and you can withdraw it any time from Offers You Sent. Unanswered offers lapse after 48 hours.</p>
+<p>If the buyer APPROVES, their order is raised to your price, the extra Lumina is taken from them straight away, and the order is held for YOU for two hours — nobody else can fill it in that window. List your copy at the agreed price and it sells immediately. If you never list, the hold lapses, their price drops back to what it was and they get the extra Lumina back.</p>
+<p>As a buyer, offers appear under your own pre-order in the Wanted tab with exactly what approving would cost you on top of what you already hold. Approving one rejects the others on that order.</p>
+        </section>
+        <section class="guide-entry" id="purchase-tax">
+          <h2>Purchase Tax</h2>
+          <p>A 5% tax is deducted from the Lumina sale price before the seller receives their payout. This acts as a Lumina sink for the economy.</p>
+        </section>
+        <section class="guide-entry" id="cancelling-listings">
+          <h2>Cancelling Listings</h2>
+          <p>Go to the My Listings tab and click Cancel on any active listing. The item is returned to your inventory, but the gold listing fee is not refunded.</p>
+        </section>
+        <section class="guide-entry" id="offline-sales">
+          <h2>Offline Sales</h2>
+          <p>If someone buys your listing while you&#x27;re offline, your Lumina is held in the Sales Inbox. A notification appears when you next open the marketplace — click Claim Lumina to collect.</p>
+        </section>
+        <section class="guide-entry" id="limits">
+          <h2>Limits</h2>
+          <p>Max 20 active listings per player. Prices must be between 1 and 99,999 Lumina per unit. You must be logged in to use the marketplace.</p>
+<p><strong>Pre-orders:</strong> up to 10 open at a time, holding at most 200,000 Lumina between them, and each expires after 14 days if it has not filled.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-currency.html">&laquo; Currency</a><a href="guide-diamond-shop.html">Lumina Shop &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

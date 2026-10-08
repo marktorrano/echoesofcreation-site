@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mounts Guide | Echoes of Creation</title>
+  <meta name="description" content="Mounts guide for Echoes of Creation. A mount carries you across the world faster than you can run.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-mounts.html">
+  <meta property="og:title" content="Mounts Guide | Echoes of Creation">
+  <meta property="og:description" content="Mounts guide for Echoes of Creation. A mount carries you across the world faster than you can run.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-mounts.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Mounts Guide",
+      "description": "Mounts guide for Echoes of Creation. A mount carries you across the world faster than you can run.",
+      "url": "https://echoesofcreation.net/guide-mounts.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mounts",
+          "item": "https://echoesofcreation.net/guide-mounts.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Mounts</div>
+      <h1 class="hero-title">Mounts</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#riding">Riding</a></li><li><a href="#speed">Speed</a></li><li><a href="#when-you-are-set-down">When you are set down</a></li><li><a href="#owning-a-mount">Owning a mount</a></li><li><a href="#collection-bonuses">Collection bonuses</a></li><li><a href="#elorian-lion">Elorian Lion</a></li><li><a href="#legend-mount-summon">Legend Mount Summon</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="riding">
+          <h2>Riding</h2>
+          <p>A mount carries you across the world faster than you can run.</p>
+<p>Press the Ride button on your shortcut bar to call your mount, and press it again to step down. The button only appears once you own a mount, so there is nothing to hunt for until then.</p>
+<p>You stay yourself while riding - your position, your collisions and everything the server sees are unchanged. The mount is something you sit on, not something you become.</p>
+        </section>
+        <section class="guide-entry" id="speed">
+          <h2>Speed</h2>
+          <p>The Elorian Lion moves you 60% faster (x1.6) than your normal speed.</p>
+<p>This multiplies whatever speed you already have, so movement-speed buffs and potions still help while mounted. It also respects the same hard ceiling every other speed source does, so nothing stacks into something the world cannot keep up with.</p>
+        </section>
+        <section class="guide-entry" id="when-you-are-set-down">
+          <h2>When you are set down</h2>
+          <p>You are put back on your feet automatically the moment you enter combat.</p>
+<p>You cannot jump while riding, and you cannot call a mount while you are already fighting. Both limits exist because there are no mounted combat or mounted jump animations yet - riding is travel, not a way to fight.</p>
+        </section>
+        <section class="guide-entry" id="owning-a-mount">
+          <h2>Owning a mount</h2>
+          <p>Mounts are unlocked for your WHOLE ACCOUNT, permanently.</p>
+<p>Buy one from the Lumina Store under the Mounts tab, then use it from your inventory. Every character you have - including ones you make later - can ride it from that moment on, and you never need bag space for it again.</p>
+<p>The store will not let you buy a mount you already own, so there is no way to waste Lumina on a second copy.</p>
+        </section>
+        <section class="guide-entry" id="collection-bonuses">
+          <h2>Collection bonuses</h2>
+          <p>Owning mounts pays you even when you are not riding one.</p>
+<p>Every 5 Normal, 5 Rare and 5 Epic mounts in your stable, and EVERY Legend and Genesis mount, is a milestone. Each milestone adds a small permanent bonus to Max HP, monster EXP, monster gold and item drop chance. Milestones stack with each other AND with the bonus of the mount you have selected, and they keep paying with no mount selected at all - they reward owning, not riding.</p>
+<p>The Mounts panel&#x27;s Collection tab shows your progress per grade (&quot;Rare 7 / 10 - milestone 1 of 2 - next at 10&quot;) and the running total the milestones are paying you.</p>
+<p>Your stable is per character, so collection bonuses are per character too. Only mounts that have been released count.</p>
+        </section>
+        <section class="guide-entry" id="elorian-lion">
+          <h2>Elorian Lion</h2>
+          <p>A great mane-crowned lion of the old Elorian plains.</p>
+<p><strong>Cost:</strong> 5,000 Lumina, from the Lumina Store (Mounts tab).</p>
+<p><strong>Speed:</strong> x1.6 while riding.</p>
+<p><strong>Unlock:</strong> permanent for the character that acquires it. Mount collections, duplicate tokens, pity counters, and selected bonuses are character-specific.</p>
+        </section>
+        <section class="guide-entry" id="legend-mount-summon">
+          <h2>Legend Mount Summon</h2>
+          <p>An Early Access gift. Opening one calls ONE random Legend-grade mount token to your stable - every Legend mount in the roster has an equal chance.</p>
+<p>Open it from your Inventory or from the Mounts panel&#x27;s Cards tab. It costs no Lumina to open. The Summon cannot be bought, sold, traded or put in storage, and it stays with the character it was delivered to until it is opened.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-monsterpedia.html">&laquo; Monsterpedia</a><a href="guide-pets.html">Pets &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

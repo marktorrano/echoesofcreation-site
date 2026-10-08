@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats &amp; Leveling Guide | Echoes of Creation</title>
+  <meta name="description" content="Stats &amp; Leveling guide for Echoes of Creation. You start with 2 free stat points at Level 1. Each level up grants 2 more. HP and MP are fully restored on level up. Max level: 45.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-stats-leveling.html">
+  <meta property="og:title" content="Stats &amp; Leveling Guide | Echoes of Creation">
+  <meta property="og:description" content="Stats &amp; Leveling guide for Echoes of Creation. You start with 2 free stat points at Level 1. Each level up grants 2 more. HP and MP are fully restored on level up. Max level: 45.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-stats-leveling.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Stats & Leveling Guide",
+      "description": "Stats & Leveling guide for Echoes of Creation. You start with 2 free stat points at Level 1. Each level up grants 2 more. HP and MP are fully restored on level up. Max level: 45.",
+      "url": "https://echoesofcreation.net/guide-stats-leveling.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stats & Leveling",
+          "item": "https://echoesofcreation.net/guide-stats-leveling.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Stats &amp; Leveling</div>
+      <h1 class="hero-title">Stats &amp; Leveling</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#leveling-up">Leveling Up</a></li><li><a href="#level-gap-penalty">Level Gap Penalty</a></li><li><a href="#base-stats">Base Stats</a></li><li><a href="#combat-stat-breakdown">Combat Stat Breakdown</a></li><li><a href="#hp-formula">HP Formula</a></li><li><a href="#mp-formula">MP Formula</a></li><li><a href="#offensive-stats">Offensive Stats</a></li><li><a href="#defensive-stats">Defensive Stats</a></li><li><a href="#resetting-stats-respec">Resetting Stats (Respec)</a></li><li><a href="#resetting-talents-respec">Resetting Talents (Respec)</a></li><li><a href="#tome-of-growth">Tome of Growth</a></li><li><a href="#ascension-talents-lv-41-45">Ascension Talents (Lv 41-45)</a></li><li><a href="#greater-tome-of-growth">Greater Tome of Growth</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="leveling-up">
+          <h2>Leveling Up</h2>
+          <p>You start with 2 free stat points at Level 1. Each level up grants 2 more.</p>
+<p>HP and MP are fully restored on level up.</p>
+<p><strong>Max level:</strong> 45. The climb has three great bands: Lv 30 is the first peak (Lv 30 → 31 alone requires the same EXP as the entire Lv 1 → 30 grind, and each level to 40 multiplies the previous by 1.6). Lv 40 → 45 is the Ascension band — each of those levels DOUBLES the previous one&#x27;s EXP and grants an Ascension Point instead of a talent point.</p>
+<p>When stat points are available, the Character button glows gold.</p>
+        </section>
+        <section class="guide-entry" id="level-gap-penalty">
+          <h2>Level Gap Penalty</h2>
+          <p>EXP and item drops are reduced when your level is far from the monster&#x27;s level.</p>
+<p>Monster higher than you:</p>
+<p>0-10 levels: 100%</p>
+<p>11-20 levels: 80%</p>
+<p>21+ levels: 60%</p>
+<p>You higher than monster:</p>
+<p>0-10 levels: 100%</p>
+<p>11-15 levels: 80%</p>
+<p>16-20 levels: 60%</p>
+<p>21-25 levels: 40%</p>
+<p>26-30 levels: 20%</p>
+<p>31+ levels: 10%</p>
+<p>Collection materials (anything a Collection asks for) always drop at the full rate, whatever your level, so you can go back and finish an early collection.</p>
+<p>Fight monsters near your level for the best rewards.</p>
+        </section>
+        <section class="guide-entry" id="base-stats">
+          <h2>Base Stats</h2>
+          <p>STR - Swordsman/Warrior attack power</p>
+<p>DEX - Assassin/Ranger attack power</p>
+<p>INT - Cleric attack power</p>
+<p>END - Defense (END x2)</p>
+<p>VIT - Max HP (+10 per point), Weight (+5 per point)</p>
+<p>SPR - Max MP (+8 per point), MP Regen</p>
+<p>Press C to open the stat screen. Use + and - buttons to plan your allocation. Combat stat changes are previewed in green/red. Press Confirm to apply or Reset to cancel.</p>
+        </section>
+        <section class="guide-entry" id="combat-stat-breakdown">
+          <h2>Combat Stat Breakdown</h2>
+          <p>Curious why your Defense is what it is? In the Stats panel (C), click any Combat Stat&#x27;s value (or its label) on the right side to open a breakdown card showing every source feeding that number — Character, Weapon, Upgrades, Off-Hand, Accessories, Gear, Set Bonus, Collection, Wing Collection, Gems, Talents, Passives, Buffs and Class Bonus — each with its contribution, summing to the total.</p>
+<p>Use it to see exactly what a new piece of gear, a gem, or a talent adds. Click outside the card to close it.</p>
+<p><strong>Note:</strong> the Wing Collection line is a percentage of your BASE stats (attributes and level only) added as a flat amount — it deliberately doesn&#x27;t scale with your gear, so it reads small next to gear-driven sources.</p>
+        </section>
+        <section class="guide-entry" id="hp-formula">
+          <h2>HP Formula</h2>
+          <p>Max HP = 50 + (VIT x 10) + (Level x 5)</p>
+<p>HP Regen = 0.5 + VIT x 0.3 per second</p>
+        </section>
+        <section class="guide-entry" id="mp-formula">
+          <h2>MP Formula</h2>
+          <p>Max MP = 20 + (SPR x 8) + (Level x 3)</p>
+<p>MP Regen = 0.3 + SPR x 0.4 per second</p>
+        </section>
+        <section class="guide-entry" id="offensive-stats">
+          <h2>Offensive Stats</h2>
+          <p>Attack = Offensive Stat x 2 + Weapon Attack</p>
+<p>Accuracy = 2 + Offensive Stat x 1.5 + Weapon Accuracy</p>
+<p>Attack Speed = base 200 (modified by buffs)</p>
+        </section>
+        <section class="guide-entry" id="defensive-stats">
+          <h2>Defensive Stats</h2>
+          <p>Defense = END x 2 + all armor defense + upgrades + buffs</p>
+<p>Dodge = all armor dodge + upgrades + buffs</p>
+<p>Weight Limit = 50 + VIT x 5 + (Level - 1) x 5</p>
+        </section>
+        <section class="guide-entry" id="resetting-stats-respec">
+          <h2>Resetting Stats (Respec)</h2>
+          <p>Want to rebuild your character? Buy a Scroll of Reallocation from the Lumina Shop (Convenience tab, 20 Lumina) and use it from your inventory. It refunds every allocated stat point and resets STR, DEX, INT, END, VIT, and SPR to 1, so you can spend the points again. You&#x27;ll be asked to confirm first, and the scroll won&#x27;t be consumed if you have no points allocated.</p>
+<p>Changing class at Level 10 also refunds all your stat points automatically.</p>
+        </section>
+        <section class="guide-entry" id="resetting-talents-respec">
+          <h2>Resetting Talents (Respec)</h2>
+          <p>To rebuild your talent tree, open the Talent Tree and press Respec. It consumes 1 Respec Scroll and refunds every talent point AND Ascension Point you&#x27;ve spent back into their pools, so you can re-allocate from scratch. If you don&#x27;t have a Respec Scroll, the button opens the Lumina Shop&#x27;s Convenience tab where you can buy one for 250 Lumina. You&#x27;ll be asked to confirm before the scroll is used.</p>
+        </section>
+        <section class="guide-entry" id="tome-of-growth">
+          <h2>Tome of Growth</h2>
+          <p>A Tome of Growth grants +1 universal passive point, spendable on any talent or stat node.</p>
+<p>Combine 10 Tome Pieces at the Combine station for a 30% chance to bind a Tome (a failure refunds 3 pieces). Use a bound Tome from the Talent Tree.</p>
+<p>Tomes can raise your passive-point pool by at most 10. Once you&#x27;ve gained 10 points from Tomes, further Tomes do nothing — the cap is reached.</p>
+        </section>
+        <section class="guide-entry" id="ascension-talents-lv-41-45">
+          <h2>Ascension Talents (Lv 41-45)</h2>
+          <p>Levels 41-45 each grant 1 Ascension Point instead of a regular talent point (5 total at Lv 45, and none above 45 — levels 46-50 grant stat points only). Ascension Points spend only on the violet Tier-5 Ascension row above each branch capstone in the Talent Tree: a 2-rank stat node, two 3-rank notables, and a crowning 2-rank Ascension capstone.</p>
+<p>You must own a branch&#x27;s capstone to start its Ascension row. The stat node must be fully ranked (2/2) before its notables unlock, and the Ascension capstone unlocks once a notable reaches max rank (3/3).</p>
+<p>A complete Ascension branch costs 10 points — exactly the maximum pool (5 from levels + 5 from Greater Tomes of Growth) — so each character commits to ONE Ascension build. Choose your branch carefully; a Respec Scroll refunds everything if you change your mind.</p>
+<p>Regular talent points stop at Lv 40; your existing tree and Tome of Growth points are unchanged.</p>
+        </section>
+        <section class="guide-entry" id="greater-tome-of-growth">
+          <h2>Greater Tome of Growth</h2>
+          <p>A Greater Tome of Growth grants +1 Ascension Point.</p>
+<p>Greater Tome Pieces drop rarely from Lv 38+ monsters (bosses and elites drop them more often). Combine 10 at the Combine station for a 30% chance to bind a Greater Tome (a failure refunds 3 pieces). Use a bound Greater Tome from the Talent Tree.</p>
+<p>Greater Tomes can raise your Ascension pool by at most 5. Once you&#x27;ve gained 5 points from them, further Greater Tomes do nothing — the cap is reached.</p>
+<p>Greater Tome Pieces and Greater Tomes are account-bound and cannot be traded on the marketplace.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-classes.html">&laquo; Classes</a><a href="guide-skills.html">Skills &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

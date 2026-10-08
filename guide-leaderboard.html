@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard Guide | Echoes of Creation</title>
+  <meta name="description" content="Leaderboard guide for Echoes of Creation. Press Y or click the Leaderboard button (top-right) to view global player rankings. The board refreshes once an hour, on the hour (UTC).">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-leaderboard.html">
+  <meta property="og:title" content="Leaderboard Guide | Echoes of Creation">
+  <meta property="og:description" content="Leaderboard guide for Echoes of Creation. Press Y or click the Leaderboard button (top-right) to view global player rankings. The board refreshes once an hour, on the hour (UTC).">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-leaderboard.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Leaderboard Guide",
+      "description": "Leaderboard guide for Echoes of Creation. Press Y or click the Leaderboard button (top-right) to view global player rankings. The board refreshes once an hour, on the hour (UTC).",
+      "url": "https://echoesofcreation.net/guide-leaderboard.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Leaderboard",
+          "item": "https://echoesofcreation.net/guide-leaderboard.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Leaderboard</div>
+      <h1 class="hero-title">Leaderboard</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#global-rankings">Global Rankings</a></li><li><a href="#categories">Categories</a></li><li><a href="#guild-rankings">Guild Rankings</a></li><li><a href="#top-3-medals">Top-3 Medals</a></li><li><a href="#your-rank">Your Rank</a></li><li><a href="#search-player-cards">Search &amp; Player Cards</a></li><li><a href="#filters-faction-class">Filters (Faction / Class)</a></li><li><a href="#combat-power-cp">Combat Power (CP)</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="global-rankings">
+          <h2>Global Rankings</h2>
+          <p>Press Y or click the Leaderboard button (top-right) to view global player rankings.</p>
+<p>The board refreshes once an hour, on the hour (UTC). Your latest stats are submitted in the background whenever your game saves — but the rankings themselves don&#x27;t move until the next hourly evaluation. The footer shows when the current snapshot was taken and when the next refresh is due.</p>
+        </section>
+        <section class="guide-entry" id="categories">
+          <h2>Categories</h2>
+          <p>Three ranking tabs:</p>
+<ul><li>Power — Combat Power (overall character strength roll-up)</li><li>Level — highest character level</li><li>Guilds — guilds ranked against each other, not players</li></ul>
+<p>Click a tab to switch between rankings.</p>
+        </section>
+        <section class="guide-entry" id="guild-rankings">
+          <h2>Guild Rankings</h2>
+          <p>The Guilds tab ranks guilds by Guild Level, which a guild raises by completing guild orders. Ties are broken by total lifetime contribution, then by which guild was founded first.</p>
+<p>Each row shows the guild&#x27;s rank, name, leader, member count and level. The top three get the same gold/silver/bronze medals as the player boards, and your own guild is highlighted in gold.</p>
+<p>If your guild sits outside the ranks shown, it&#x27;s pinned at the bottom of the list so you can always see where you stand.</p>
+<p>Unlike the player boards this one is live — it reflects contribution the moment it lands, with no hourly snapshot to wait for.</p>
+        </section>
+        <section class="guide-entry" id="top-3-medals">
+          <h2>Top-3 Medals</h2>
+          <p>The top 3 of each category get a colored medal next to their name:</p>
+<ul><li>Gold — Rank 1</li><li>Silver — Rank 2</li><li>Bronze — Rank 3</li></ul>
+<p>Medals refresh with the snapshot each hour. Hold rank 1 at the top of an hour and you keep the gold dot until the next refresh.</p>
+        </section>
+        <section class="guide-entry" id="your-rank">
+          <h2>Your Rank</h2>
+          <p>Your entry is highlighted with a golden tint in the leaderboard.</p>
+<p>The top 100 players are shown per category.</p>
+<p>Your stats are submitted automatically whenever your game saves — within a couple of minutes of any score change, you&#x27;re queued for the next snapshot.</p>
+        </section>
+        <section class="guide-entry" id="search-player-cards">
+          <h2>Search &amp; Player Cards</h2>
+          <p>Use the search box under the category tabs to find ANY player by character name — including offline players, alternate characters, and the lowest levels (GM/dev accounts are excluded). Type at least 2 letters.</p>
+<p>Click a player&#x27;s row — here on the leaderboard OR on a member in your Guild roster — to open their card: class, level, faction, guild, CP, gender, and whether that character is currently Online (green) or Offline. From the card you can Invite to Party, Add Friend, or Chat.</p>
+        </section>
+        <section class="guide-entry" id="filters-faction-class">
+          <h2>Filters (Faction / Class)</h2>
+          <p>The Filter button (top-right, above the table) opens a dropdown with two groups you can combine:</p>
+<ul><li>Faction — All / Light / Dark / Creation.</li><li>Class — All / Adventurer / Swordsman / Assassin / Ranger / Cleric.</li></ul>
+<p>Picks combine (e.g. Dark + Ranger), the button shows how many filters are active, and it all works together with the search box.</p>
+<p>Each row also shows a small status dot beside the rank — green Active, blue Auto-farming, amber Away, grey Offline — so you can see who&#x27;s online at a glance.</p>
+        </section>
+        <section class="guide-entry" id="combat-power-cp">
+          <h2>Combat Power (CP)</h2>
+          <p>Combat Power is a single number summarising your overall character strength. It folds in: level, ATK, DEF, max HP/MP, accuracy, dodge, block chance, crit rate &amp; damage, attack speed, talent points spent, gear upgrade levels, and filled gem sockets. Visible in your Stats panel header (C).</p>
+<p>Whenever it moves, a banner counts your new total up on screen with the change beside it - green for a gain, red for a loss - so you can see straight away whether an upgrade, a socket or a talent point was worth it.</p>
+<p>Upgrading gear, sockets, or talents will visibly move your CP — use it to compare loadouts.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-faction-war.html">&laquo; Faction War</a><a href="guide-world-map.html">World Map &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

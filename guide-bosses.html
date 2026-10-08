@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bosses Guide | Echoes of Creation</title>
+  <meta name="description" content="Bosses guide for Echoes of Creation. Bosses have 4 phases at 75%, 50%, and 25% HP. Each phase increases their attack, speed, and HP regeneration.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-bosses.html">
+  <meta property="og:title" content="Bosses Guide | Echoes of Creation">
+  <meta property="og:description" content="Bosses guide for Echoes of Creation. Bosses have 4 phases at 75%, 50%, and 25% HP. Each phase increases their attack, speed, and HP regeneration.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-bosses.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Bosses Guide",
+      "description": "Bosses guide for Echoes of Creation. Bosses have 4 phases at 75%, 50%, and 25% HP. Each phase increases their attack, speed, and HP regeneration.",
+      "url": "https://echoesofcreation.net/guide-bosses.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bosses",
+          "item": "https://echoesofcreation.net/guide-bosses.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Bosses</div>
+      <h1 class="hero-title">Bosses</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#boss-mechanics">Boss Mechanics</a></li><li><a href="#telegraphs">Telegraphs</a></li><li><a href="#boss-immunities">Boss Immunities</a></li><li><a href="#special-abilities">Special Abilities</a></li><li><a href="#boss-drops">Boss Drops</a></li><li><a href="#sealed-treasures-tome-relics">Sealed Treasures: Tome &amp; Relics</a></li><li><a href="#the-forgotten-one-world-boss">The Forgotten One (World Boss)</a></li><li><a href="#world-boss-announcement">World Boss Announcement</a></li><li><a href="#world-boss-timer-panel">World Boss Timer Panel</a></li><li><a href="#server-events">Server Events</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="boss-mechanics">
+          <h2>Boss Mechanics</h2>
+          <p>Bosses have 4 phases at 75%, 50%, and 25% HP. Each phase increases their attack, speed, and HP regeneration. A large HP bar appears at the top of the screen. Boss attacks have a minimum 85% hit chance.</p>
+        </section>
+        <section class="guide-entry" id="telegraphs">
+          <h2>Telegraphs</h2>
+          <p>Bosses telegraph powerful attacks with a red warning zone on the ground that fills in from the center as the attack charges. Step out of the circle before the fill reaches the edge — the blow lands where the zone was drawn, not wherever you end up, so moving away avoids it.</p>
+        </section>
+        <section class="guide-entry" id="boss-immunities">
+          <h2>Boss Immunities</h2>
+          <p>Bosses are immune to all status effects — stun, slow, poison, and bleed have no effect on them. You can&#x27;t kite or lock them down with crowd control, and you can&#x27;t interrupt their healing with stun, so position well and out-damage them instead.</p>
+        </section>
+        <section class="guide-entry" id="special-abilities">
+          <h2>Special Abilities</h2>
+          <p>Bosses can summon minions, create hazard zones (purple corrupted ground that damages you), buff their own defense, and channel healing. Because bosses ignore crowd control, the heal can&#x27;t be interrupted with stun — burn them down before it finishes.</p>
+        </section>
+        <section class="guide-entry" id="boss-drops">
+          <h2>Boss Drops</h2>
+          <p>Bosses roll their entire drop table on death — there&#x27;s no guaranteed item, so a clean kill can still yield nothing. Rare collection materials have a small chance to drop (usually a few %), and unique boss equipment is much rarer — typically a fraction of a percent per piece, per kill. Drop-rate buffs (Drop-Rate Charm) stack to push those odds up. EXP and gold rewards are always paid out in full.</p>
+        </section>
+        <section class="guide-entry" id="sealed-treasures-tome-relics">
+          <h2>Sealed Treasures: Tome &amp; Relics</h2>
+          <p>The mightiest bosses guard exceedingly rare sealed treasures, delivered by mail when they drop (today: the Awakened Forgotten One raid - more bosses may hold them in the future):</p>
+<p>Sealed Legend Tome - choose one legend skill of your class to learn (level 30+).</p>
+<p>Sealed Wings Relic - choose ANY wings from the world&#x27;s finery.</p>
+<p>Sealed Outfit Relic - choose ANY outfit from the world&#x27;s finery.</p>
+<p>Every participant rolls their own chance at each treasure on every kill - just be there when the boss falls. All three are bound to your account: they cannot be traded, sold, or listed on the Marketplace - a sealed treasure is earned, never bought.</p>
+        </section>
+        <section class="guide-entry" id="the-forgotten-one-world-boss">
+          <h2>The Forgotten One (World Boss)</h2>
+          <p>The Forgotten One awaits at Creator&#x27;s Gate as a server-wide world boss. You fight it in your own instance, but it shares one respawn timer with every player: once anyone defeats it, it stays down for 1 hour for everyone, then rises again. Enter during the cooldown and the arena will be empty.</p>
+        </section>
+        <section class="guide-entry" id="world-boss-announcement">
+          <h2>World Boss Announcement</h2>
+          <p>When a player lands the killing blow on The Forgotten One, a global announcement is broadcast to every online player: &quot;&lt;Name&gt; has defeated The Forgotten One!&quot; It appears as a banner and in global chat.</p>
+        </section>
+        <section class="guide-entry" id="world-boss-timer-panel">
+          <h2>World Boss Timer Panel</h2>
+          <p>Click the boss-skull button in the HUD shortcut row to open the World Boss panel. It shows The Forgotten One&#x27;s portrait, level, item drops, spawn location (Creator&#x27;s Gate), and notable abilities — plus a live respawn status: a green &#x27;UP NOW&#x27; when it&#x27;s available, or a HH:MM:SS countdown until it returns. A red dot appears on the boss button whenever the boss is up, so you can tell at a glance without opening the panel. The timer is shared server-wide, so everyone sees the same countdown. You must be logged in online to see it.</p>
+        </section>
+        <section class="guide-entry" id="server-events">
+          <h2>Server Events</h2>
+          <p>Eloria occasionally hosts milestone events that multiply drop rates, EXP, or gold globally. When one is active, you&#x27;ll see a banner at the top of the screen with a countdown to its end, and a chat announcement when it starts. The bonus stacks multiplicatively with Eloria&#x27;s Favor and Drop-Rate Charms, so the smart play is to save your Favor + charms for event windows. Lumina drops are never multiplied by events — that supply stays flat.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-elite-monsters.html">&laquo; Elite Monsters</a><a href="guide-battle-dungeon.html">Battle Dungeon &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

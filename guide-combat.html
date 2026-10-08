@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combat Guide | Echoes of Creation</title>
+  <meta name="description" content="Combat guide for Echoes of Creation. Press F or Z to attack. Melee classes strike in a 90-degree arc in front of you. Ranged classes fire a projectile toward your target.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-combat.html">
+  <meta property="og:title" content="Combat Guide | Echoes of Creation">
+  <meta property="og:description" content="Combat guide for Echoes of Creation. Press F or Z to attack. Melee classes strike in a 90-degree arc in front of you. Ranged classes fire a projectile toward your target.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-combat.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Combat Guide",
+      "description": "Combat guide for Echoes of Creation. Press F or Z to attack. Melee classes strike in a 90-degree arc in front of you. Ranged classes fire a projectile toward your target.",
+      "url": "https://echoesofcreation.net/guide-combat.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Combat",
+          "item": "https://echoesofcreation.net/guide-combat.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Combat</div>
+      <h1 class="hero-title">Combat</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#basic-attacks">Basic Attacks</a></li><li><a href="#attacking-on-the-move">Attacking on the Move</a></li><li><a href="#hit-chance">Hit Chance</a></li><li><a href="#shield-block-swordsman">Shield Block (Swordsman)</a></li><li><a href="#damage-calculation">Damage Calculation</a></li><li><a href="#targeting">Targeting</a></li><li><a href="#skills-in-combat">Skills in Combat</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="basic-attacks">
+          <h2>Basic Attacks</h2>
+          <p>Press F or Z to attack. Melee classes strike in a 90-degree arc in front of you. Ranged classes fire a projectile toward your target.</p>
+        </section>
+        <section class="guide-entry" id="attacking-on-the-move">
+          <h2>Attacking on the Move</h2>
+          <p>You don&#x27;t have to stand still to fight. Keep moving while you attack: your legs keep running while your upper body swings and turns to face your target. Run with a monster behind you and you back-pedal while you strike it.</p>
+<p>Skills that spin, leap or channel - Whirlwind Slash, Titan&#x27;s Wrath, Ragebreaker, Divine Judgment and the like - still hold you in place until they finish, and so do quick buff casts.</p>
+<p>A monster you keep out of reach will still charge you down.</p>
+        </section>
+        <section class="guide-entry" id="hit-chance">
+          <h2>Hit Chance</h2>
+          <p>Attacks can miss based on your Accuracy vs the target&#x27;s Dodge.</p>
+<p>Hit chance = 50% + (your Accuracy - target Dodge) x 2%</p>
+<p>Minimum 10%, maximum 95%.</p>
+        </section>
+        <section class="guide-entry" id="shield-block-swordsman">
+          <h2>Shield Block (Swordsman)</h2>
+          <p>While a shield is equipped in the off-hand, Swordsmen gain Block: a 15% chance to halve incoming damage from a hit that lands.</p>
+<p>Block is rolled after Dodge — a dodged attack is avoided entirely, a blocked one still hits for half. A BLOCK popup shows when it procs, and your BLK chance appears in the HUD stat line.</p>
+<p>Socketing Onyx gems into your shield raises your Block chance (capped at 50%).</p>
+<p><strong>Tradeoff:</strong> raising a shield costs mobility — your total Dodge is reduced by 20% while a shield is equipped.</p>
+<p>Boss attacks with a guaranteed minimum (like Primordius) can be blocked, but never below their minimum damage.</p>
+        </section>
+        <section class="guide-entry" id="damage-calculation">
+          <h2>Damage Calculation</h2>
+          <p>Your damage = Offensive Stat x2 + Weapon Attack.</p>
+<p>Upgrading your weapon raises its own Attack (+10% per level, up to +100% at +10) - it boosts the weapon&#x27;s attack, not your stat damage. Other gear upgrades work the same way on their own stats.</p>
+<p><strong>Enemy defense reduces damage:</strong> actual = max(1, damage - defense).</p>
+        </section>
+        <section class="guide-entry" id="targeting">
+          <h2>Targeting</h2>
+          <p><strong>You hold two targets at once:</strong> a combat target and a support target.</p>
+<p>Combat target — click a monster, or press TAB to cycle the 2 nearest. Their name and HP show in the bar at the top of the screen. Clicking empty ground clears it.</p>
+<p>Support target — click another player, or click their card in the party frames under the minimap. A ring appears at their feet and a card appears under the party frames. Green means an ally (same faction, or either of you unaligned); red means a rival faction.</p>
+<p>The support target STAYS selected through monster clicks, ground clicks and auto-hunt, so you can keep fighting while holding someone to heal. Only ESC clears it. Clicking your own party card also clears it.</p>
+<p>Allies and unaligned players can never be attacked — selecting one is for support, not combat.</p>
+<p><strong>Clerics:</strong> with an ally selected and within 20m, Heal is cast on THEM instead of yourself. The ally card tells you when they are out of range or can&#x27;t be healed, and the cast falls back to you.</p>
+<p>Drag the enemy HP bar to move it anywhere on screen — its position is saved per character. This applies to both the normal target bar and the larger boss bar.</p>
+        </section>
+        <section class="guide-entry" id="skills-in-combat">
+          <h2>Skills in Combat</h2>
+          <p>Assign skills to hotbar slots 1-9.</p>
+<p>Skills cost MP and have cooldowns.</p>
+<p>With auto-cast ON, skills fire automatically during auto-combat.</p>
+<p>When you hit a monster with a skill (auto-hunt off), your character keeps landing normal attacks on it until it dies or you target something else or move away.</p>
+<p>Press a ready skill while you&#x27;re mid-swing and it&#x27;s queued as your very next action — no need to time the press between attacks.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-saving.html">&laquo; Saving &amp; Characters</a><a href="guide-auto-combat.html">Auto-Combat &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

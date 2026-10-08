@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monsterpedia Guide | Echoes of Creation</title>
+  <meta name="description" content="Monsterpedia guide for Echoes of Creation. A bestiary that tracks every monster you&#x27;ve encountered. Press B to open it. The more you fight a monster, the more info you unlock.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-monsterpedia.html">
+  <meta property="og:title" content="Monsterpedia Guide | Echoes of Creation">
+  <meta property="og:description" content="Monsterpedia guide for Echoes of Creation. A bestiary that tracks every monster you&#x27;ve encountered. Press B to open it. The more you fight a monster, the more info you unlock.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-monsterpedia.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Monsterpedia Guide",
+      "description": "Monsterpedia guide for Echoes of Creation. A bestiary that tracks every monster you've encountered. Press B to open it. The more you fight a monster, the more info you unlock.",
+      "url": "https://echoesofcreation.net/guide-monsterpedia.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Monsterpedia",
+          "item": "https://echoesofcreation.net/guide-monsterpedia.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Monsterpedia</div>
+      <h1 class="hero-title">Monsterpedia</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#what-is-it">What Is It?</a></li><li><a href="#kill-milestones">Kill Milestones</a></li><li><a href="#tracking-a-target">Tracking a Target</a></li><li><a href="#elite-tracking">Elite Tracking</a></li><li><a href="#monster-collection">Monster Collection</a></li><li><a href="#gear-collection">Gear Collection</a></li><li><a href="#cosmetic-collections-wings-outfits">Cosmetic Collections (Wings &amp; Outfits)</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="what-is-it">
+          <h2>What Is It?</h2>
+          <p>A bestiary that tracks every monster you&#x27;ve encountered. Press B to open it. The more you fight a monster, the more info you unlock.</p>
+<p>Use the search box above the list to filter by monster name, zone name, or item name — typing a material shows every discovered monster that drops it. Monsters you haven&#x27;t discovered yet only match by their zone — their names and drops stay hidden until you earn them.</p>
+<p>Wondering where a material comes from? Open it in your Inventory and press Location — the Monsterpedia opens showing every discovered monster that drops it and where it lives.</p>
+        </section>
+        <section class="guide-entry" id="kill-milestones">
+          <h2>Kill Milestones</h2>
+          <p>1 kill - Name and type revealed</p>
+<p>10 kills - Stats revealed</p>
+<p>25 kills - Drop table revealed</p>
+<p>50 kills - Special abilities revealed</p>
+        </section>
+        <section class="guide-entry" id="tracking-a-target">
+          <h2>Tracking a Target</h2>
+          <p>Press Track on a monster&#x27;s page to pin it to your quest tracker. It shows your kills toward the next reveal, and once everything is revealed it switches to that monster&#x27;s collection materials so you can see how close you are.</p>
+<p>Only one monster is tracked at a time; press Untrack (or Track another) to change it. The pin lasts for your play session.</p>
+<p>If your quest tracker is hidden, the target is hidden with it — bring the tracker back from the shortcut bar.</p>
+        </section>
+        <section class="guide-entry" id="elite-tracking">
+          <h2>Elite Tracking</h2>
+          <p>Elite kills are tracked separately. The Monsterpedia shows both your normal and elite kill counts per monster type.</p>
+        </section>
+        <section class="guide-entry" id="monster-collection">
+          <h2>Monster Collection</h2>
+          <p>Each monster has a collection requiring specific drop items. Collect the required items and click Register Collection on the monster&#x27;s detail page to consume the items and gain permanent stat bonuses.</p>
+<p>Indicators in the monster list:</p>
+<p>★ = enough items to register</p>
+<p>✓ = already registered</p>
+<p>Click the Collection Effects tab to see all accumulated bonuses.</p>
+        </section>
+        <section class="guide-entry" id="gear-collection">
+          <h2>Gear Collection</h2>
+          <p>Open the Collection (U) and switch to the Gear tab. Registering a gear collection permanently consumes one copy of that gear in exchange for a permanent, account-wide stat bonus shared by all your characters.</p>
+<p>When you click Register, a confirmation dialog lists every copy you own and lets you pick exactly which one to deposit — so you can keep a gemmed or higher-upgrade copy and hand over a plainer one. The safest copy (least upgraded, fewest gems) is selected by default. Locked copies can never be selected.</p>
+<p>Epic and Legend gear can be registered at several upgrade tiers — for example a Legend weapon at +5, then again at +8, then at +10 — with each tier granting a bigger bonus. Each tier consumes a separate copy at that upgrade level, so duplicate Epic and Legend drops are never wasted: feed them back into the higher rungs.</p>
+        </section>
+        <section class="guide-entry" id="cosmetic-collections-wings-outfits">
+          <h2>Cosmetic Collections (Wings &amp; Outfits)</h2>
+          <p>Cosmetic wings and outfits have ownership-only collections: registering consumes NOTHING, and it happens automatically as soon as the cosmetic is yours — in your bag, equipped, or stored in the Wardrobe. You keep the look AND the bonus.</p>
+<p>Outfits and most wings grant flat bonuses (for example the Radiant Light Set grants +150 Max HP, +25 Defense and +12 Dodge).</p>
+<p>The five Legend wings — Wings of Light, Wings of Void, Wings of the Forgotten, Wings of the Primordial and Rose Seraph Wings — each grant +2.5% Attack, Defense and Max HP. This percentage is calculated against your BASE stats (what your attributes and level alone provide) and the result is added as a flat amount. It does NOT multiply with your weapon, gear, gems or other bonuses — so the number is modest by design and doesn&#x27;t grow as your gear improves. It appears as the &quot;Wing Collection&quot; line in the Combat Stat Breakdown.</p>
+<p>A few promotional cosmetics are appearance-only and have no collection bonus.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-achievements.html">&laquo; Achievements</a><a href="guide-mounts.html">Mounts &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pets Guide | Echoes of Creation</title>
+  <meta name="description" content="Pets guide for Echoes of Creation. Pets are loyal companions that follow you everywhere you go. Open the Pets panel from the HUD&#x27;s Pets button to see every companion you own.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-pets.html">
+  <meta property="og:title" content="Pets Guide | Echoes of Creation">
+  <meta property="og:description" content="Pets guide for Echoes of Creation. Pets are loyal companions that follow you everywhere you go. Open the Pets panel from the HUD&#x27;s Pets button to see every companion you own.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-pets.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Pets Guide",
+      "description": "Pets guide for Echoes of Creation. Pets are loyal companions that follow you everywhere you go. Open the Pets panel from the HUD's Pets button to see every companion you own.",
+      "url": "https://echoesofcreation.net/guide-pets.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pets",
+          "item": "https://echoesofcreation.net/guide-pets.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Pets</div>
+      <h1 class="hero-title">Pets</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#companions">Companions</a></li><li><a href="#mystery-eggs-hatching">Mystery Eggs &amp; Hatching</a></li><li><a href="#pet-tiers">Pet Tiers</a></li><li><a href="#combining">Combining</a></li><li><a href="#legendary-pet-chest">Legendary Pet Chest</a></li><li><a href="#bonding-your-collection">Bonding &amp; Your Collection</a></li><li><a href="#feeding-growth">Feeding &amp; Growth</a></li><li><a href="#upgrading-a-pet-s-tier">Upgrading a Pet&#x27;s Tier</a></li><li><a href="#releasing-pets">Releasing Pets</a></li><li><a href="#pet-skills">Pet Skills</a></li><li><a href="#legend-pet-skills">Legend Pet Skills</a></li><li><a href="#summoning">Summoning</a></li><li><a href="#pet-types">Pet Types</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="companions">
+          <h2>Companions</h2>
+          <p>Pets are loyal companions that follow you everywhere you go. Open the Pets panel from the HUD&#x27;s Pets button to see every companion you own.</p>
+<p>A summoned pet grants its Aura stats and any rolled skills. Only the active pet&#x27;s bonuses apply.</p>
+        </section>
+        <section class="guide-entry" id="mystery-eggs-hatching">
+          <h2>Mystery Eggs &amp; Hatching</h2>
+          <p><strong>Your first egg is guaranteed:</strong> at level 10, visit the Sundries shop in the village for the &#x27;A Strange Clutch&#x27; questline.</p>
+<p>After that, Mystery Eggs drop rarely from monsters level 10 and up (about 1 in 500) - elites drop them 3x as often, bosses 10x.</p>
+<p>Hatch eggs in the Pets panel&#x27;s Hatch tab (up to 10 at once). Every egg rolls a dragon AND a tier:</p>
+<p><strong>Dragon:</strong> Amethyst (offense), Light (evasion) or Creation (bulwark) Dragonling - equal odds, pick your specialty.</p>
+<p><strong>Tier:</strong> Normal 74.6%, Rare 20%, Epic 5%, Legend 0.4% (about 1 in 250).</p>
+<p>During the reveal, a glowing card back means a higher-tier pet is inside!</p>
+<p>Eggs and unbonded pets are tradeable on the marketplace.</p>
+        </section>
+        <section class="guide-entry" id="pet-tiers">
+          <h2>Pet Tiers</h2>
+          <p>Every pet has a tier, shown by its name color: Normal (white), Rare (blue), Epic (purple), Legend (gold).</p>
+<p>The tier multiplies the pet&#x27;s Aura stats: Normal x1, Rare x1.5, Epic x2.2, Legend x3.2 - a Legend pet is the ultimate companion.</p>
+<p>Each dragon has its own specialty, equal in overall power:</p>
+<p>Amethyst Dragonling - offense (high Attack).</p>
+<p>Light Dragonling - evasion (high Dodge).</p>
+<p>Creation Dragonling - bulwark (high Defense and HP).</p>
+<p>The tier is the power, the dragon is the style - pick the one that fits how you fight.</p>
+        </section>
+        <section class="guide-entry" id="combining">
+          <h2>Combining</h2>
+          <p>Open the Combine tab in the Pets panel and register any 3 unbonded pets of the SAME tier - dragons can be mixed freely (Auto-register fills the board for you, up to 10 combines at once).</p>
+<p>Each combine has a 30% chance to create 1 RANDOM dragon of the next tier (Normal -&gt; Rare -&gt; Epic -&gt; Legend).</p>
+<p><strong>Guarantee:</strong> your 10th consecutive attempt at a tier step automatically succeeds. The counters are shown in the Combine tab and reset on any success.</p>
+<p>Failed combines refund Spirit Essence: 5 (Normal), 15 (Rare), 40 (Epic).</p>
+        </section>
+        <section class="guide-entry" id="legendary-pet-chest">
+          <h2>Legendary Pet Chest</h2>
+          <p>The Legendary Pet Chest is a special gift that lets you choose ANY pet outright - no hatching or combining needed.</p>
+<p>Use it from your bag, pick any companion, and confirm. It bonds to you instantly at LEGEND tier - the ultimate x3.2 Aura.</p>
+<p>Your choice is final and the chest is consumed. If your collection is full (30 pets), the pet waits as a token in your bag until you free a slot and bond it from the Pets panel.</p>
+<p>The chest is account-bound - it cannot be traded or sold.</p>
+        </section>
+        <section class="guide-entry" id="bonding-your-collection">
+          <h2>Bonding &amp; Your Collection</h2>
+          <p>Bond an unbonded pet to add it to your collection forever. Bonding consumes the token - a bonded pet can never be traded or used in a combine, so spare tokens are best combined or sold.</p>
+<p>You can bond multiple copies of the same dragon - every bonded pet is its own companion with its own tier, level and skills.</p>
+<p>Your collection holds up to 30 pets. Browse them in the Pets panel and tap any pet to see its stats, feed it, or summon it.</p>
+<p>Mark your best pets as Favorites - they show a gold star and sort to the front of your collection.</p>
+        </section>
+        <section class="guide-entry" id="feeding-growth">
+          <h2>Feeding &amp; Growth</h2>
+          <p>Feed Spirit Essence (drops from monsters level 10 and up, about 1 in 25) to level a bonded pet up to level 30.</p>
+<p>The cost per level rises as the pet grows (5 + 2 per level, the same for every dragon).</p>
+<p><strong>Stages:</strong> Hatchling -&gt; Juvenile (Lv 10) -&gt; Adult (Lv 20) -&gt; Radiant (Lv 30). Each stage makes your pet visibly larger and unlocks a skill slot.</p>
+<p>At Radiant, your dragon transforms into its majestic final form.</p>
+<p>The pet&#x27;s Aura stats grow with every level, reaching full strength at level 30.</p>
+        </section>
+        <section class="guide-entry" id="upgrading-a-pet-s-tier">
+          <h2>Upgrading a Pet&#x27;s Tier</h2>
+          <p>Upgrade Tier (in a pet&#x27;s detail panel) raises a pet to a higher tier while KEEPING its level and skills - so you can pour Spirit Essence into a Normal or Rare pet, then upgrade it later without re-leveling.</p>
+<p>It consumes another pet of the SAME dragon at a HIGHER tier. Example: feed a Rare Light Dragonling to Lv 13, then consume an Epic Light Dragonling to get a Lv 13 Epic Light Dragonling.</p>
+<p>If you own several higher tiers (say an Epic AND a Legend), you choose which one to consume - and your pet lands on that tier.</p>
+<p>The consumed pet is gone for good. Favorited and summoned pets can&#x27;t be used as fodder - dismiss or un-favorite them first.</p>
+        </section>
+        <section class="guide-entry" id="releasing-pets">
+          <h2>Releasing Pets</h2>
+          <p>Release (in a pet&#x27;s detail panel) turns a bonded pet into Spirit Essence - a way to recycle spare pets into growth fuel for the pets you keep.</p>
+<p>Essence returned = a tier base plus 3 per level above 1. Tier base: Normal 5, Rare 20, Epic 60, Legend 150. Example: a Lv 13 Epic gives 96 (60 + 36); a Lv 30 Legend gives 237 (150 + 87).</p>
+<p>Releasing is permanent - the pet, its levels and skills are gone. Favorited and Legend pets require you to type RELEASE to confirm, so a keeper is never released by accident.</p>
+        </section>
+        <section class="guide-entry" id="pet-skills">
+          <h2>Pet Skills</h2>
+          <p>Each skill slot can hold one rolled skill. Rolling or rerolling a slot costs 25 Spirit Essence and grants a random skill with a random strength.</p>
+<p>The skills and their roll ranges:</p>
+<ul><li><strong>Fierce Spirit:</strong> Attack +20 to +50</li><li><strong>Stalwart Scales:</strong> Defense +20 to +40</li><li><strong>Vitality:</strong> Max HP +300 to +600</li><li><strong>Keen Eye:</strong> Accuracy +20 to +40</li><li><strong>Predator&#x27;s Focus:</strong> Crit Rate +2% to +4%</li><li><strong>Treasure Scent:</strong> Gold Find +3% to +6%</li><li><strong>Scholar&#x27;s Bond:</strong> EXP +2% to +4%</li><li><strong>Pack Mule:</strong> Carry Weight +5% to +10%</li><li><strong>Swift Wings:</strong> Move Speed +2% to +4%</li><li><strong>Mender&#x27;s Warmth:</strong> HP Regen +20 to +40</li></ul>
+<p>The rolled value applies at full strength no matter the pet&#x27;s level or tier.</p>
+<p>EXP and Gold Find pet skills stack with boost potions.</p>
+        </section>
+        <section class="guide-entry" id="legend-pet-skills">
+          <h2>Legend Pet Skills</h2>
+          <p>Legend-tier pets can awaken a powerful ACTIVE skill for 200 Spirit Essence (each dragon has its own):</p>
+<p><strong>Amethyst - Umbral Bite:</strong> strikes the nearest enemy you are fighting for 150% of your Attack every 8s. It only assists - it never pulls monsters you haven&#x27;t engaged.</p>
+<p><strong>Light - Radiant Mend:</strong> heals you for 12% of your Max HP when you are hurt, every 10s.</p>
+<p><strong>Creation - Primordial Ward:</strong> shields you for 15% of your Max HP for 5s, every 15s in combat.</p>
+<p>The skill triggers automatically while the pet is summoned.</p>
+        </section>
+        <section class="guide-entry" id="summoning">
+          <h2>Summoning</h2>
+          <p>In the Pets panel, press Summon on any pet you own to call it to your side. Only one pet can be active at a time - summoning a new one dismisses the current one. Press Dismiss to send your pet away.</p>
+<p>Your active pet is saved with your character and reappears when you log back in. Other players can see your summoned pet and its growth stage.</p>
+        </section>
+        <section class="guide-entry" id="pet-types">
+          <h2>Pet Types</h2>
+          <p>Flying pets hover at your left shoulder, gently bobbing as you travel.</p>
+<p>Land pets (coming soon) will walk alongside you on the ground.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-mounts.html">&laquo; Mounts</a><a href="guides.html">All guides &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

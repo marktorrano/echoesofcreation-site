@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guilds Guide | Echoes of Creation</title>
+  <meta name="description" content="Guilds guide for Echoes of Creation. Open the Guild panel with the G key, or from the Menu (☰ → Guild).">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-guild.html">
+  <meta property="og:title" content="Guilds Guide | Echoes of Creation">
+  <meta property="og:description" content="Guilds guide for Echoes of Creation. Open the Guild panel with the G key, or from the Menu (☰ → Guild).">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-guild.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Guilds Guide",
+      "description": "Guilds guide for Echoes of Creation. Open the Guild panel with the G key, or from the Menu (☰ → Guild).",
+      "url": "https://echoesofcreation.net/guide-guild.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Guilds",
+          "item": "https://echoesofcreation.net/guide-guild.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Guilds</div>
+      <h1 class="hero-title">Guilds</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#creating-a-guild">Creating a Guild</a></li><li><a href="#browsing-joining-guilds">Browsing &amp; Joining Guilds</a></li><li><a href="#invites">Invites</a></li><li><a href="#roster-roles">Roster &amp; Roles</a></li><li><a href="#join-setting-open-vs-approval">Join Setting (Open vs Approval)</a></li><li><a href="#guild-chat">Guild Chat</a></li><li><a href="#guild-orders">Guild Orders</a></li><li><a href="#donating-materials">Donating Materials</a></li><li><a href="#giving-up-an-order">Giving Up an Order</a></li><li><a href="#contribution-points">Contribution Points</a></li><li><a href="#guild-coins">Guild Coins</a></li><li><a href="#the-guild-store">The Guild Store</a></li><li><a href="#your-grade-1-10">Your Grade (1–10)</a></li><li><a href="#guild-buffs">Guild Buffs</a></li><li><a href="#guild-buffs-and-cp">Guild Buffs and CP</a></li><li><a href="#if-the-leader-goes-inactive">If the Leader Goes Inactive</a></li><li><a href="#guild-towers">Guild Towers</a></li><li><a href="#building-and-upgrading">Building and Upgrading</a></li><li><a href="#the-guild-hall">The Guild Hall</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="creating-a-guild">
+          <h2>Creating a Guild</h2>
+          <p>Open the Guild panel with the G key, or from the Menu (☰ → Guild).</p>
+<p>If you&#x27;re not in a guild, enter a name (3–24 letters, numbers, or spaces) and press Create Guild.</p>
+<p>Founding a guild costs Lumina and requires a minimum level; the exact cost is shown on the create screen. You can only be in one guild at a time.</p>
+        </section>
+        <section class="guide-entry" id="browsing-joining-guilds">
+          <h2>Browsing &amp; Joining Guilds</h2>
+          <p>If you&#x27;re not in a guild, the Guild panel&#x27;s Browse tab lists guilds you can join, each showing its member count, leader, and join setting. Use the search box to find one by name.</p>
+<p>How you join depends on the guild&#x27;s setting:</p>
+<ul><li>Open — press Join and you&#x27;re in instantly.</li><li>Approval — press Request; a leader or officer must approve you. While you wait it shows &quot;Requested&quot; with a Cancel button.</li></ul>
+<p>You can only be in one guild at a time, and joining (or being approved) drops any other pending invites or requests you had.</p>
+        </section>
+        <section class="guide-entry" id="invites">
+          <h2>Invites</h2>
+          <p>A guild&#x27;s leader or officers can also invite you directly by your character name. Pending invitations show on the Invites tab of your Guild panel (and a red dot appears on the Guild menu entry) — press Join to accept or Decline to dismiss.</p>
+<p>An invite lets you into an Approval guild without waiting for a request.</p>
+        </section>
+        <section class="guide-entry" id="roster-roles">
+          <h2>Roster &amp; Roles</h2>
+          <p>The Members tab lists every member the same way as the Friends list: an online dot (green Active, blue Auto-farming, amber Away, grey Offline), the character name with level and class beside it, and their current activity/zone below. Each member row has an Invite button (party-invite an online member) and a Chat button (open a private message) — click a name to open their player card.</p>
+<p><strong>There are three ranks:</strong> Leader, Officer, and Member.</p>
+<ul><li>Officers can invite players, approve or deny join requests, change the join setting, and kick members.</li><li>The Leader can promote/demote officers, kick anyone, set the message of the day, transfer leadership, and disband the guild.</li></ul>
+<p>To leave as the leader, transfer leadership first (or disband if you&#x27;re the only member).</p>
+        </section>
+        <section class="guide-entry" id="join-setting-open-vs-approval">
+          <h2>Join Setting (Open vs Approval)</h2>
+          <p>Leaders and officers set how outsiders join from the guild header (&quot;Joining:&quot;).</p>
+<ul><li>Open — anyone who finds you in the Browse list can join instantly, up to the member cap.</li><li>Approval — players must Request to join; requests appear on the Pending tab, where an officer presses Approve or Deny. A red dot on the Guild menu entry flags new requests.</li></ul>
+<p>Newly created guilds start Open.</p>
+        </section>
+        <section class="guide-entry" id="guild-chat">
+          <h2>Guild Chat</h2>
+          <p>Guild chat lives in the main chat box, in its own &quot;Guild&quot; tab — the tab appears while you&#x27;re in a guild (next to Map and Global). Type with the Guild tab selected to message your guild.</p>
+<p>Messages are saved, so you&#x27;ll see recent history — including things said while you were offline — and the Guild tab shows an unread dot when new messages arrive while you&#x27;re on another tab.</p>
+        </section>
+        <section class="guide-entry" id="guild-orders">
+          <h2>Guild Orders</h2>
+          <p>The Orders tab shows the same five choices every day — slaying monsters, earning gold, forging or enchanting gear, donating materials, and joining a world boss raid.</p>
+<p>Pick one and it becomes your active order. Progress is tracked automatically as you play; there is no claim button, so the moment you hit the target it completes and pays out on its own. Then you pick again.</p>
+<p>You can complete five orders a day, and nothing stops you picking the SAME one every time — five rounds of Slay 100 Monsters is a perfectly good day.</p>
+<p>Orders reset daily at 00:00 UTC.</p>
+        </section>
+        <section class="guide-entry" id="donating-materials">
+          <h2>Donating Materials</h2>
+          <p>The donate order is the one you complete on purpose rather than by playing. Open the Orders tab and press Donate materials to see everything in your bag that qualifies, pick an amount, and send it.</p>
+<p>Only materials can be donated — gear, potions and valuables are never offered and would be refused anyway. Donated materials are consumed permanently and credit your guild&#x27;s contribution pool, so they count toward your Grade and the guild&#x27;s buffs at the same time.</p>
+<p>A locked stack is never donated, the same as selling.</p>
+        </section>
+        <section class="guide-entry" id="giving-up-an-order">
+          <h2>Giving Up an Order</h2>
+          <p>Changed your mind? Press Give Up and pick something else. There is no limit — you can swap as often as you like, because the five choices are always the same and nothing is being randomised away from you.</p>
+<p>The one cost is that giving up RESETS that order&#x27;s progress. Coming back to it later starts from zero, so it is cheaper to switch early than at 90%.</p>
+        </section>
+        <section class="guide-entry" id="contribution-points">
+          <h2>Contribution Points</h2>
+          <p>Every completed order awards 20 contribution points, and you can finish all of them every day — nothing is rationed. Those points do two things at once:</p>
+<ul><li>They add to YOUR personal total, which raises your Grade in the guild.</li><li>They add to the guild&#x27;s pool, which the leader spends on guild buffs, and to the guild&#x27;s lifetime total, which raises the Guild Level.</li></ul>
+<p>Spending from the pool never lowers your personal total or the guild&#x27;s level — the lifetime total only ever goes up.</p>
+        </section>
+        <section class="guide-entry" id="guild-coins">
+          <h2>Guild Coins</h2>
+          <p>Guild Coins are yours, not the guild&#x27;s. They are earned two ways:</p>
+<ul><li>Completing a guild order — the same order that pays contribution pays you a coin for each point, so a full day of five orders is 100 coins.</li><li>Donating parts to a Tower — cut blocks, reinforced beams and iron braces each pay a few coins when you hand them over, up to a daily limit.</li></ul>
+<p>Each character keeps their own coins — an alt&#x27;s orders fill the alt&#x27;s purse, not yours. They stay with you if you leave a guild, unlike your Grade, which is forfeited; you just need to be in a guild to spend them.</p>
+<p>The tower-donation limit is the one thing counted across your whole account, because the materials it spends are shared between your characters anyway.</p>
+<p>Nothing is taken away when the guild spends its contribution pool: that is the guild&#x27;s money, and coins are yours.</p>
+        </section>
+        <section class="guide-entry" id="the-guild-store">
+          <h2>The Guild Store</h2>
+          <p>The Store tab on the Guild panel is where coins are spent. It stocks potions and battle supplies, boost potions, and crafting materials such as Enchantment Stones and Elorite.</p>
+<p><strong>Some lines are gated:</strong> a few need a higher Guild Level, a few need a higher Grade, and the scarcer ones have a daily limit shown on the card. A card tells you which of those is holding it back before you press anything.</p>
+<p>Everything you buy goes straight to your bag.</p>
+        </section>
+        <section class="guide-entry" id="your-grade-1-10">
+          <h2>Your Grade (1–10)</h2>
+          <p>Grade is your standing inside the guild, earned from the contribution points you personally banked. It rises as you complete orders and never falls.</p>
+<p>Grade decides how much of a guild buff you actually receive:</p>
+<ul><li>Grade 1 — no buff yet</li><li>Grade 2 — buff level 1</li><li>Grade 4 — level 2</li><li>Grade 6 — level 3</li><li>Grade 8 — level 4</li><li>Grade 10 — level 5 (full)</li></ul>
+<p>So a guild can buy a level 5 buff, but a member at Grade 3 still only receives level 1 of it. Contributing is how you unlock what your guild already owns.</p>
+        </section>
+        <section class="guide-entry" id="guild-buffs">
+          <h2>Guild Buffs</h2>
+          <p>The Buffs tab sells permanent stat bonuses for the whole guild, paid for out of the contribution pool. There are four stats — Attack, Defense, Dodge and Accuracy — each in three flavours:</p>
+<ul><li>General — applies everywhere, the smallest of the three.</li><li>PvE — applies against monsters only.</li><li>PvP — applies against other players only.</li></ul>
+<p>General stacks with whichever of PvE/PvP fits your current situation, the same way enchantments work.</p>
+<p>Each buff has 5 levels. Buying a level is permanent — buffs are never timed and never need re-activating, and nothing expires if the pool later runs dry.</p>
+<p>Only the guild leader can purchase levels. The panel shows each level&#x27;s exact cost and what you personally receive at your current Grade.</p>
+        </section>
+        <section class="guide-entry" id="guild-buffs-and-cp">
+          <h2>Guild Buffs and CP</h2>
+          <p>Guild buffs apply to your character in combat, but they are deliberately NOT counted in your CP.</p>
+<p>CP measures you — your gear, levels, talents and enchants. A guild&#x27;s treasury is not yours, and it would follow you out the door the day you left. Leaving a guild would drop your CP through no change to your character.</p>
+<p>So the leaderboard ranks the player, and the buffs quietly do their work in the fight.</p>
+        </section>
+        <section class="guide-entry" id="if-the-leader-goes-inactive">
+          <h2>If the Leader Goes Inactive</h2>
+          <p>A guild is never left stranded behind an absent leader. If the leader hasn&#x27;t logged in for 7 days, leadership passes automatically to whoever is best placed to run it:</p>
+<ul><li>an officer who has been playing recently — the most recently seen one;</li><li>failing that, the highest-contributing member who has been playing recently;</li><li>and failing that, the highest contributor in the guild.</li></ul>
+<p>The former leader stays on as an officer, so nothing is taken from them. If they return and the guild wants them back in charge, the new leader can transfer leadership straight back.</p>
+<p>The guild is told when this happens — by mail and in guild chat.</p>
+        </section>
+        <section class="guide-entry" id="guild-towers">
+          <h2>Guild Towers</h2>
+          <p>Your guild builds five Towers, each ten levels deep, and every member carries their effects:</p>
+<p>Beacon — experience, up to +12%</p>
+<p>Coinspire — gold, up to +18%</p>
+<p>Reliquary — drop rate, up to +9%</p>
+<p>Hearthstone — food buffs last longer, up to +30%</p>
+<p>Wright&#x27;s — Life Skill experience, up to +15%</p>
+<p>A Tower&#x27;s effect applies to every member of the guild, not just whoever paid for it.</p>
+        </section>
+        <section class="guide-entry" id="building-and-upgrading">
+          <h2>Building and Upgrading</h2>
+          <p><strong>A Tower level costs two things:</strong> Construction parts — cut blocks, iron braces and reinforced beams, made with the Construction life skill — and guild contribution.</p>
+<p>The first level is modest; the tenth is a long-term goal for the whole guild.</p>
+<p>Anyone can donate the parts. Contribution comes from the guild&#x27;s shared pool, so Orders and donations both feed it.</p>
+<p>Donating parts also earns YOU Guild Coins — see Guild Coins, above.</p>
+        </section>
+        <section class="guide-entry" id="the-guild-hall">
+          <h2>The Guild Hall</h2>
+          <p>The Hall is where your Towers stand. As a Tower rises through its levels its model grows with it, so the Hall shows at a glance what your guild has actually built.</p>
+<p>Every member can visit, and what you see is your own guild&#x27;s progress.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-party.html">&laquo; Party</a><a href="guide-friends.html">Friends &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

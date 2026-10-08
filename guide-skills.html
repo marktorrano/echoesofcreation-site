@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills Guide | Echoes of Creation</title>
+  <meta name="description" content="Skills guide for Echoes of Creation. Active skills cost MP and have cooldowns. Assign them to hotbar slots 1-9. Each class has unique skills that unlock at certain levels.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-skills.html">
+  <meta property="og:title" content="Skills Guide | Echoes of Creation">
+  <meta property="og:description" content="Skills guide for Echoes of Creation. Active skills cost MP and have cooldowns. Assign them to hotbar slots 1-9. Each class has unique skills that unlock at certain levels.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-skills.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Skills Guide",
+      "description": "Skills guide for Echoes of Creation. Active skills cost MP and have cooldowns. Assign them to hotbar slots 1-9. Each class has unique skills that unlock at certain levels.",
+      "url": "https://echoesofcreation.net/guide-skills.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Skills",
+          "item": "https://echoesofcreation.net/guide-skills.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Skills</div>
+      <h1 class="hero-title">Skills</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#active-skills">Active Skills</a></li><li><a href="#passive-skills">Passive Skills</a></li><li><a href="#skill-tiers">Skill Tiers</a></li><li><a href="#sealed-legend-tome">Sealed Legend Tome</a></li><li><a href="#hotbar-auto-cast">Hotbar &amp; Auto-Cast</a></li><li><a href="#auto-heal-cleric">Auto-Heal (Cleric)</a></li><li><a href="#party-support-skills">Party Support Skills</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="active-skills">
+          <h2>Active Skills</h2>
+          <p>Active skills cost MP and have cooldowns. Assign them to hotbar slots 1-9. Each class has unique skills that unlock at certain levels.</p>
+        </section>
+        <section class="guide-entry" id="passive-skills">
+          <h2>Passive Skills</h2>
+          <p>Passive skills are always active once learned. They provide permanent bonuses to stats like HP, defense, dodge, move speed, and more.</p>
+        </section>
+        <section class="guide-entry" id="skill-tiers">
+          <h2>Skill Tiers</h2>
+          <p><strong>Normal:</strong> Buy for 500g at Sage Elwin.</p>
+<p><strong>Rare:</strong> Buy for 100 Lumina at Sage Elwin.</p>
+<p><strong>Epic:</strong> Buy for 500 Lumina at Sage Elwin.</p>
+<p><strong>Legend:</strong> Buy for 10,000 Lumina at Sage Elwin - or learn one from a Sealed Legend Tome, an exceedingly rare drop from the Awakened Forgotten One raid.</p>
+        </section>
+        <section class="guide-entry" id="sealed-legend-tome">
+          <h2>Sealed Legend Tome</h2>
+          <p>An exceedingly rare drop from the mightiest bosses (today: the Awakened Forgotten One raid). Every participant has their own chance on each kill - being there is all it takes to be eligible.</p>
+<p>Use the tome at level 30+ to CHOOSE one legend skill of your class to learn (currently Titan&#x27;s Wrath, Death&#x27;s Embrace, Storm of Arrows, Angel&#x27;s Blessing, or Ragebreaker - new legend skills join the selection as they are released).</p>
+<p>The tome is bound to your account - it cannot be traded, sold, or listed on the Marketplace, so a spare stays with you as a trophy.</p>
+<p>Delivered by mail when it drops, so it reaches you even if your bags were full or you left the arena.</p>
+        </section>
+        <section class="guide-entry" id="hotbar-auto-cast">
+          <h2>Hotbar &amp; Auto-Cast</h2>
+          <p>Drag skills to hotbar slots from the Skills screen (K). The panel shows two rows: the keyed row (1-9) and an extra click-only row (slots 9-17, shown as the top bar on the HUD).</p>
+<p>Drag a skill out of a slot and drop it anywhere to unassign it (or right-click to clear).</p>
+<p>Right-click a slot to toggle auto-cast.</p>
+<p>With auto-cast ON, the skill fires automatically in auto-combat when off cooldown and MP is available.</p>
+        </section>
+        <section class="guide-entry" id="auto-heal-cleric">
+          <h2>Auto-Heal (Cleric)</h2>
+          <p>Clerics can auto-cast healing skills. In the Skills screen (K), drag a healing skill (Heal, Angel&#x27;s Blessing) onto an Auto-Heal slot — or select the skill and click a slot.</p>
+<p>Use the &#x27;Heal below&#x27; stepper to set the HP threshold (10%–90%). During auto-combat your Cleric casts the heal as soon as HP drops below it — heals take priority over attack skills.</p>
+<p>Drag a skill out of an Auto-Heal slot and drop it anywhere to clear it, or right-click the slot.</p>
+        </section>
+        <section class="guide-entry" id="party-support-skills">
+          <h2>Party Support Skills</h2>
+          <p>Five epic class skills (Lv 25, bought from Sage Elwin for 500 Lumina) support your whole party. Buffs and heals reach every member, even across maps:</p>
+<p><strong>Swordsman - Guardian&#x27;s Roar:</strong> taunts nearby enemies onto you and grants the party +80 Defense for 3 minutes.</p>
+<p><strong>Ranger - Hunter&#x27;s Boon:</strong> grants the party +60 Accuracy, +40 Dodge, and +8% Skill Speed for 3 minutes.</p>
+<p><strong>Cleric - Sacred Nova:</strong> heals you and all party members (scaled by your INT) and deals 180% AoE holy damage to nearby enemies.</p>
+<p><strong>Assassin - Killing Intent:</strong> sharpens the whole party&#x27;s offense with +10% Attack Speed and +10% Damage for 3 minutes.</p>
+<p><strong>Warrior - Berserker&#x27;s Warcry:</strong> whips the party into fury with +12% Damage for 3 minutes (the strongest pure-damage cry; same-stat buffs don&#x27;t stack — the strongest wins).</p>
+<p>All five can be cast solo too — the party buffs/heals still benefit you.</p>
+        </section>
+        <div class="guide-nav"><a href="guide-stats-leveling.html">&laquo; Stats &amp; Leveling</a><a href="guide-quests.html">Quests &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

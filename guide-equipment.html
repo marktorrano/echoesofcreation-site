@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment &amp; Upgrades Guide | Echoes of Creation</title>
+  <meta name="description" content="Equipment &amp; Upgrades guide for Echoes of Creation. slots: Weapon, Off-hand, Helm, Upper Armor, Lower Armor, Gauntlets, Boots, Cape, Necklace, 2 Earrings, 2 Rings, Belt.">
+  <link rel="canonical" href="https://echoesofcreation.net/guide-equipment.html">
+  <meta property="og:title" content="Equipment &amp; Upgrades Guide | Echoes of Creation">
+  <meta property="og:description" content="Equipment &amp; Upgrades guide for Echoes of Creation. slots: Weapon, Off-hand, Helm, Upper Armor, Lower Armor, Gauntlets, Boots, Cape, Necklace, 2 Earrings, 2 Rings, Belt.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://echoesofcreation.net/guide-equipment.html">
+  <meta property="og:site_name" content="Echoes of Creation">
+  <meta property="og:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://echoesofcreation.net/images/hero-banner.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero { min-height: 36vh; display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 20px 50px;
+      background: linear-gradient(180deg, rgba(10, 8, 14, 0.92), rgba(10, 8, 14, 0.78)), url('images/hero-banner.webp') center/cover no-repeat; }
+    .guide-hero .hero-subtitle { margin-top: 12px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .guide-crumbs { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .guide-crumbs a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-wrap { max-width: 820px; margin: 0 auto; }
+    .guide-toc { background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px;
+      padding: 18px 22px; margin-bottom: 36px; }
+    .guide-toc h2 { font-family: var(--font-display, Georgia, serif); font-size: 1rem; color: var(--color-gold, #d4a853);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+    .guide-toc ol { margin: 0; padding-left: 20px; columns: 2 240px; column-gap: 28px; }
+    .guide-toc li { margin: 4px 0; break-inside: avoid; }
+    .guide-toc a { color: var(--color-text, #e0ddd5); text-decoration: none; }
+    .guide-toc a:hover { color: var(--color-gold, #d4a853); }
+    .guide-entry { margin-bottom: 34px; scroll-margin-top: 90px; }
+    .guide-entry h2 { font-family: var(--font-display, Georgia, serif); font-size: 1.35rem; color: var(--color-gold, #d4a853);
+      margin: 0 0 12px; letter-spacing: 0.02em; }
+    .guide-entry p, .guide-entry li { color: rgba(255,255,255,0.82); line-height: 1.75; }
+    .guide-entry p { margin: 0 0 10px; }
+    .guide-entry ul, .guide-entry ol { margin: 0 0 12px; padding-left: 22px; }
+    .guide-entry strong { color: var(--color-text, #e0ddd5); }
+    .guide-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .guide-nav a { color: var(--color-gold, #d4a853); text-decoration: none; }
+    .guide-fine { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 28px; text-align: center; }
+    .hub-section { margin-bottom: 48px; }
+    .hub-section h2 { font-family: var(--font-display, Georgia, serif); color: var(--color-gold, #d4a853); font-size: 1.5rem; margin: 0 0 6px; }
+    .hub-section > p { color: rgba(255,255,255,0.6); margin: 0 0 18px; }
+    .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .hub-card { display: block; padding: 18px 20px; border-radius: 8px; text-decoration: none;
+      background: var(--color-surface, #1a1a2e); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s, transform 0.3s; }
+    .hub-card:hover { border-color: rgba(212,168,83,0.45); transform: translateY(-2px); }
+    .hub-card h3 { font-family: var(--font-display, Georgia, serif); color: var(--color-text, #e0ddd5); font-size: 1.1rem; margin: 0 0 6px; }
+    .hub-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .guide-toc ol { columns: 1; } }
+  </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Equipment & Upgrades Guide",
+      "description": "Equipment & Upgrades guide for Echoes of Creation. slots: Weapon, Off-hand, Helm, Upper Armor, Lower Armor, Gauntlets, Boots, Cape, Necklace, 2 Earrings, 2 Rings, Belt.",
+      "url": "https://echoesofcreation.net/guide-equipment.html",
+      "dateModified": "2026-10-08",
+      "inLanguage": "en",
+      "image": "https://echoesofcreation.net/images/hero-banner.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Torrano Dev"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Echoes of Creation",
+        "url": "https://echoesofcreation.net/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://echoesofcreation.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://echoesofcreation.net/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Equipment & Upgrades",
+          "item": "https://echoesofcreation.net/guide-equipment.html"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Echoes of Creation" class="nav-logo-img"></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#world">World</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="patch-notes-0.2.17.html">Patch Notes</a></li>
+        <li><a href="https://discord.gg/JjrmEN9exb" class="nav-discord-link" target="_blank" rel="noopener">Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="guide-hero">
+    <div>
+      <div class="guide-crumbs"><a href="index.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Equipment &amp; Upgrades</div>
+      <h1 class="hero-title">Equipment &amp; Upgrades</h1>
+      <p class="hero-subtitle">An Echoes of Creation guide</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="guide-wrap">
+        <nav class="guide-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol><li><a href="#equipment-slots">Equipment Slots</a></li><li><a href="#drag-drop">Drag &amp; Drop</a></li><li><a href="#gear-tiers">Gear Tiers</a></li><li><a href="#crafting-at-the-blacksmith">Crafting at the Blacksmith</a></li><li><a href="#legend-weapon-forging-void-shards">Legend Weapon Forging (Void-Shards)</a></li><li><a href="#abyssal-gear-lv-40-forge">Abyssal Gear (Lv 40 Forge)</a></li><li><a href="#reforging">Reforging</a></li><li><a href="#enchanting-accessories">Enchanting Accessories</a></li><li><a href="#upgrading-1-to-10">Upgrading (+1 to +10)</a></li><li><a href="#upgrade-success-rates">Upgrade Success Rates</a></li><li><a href="#upgrade-failure">Upgrade Failure</a></li><li><a href="#scroll-of-protection">Scroll of Protection</a></li><li><a href="#upgrade-costs">Upgrade Costs</a></li><li><a href="#stat-comparison">Stat Comparison</a></li><li><a href="#accessories">Accessories</a></li><li><a href="#gear-set-bonuses">Gear Set Bonuses</a></li><li><a href="#accessory-set-bonuses">Accessory Set Bonuses</a></li><li><a href="#socketing-rules">Socketing Rules</a></li><li><a href="#gem-sockets">Gem Sockets</a></li><li><a href="#gem-effects">Gem Effects</a></li><li><a href="#socketing-rates">Socketing Rates</a></li><li><a href="#scroll-of-socket-extension">Scroll of Socket Extension</a></li><li><a href="#gem-extractor">Gem Extractor</a></li><li><a href="#gems-shards-extraction">Gems, Shards &amp; Extraction</a></li></ol>
+        </nav>
+        <section class="guide-entry" id="equipment-slots">
+          <h2>Equipment Slots</h2>
+          <p>14 slots: Weapon, Off-hand, Helm, Upper Armor, Lower Armor, Gauntlets, Boots, Cape, Necklace, 2 Earrings, 2 Rings, Belt.</p>
+<p>Gear has level and class requirements. Each class can only equip its own weapon type — Swordsman: swords, Assassin: knives/daggers, Ranger: bows, Cleric: staves, Warrior: greatswords (two-handed, no off-hand). The Adventurer (before Level 10) can use any weapon.</p>
+        </section>
+        <section class="guide-entry" id="drag-drop">
+          <h2>Drag &amp; Drop</h2>
+          <p>Drag gear from your inventory onto an equipment slot to equip it directly.</p>
+<p>Drag equipped gear to the inventory area to unequip it.</p>
+<p>Drag between two matching slots (e.g., Ring 1 and Ring 2) to swap them.</p>
+<p>You can also still click to equip/unequip as before.</p>
+        </section>
+        <section class="guide-entry" id="gear-tiers">
+          <h2>Gear Tiers</h2>
+          <p>Normal - white (common drops)</p>
+<p>Rare - blue (uncommon drops)</p>
+<p>Epic - purple (rare drops / crafting)</p>
+<p>Legend - gold (very rare / boss drops)</p>
+<p><strong>Genesis - teal (apex gear:</strong> Genesis weapons and off-hands from the Creation Gem forge, Abyssal gear reforged by the Tidewright)</p>
+        </section>
+        <section class="guide-entry" id="crafting-at-the-blacksmith">
+          <h2>Crafting at the Blacksmith</h2>
+          <p>Gareth the Blacksmith has a Craft tab next to Buy/Sell/Upgrade.</p>
+<p>Recipes combine monster materials plus gold or Lumina into gear. Materials are drawn from your bag first, then from account Storage.</p>
+<p>Crafted gear comes out with no sockets — you can add up to 4 afterward with Scrolls of Socket Extension. (The one exception: Void-Shard legend forges roll sockets like a monster drop — see Legend Weapon Forging.)</p>
+<p>Use the bar at the top to filter recipes by category, class, and tier.</p>
+        </section>
+        <section class="guide-entry" id="legend-weapon-forging-void-shards">
+          <h2>Legend Weapon Forging (Void-Shards)</h2>
+          <p>The Legend weapons can be FORGED from Void-Shards — a high-stakes gamble beside the boss lottery.</p>
+<p>The void-twisted champions of the Corrupted zones (Corrupted Hollow, Blighted Reach, Defiled Sanctum, Shadowfen — Lv 35) each drop their class&#x27;s Void-Shard at 2%.</p>
+<p>Bring 100 matching shards plus 50,000 gold to Gareth the Blacksmith (Lv 28 required):</p>
+<p>100x Void-Shard of the Swordsman -&gt; Creator&#x27;s Edge</p>
+<p>100x Void-Shard of the Assassin -&gt; Void Fang</p>
+<p>100x Void-Shard of the Ranger -&gt; Forgotten Bow</p>
+<p>100x Void-Shard of the Cleric -&gt; Creator&#x27;s Staff</p>
+<p>100x Void-Shard of the Warrior -&gt; Worldrender</p>
+<p>Each attempt has a 25% success chance. On a fail, the shards AND the gold are consumed — a warning asks you to confirm before every attempt. The result is locked in and saved BEFORE it&#x27;s revealed, so you can&#x27;t reload to retry.</p>
+<p>A successful forge rolls its socket count exactly like a monster drop:</p>
+<p>0 sockets: 50.3% | 4 sockets: 3.0%</p>
+<p>1 socket: 25.1% | 5 sockets: 1.5%</p>
+<p>2 sockets: 13.1% | 6 sockets: 0.7%</p>
+<p>3 sockets: 6.0% | 7 sockets: 0.3%</p>
+<p>Low rolls can still be extended with Scrolls of Socket Extension (up to 4).</p>
+<p>Forged weapons BIND TO YOUR ACCOUNT the moment they are made: they can never be traded or listed on the Marketplace, but they can still move between your own characters through Storage. Copies dropped by The Forgotten One and Primordius (0.5%) stay unbound and tradeable.</p>
+<p>Void-Shards themselves cannot be traded — every shard is earned in the hunt.</p>
+        </section>
+        <section class="guide-entry" id="abyssal-gear-lv-40-forge">
+          <h2>Abyssal Gear (Lv 40 Forge)</h2>
+          <p>The strongest armor and accessories in Eloria are FORGED, not dropped.</p>
+<p>The Dark Tide coast (Lv 40) is home to Abyssal Sirens, Drowned Revenants and Brinefang Stalkers. Each rarely yields its monster part — Brinefang Scales, Revenant&#x27;s Emblems and the precious Siren&#x27;s Pearls. Parts are tradeable on the Marketplace and are never auto-sold.</p>
+<p>Parts also feed each coast monster&#x27;s Collection (permanent account stat bonuses) — check the Monsterpedia.</p>
+<p>Bring Nerissa the Tidewright (Eloria Village) a Legend base piece plus parts and gold, and she forges it into a Genesis-tier Abyssal piece (Lv 40):</p>
+<p>Forgotten armor + Creator&#x27;s Mantle -&gt; the 6-piece Abyssal Set</p>
+<p>Legend accessories -&gt; 4 Abyssal accessories</p>
+<p>When you forge, YOU CHOOSE which copy of the base piece Nerissa consumes — a picker lists every eligible copy in your bag with its upgrade and socket state (least valuable first). Copies with gems socketed, locked copies and bound copies are never eligible: extract gems first, they are recoverable. Whatever you pick is consumed forever, upgrades and all.</p>
+<p>Every forging rolls sockets like the Genesis forge: most pieces come out with 0-4, rare rolls grant 5, 6 or even 7. Low rolls can still be extended with Scrolls of Socket Extension (up to 4).</p>
+<p><strong>IMPORTANT:</strong> Abyssal gear itself can never be traded or listed on the Marketplace — trade the monster PARTS instead. Equipping a piece binds it to your account (you&#x27;ll be asked to confirm); bound or not, it can still be shared with your other characters through Storage.</p>
+        </section>
+        <section class="guide-entry" id="reforging">
+          <h2>Reforging</h2>
+          <p>Hold several copies of the same gear piece? Open Reforge from the Menu (or put it on your HUD bar with Customize HUD) and reforge them into 1 fresh copy with 4 to 7 sockets. The Reforge panel shows how many copies one Reforge takes (5 at launch).</p>
+<p>The new piece rolls 4 to 7 sockets. Reforging always succeeds.</p>
+<p>Works on Legend and Genesis gear only - weapons, off-hands, helms, armor, gauntlets, boots and capes. Accessories, wings and outfits never hold sockets, so they can&#x27;t be reforged.</p>
+<p>EVERYTHING on the pieces used is lost: upgrade levels, socketed gems and enchants. The new piece starts at +0 with empty sockets. Tap the copies you want to use, or press Auto-add to fill the empty slots with your least-invested copies. Reforge then asks you to Confirm, showing exactly which pieces will be destroyed.</p>
+<p>Lock a piece in your inventory to keep it out of Reforging. Pieces that are equipped, in your warehouse or listed on the Marketplace are never used.</p>
+<p>Genesis weapons roll a fresh innate and grade (60% Low, 30% Mid, 10% High). If any piece used was bound, the new piece is bound too.</p>
+<p>You must be online - the server rolls the result.</p>
+        </section>
+        <section class="guide-entry" id="enchanting-accessories">
+          <h2>Enchanting Accessories</h2>
+          <p>Accessories hide ENCHANT LINES — bonus stats you can reroll for the perfect roll.</p>
+<p>Open the Enchant station (the Enchant shortcut on the HUD), pick an accessory (equipped or in your bag), and spend 1 Enchantment Stone plus gold to REROLL all of its lines. Rerolling replaces every line at once, so it&#x27;s a gamble — keep going until you like the result.</p>
+<p>Enchantment Stones drop from monsters of the Cursed Caverns and beyond (Lv 14+) at the same rarity as gems, and are tradeable on the Marketplace.</p>
+<p>How many lines an accessory can hold depends on its tier:</p>
+<p>Rare - 1 line</p>
+<p>Epic - 2 lines</p>
+<p>Legend - 3 lines</p>
+<p>Genesis - 4 lines (the Abyssal accessories)</p>
+<p>Each line rolls a stat and a VARIANT:</p>
+<p>General (white) - always active</p>
+<p>PvE (teal) - only against monsters</p>
+<p>PvP (crimson) - only in the Faction War</p>
+<p>Specialized PvE and PvP lines roll about 25% higher than General, so a focused build hits harder in its element. Higher tiers roll bigger numbers — chase the lines that fit your build!</p>
+        </section>
+        <section class="guide-entry" id="upgrading-1-to-10">
+          <h2>Upgrading (+1 to +10)</h2>
+          <p>Visit Gareth the Blacksmith to upgrade.</p>
+<p>Each level gives +10% stat bonus (up to +100% at +10).</p>
+<p>Costs gold based on gear tier and current level.</p>
+<p>You can upgrade both equipped gear and gear in your inventory — useful for pre-upgrading off-class items for Gear Collections.</p>
+<p>A short forging animation plays while the upgrade is processed, then the result is revealed.</p>
+        </section>
+        <section class="guide-entry" id="upgrade-success-rates">
+          <h2>Upgrade Success Rates</h2>
+          <p>+0 to +1: 95% | +5 to +6: 55%</p>
+<p>+1 to +2: 90% | +6 to +7: 45%</p>
+<p>+2 to +3: 85% | +7 to +8: 35%</p>
+<p>+3 to +4: 75% | +8 to +9: 25%</p>
+<p>+4 to +5: 65% | +9 to +10: 15%</p>
+        </section>
+        <section class="guide-entry" id="upgrade-failure">
+          <h2>Upgrade Failure</h2>
+          <p>+0 to +3: Safe — nothing happens on fail.</p>
+<p>+4 to +7: Downgrade — drops 1 level on fail.</p>
+<p>+8 to +9: Destroy — item is destroyed on fail!</p>
+<p>Be careful with high-level upgrades.</p>
+<p>A warning popup will appear before attempting upgrades that risk destruction if you have no Scroll of Protection active.</p>
+<p>When a player successfully upgrades an item to +9 or above, a global announcement is shown as a toast and posted in the global chat. Click the item name in chat to view its stats.</p>
+        </section>
+        <section class="guide-entry" id="scroll-of-protection">
+          <h2>Scroll of Protection</h2>
+          <p>Prevents your equipment from being destroyed during +8 and +9 upgrade attempts. If the upgrade fails, the item stays at its current level and one scroll charge is consumed.</p>
+<p>Stacks up to 5 charges. Buy from the Lumina Shop for 10 Lumina each.</p>
+<p>Using one from your inventory adds a quantity stepper, so you can top off several charges at once (it never spends more than the 5-charge cap allows).</p>
+<p>The Blacksmith&#x27;s header shows a scroll icon with how many you own — click it to open the scroll&#x27;s details and activate one or more charges (with a quantity stepper) without leaving the shop. If you have none, clicking it takes you straight to the Lumina Shop to buy more.</p>
+<p>The upgrade UI shows your active protection status next to the failure risk.</p>
+        </section>
+        <section class="guide-entry" id="upgrade-costs">
+          <h2>Upgrade Costs</h2>
+          <p><strong>Base cost by tier:</strong> Normal 100g, Rare 500g, Epic 2000g, Legend 5000g.</p>
+<p><strong>Multiplied by level:</strong> x1, x2, x3, x4, x5, x7, x9, x12, x15, x20.</p>
+<p><strong>Example:</strong> Rare +4 to +5 = 500 x 5 = 2,500g.</p>
+        </section>
+        <section class="guide-entry" id="stat-comparison">
+          <h2>Stat Comparison</h2>
+          <p>When viewing gear in your inventory or at the Blacksmith&#x27;s shop, stats are compared against your currently equipped item in that slot.</p>
+<p>Green numbers = better than equipped.</p>
+<p>Red numbers = worse than equipped.</p>
+<p>If the slot is empty, all stats show as green gains.</p>
+        </section>
+        <section class="guide-entry" id="accessories">
+          <h2>Accessories</h2>
+          <p><strong>Accessories fill 6 slots:</strong> Necklace, 2 Earrings, 2 Rings, Belt.</p>
+<p>Earring and Ring slots are dual — you can equip two of each.</p>
+<p>Necklaces boost Attack (and Accuracy at higher tiers).</p>
+<p>Earrings boost Accuracy (and Attack at higher tiers).</p>
+<p>Rings boost Defense (and Dodge at higher tiers).</p>
+<p>Belts boost Dodge and max carry Weight.</p>
+<p>Tiers &amp; key stats per piece:</p>
+<p><strong>Normal (Lv 1):</strong> ATK +2 / ACC +1 / DEF +1 / DGE +1, Wt +10</p>
+<p><strong>Rare (Lv 10):</strong> ATK +5 / ACC +3 / DEF +3 / DGE +3, Wt +20</p>
+<p><strong>Epic (Lv 20):</strong> ATK +10 / ACC +6 / DEF +6 / DGE +6, Wt +35</p>
+<p><strong>Legend (Lv 28):</strong> ATK +18 / ACC +10 / DEF +10 / DGE +10, Wt +50</p>
+<p>Normal accessories are sold by Gareth the Blacksmith.</p>
+<p>Rare drop from Goblin Hills (3%), Epic from Cursed Caverns (2-3%), Legend from Shadow Guardian and The Forgotten One (2%).</p>
+        </section>
+        <section class="guide-entry" id="gear-set-bonuses">
+          <h2>Gear Set Bonuses</h2>
+          <p>Equipping multiple pieces from the same set grants bonus stats:</p>
+<p><strong>Leather Set (Normal):</strong> 3pc: DEF +5 | 5pc: Dodge +3, HP +30</p>
+<p><strong>Chain Set (Rare):</strong> 3pc: DEF +12, Dodge +5 | 5pc: ATK +8, HP +80</p>
+<p><strong>Plate Set (Epic):</strong> 3pc: DEF +25, Dodge +10 | 5pc: ATK +20, HP +200, ACC +10</p>
+<p><strong>Forgotten Set (Legend):</strong> 3pc: DEF +40, Dodge +15, ATK +15 | 5pc: ATK +50, DEF +50, Dodge +25, ACC +25, HP +500, MP +200</p>
+<p><strong>Abyssal Set (Genesis):</strong> 3pc: DEF +90, Dodge +33, ATK +40, HP +450 | 5pc: ATK +110, DEF +110, Dodge +50, ACC +50, HP +1200, MP +450</p>
+<p>Active set bonuses are shown on the Character Stats screen (C).</p>
+        </section>
+        <section class="guide-entry" id="accessory-set-bonuses">
+          <h2>Accessory Set Bonuses</h2>
+          <p>Equipping multiple accessories of the same tier grants additional bonuses. The 6 accessory slots are: Necklace, Earring x2, Ring x2, Belt.</p>
+<p>Rare Accessory Harmony:</p>
+<p>3pc: DEF +8, ACC +5</p>
+<p>5pc: ATK +10, HP +60, Dodge +5</p>
+<p>Epic Accessory Resonance:</p>
+<p>3pc: DEF +18, ACC +12, Dodge +8</p>
+<p>5pc: ATK +25, HP +150, MP +80</p>
+<p>Legendary Accessory Convergence:</p>
+<p>3pc: DEF +30, ATK +20, Dodge +15</p>
+<p>5pc: ATK +40, DEF +40, Dodge +20, ACC +20, HP +300, MP +150</p>
+<p>Abyssal Accessory Communion (Genesis):</p>
+<p>3pc: DEF +65, ATK +45, Dodge +30</p>
+<p>5pc: ATK +80, DEF +80, Dodge +40, ACC +40, HP +650, MP +320</p>
+<p>Click an equipped accessory to see your current set bonus progress.</p>
+        </section>
+        <section class="guide-entry" id="socketing-rules">
+          <h2>Socketing Rules</h2>
+          <p>The core rules of gem socketing, in one place:</p>
+<ol><li>Sockets come from drops. Weapons and armor can drop with up to 7 sockets (many drop with none) - the more sockets, the rarer the drop. Crafted gear has no sockets by default. You can add sockets afterward with a Scroll of Socket Extension (up to 4 max via the scroll - see Scroll of Socket Extension).</li></ol>
+<ol><li>One gem type per item. The first gem or shard you insert locks the item to that type - it won&#x27;t accept any other kind after that.</li></ol>
+<p>EXCEPTION - two-handed weapons (the Warrior&#x27;s greatsword): they hold up to TWO gem types, and every gem in them counts DOUBLE on the scaling curve. One greatsword carries what other classes split across weapon + off-hand.</p>
+<ol><li>The effect scales with the NUMBER of gems socketed, not just having one. Each gem added is worth more than the last, with a steep jump at the top end.</li></ol>
+<ol><li>A gem does one thing in a weapon and a different thing in armor (see Gem Effects).</li></ol>
+<ol><li>A few armor effects are slot-locked: Accuracy and Gold Drop Find fit gloves, Dodge fits boots, Status Resist fits helmets.</li></ol>
+<ol><li>Adding a gem can backfire. Past the first it&#x27;s a gamble (see Socketing Rates): a fail destroys the gem you tried to add, and from the 5th gem on a downgrade can also knock out a gem already set. The result is locked in and saved BEFORE it&#x27;s revealed, so you can&#x27;t reload to retry.</li></ol>
+<ol><li>Shards are the weaker grade (about 60% of a gem) and count as their own type; combine 3 matching shards into 1 gem.</li></ol>
+<p>Socket, combine, and extract from the Sockets panel (HUD shortcut or side menu). Resetting an item destroys its gems unless you first pull the top one out with a Gem Extractor.</p>
+        </section>
+        <section class="guide-entry" id="gem-sockets">
+          <h2>Gem Sockets</h2>
+          <p>Weapons and armor dropped by monsters can have 1 to 7 sockets - the more sockets, the rarer the drop.</p>
+<p>Socket gems into them to power them up.</p>
+<p><strong>ONE type per item:</strong> the first gem you socket locks the item to that gem. Socket a Ruby and that item only accepts Rubies after that.</p>
+<p>The bonus scales with the NUMBER of gems socketed - each added gem is worth more than the last, with a big jump at the top end.</p>
+<p>A gem does different things in a weapon vs. armor (see Gem Effects).</p>
+        </section>
+        <section class="guide-entry" id="gem-effects">
+          <h2>Gem Effects</h2>
+          <p>Each gem has a weapon effect and an armor effect:</p>
+<p><strong>Ruby - Weapon:</strong> Lifesteal | Armor: Max HP</p>
+<p><strong>Diamond - Weapon:</strong> Attack % | Armor: Defense %</p>
+<p><strong>Sapphire - Weapon:</strong> Skill Damage % | Armor: Max MP %</p>
+<p><strong>Topaz - Weapon:</strong> Gold Drop Find | Armor: Accuracy (gloves)</p>
+<p><strong>Emerald - Weapon:</strong> Crit Rate | Armor: Dodge (boots)</p>
+<p><strong>Opal - Weapon:</strong> Attack Speed | Armor: Move Speed</p>
+<p><strong>Amethyst - Weapon:</strong> Crit Damage | Armor: Status Resist (helmet)</p>
+<p><strong>Onyx - Shield:</strong> Block Rate | Armor: Block Pierce (gloves)</p>
+<p>Some armor effects only fit a specific slot: Accuracy on gloves, Dodge on boots, Status Resist on helmets.</p>
+<p><strong>Onyx is special:</strong> it only fits shields and gloves. In a shield it raises your Block chance (base 15%, capped at 50%). In gloves it grants Block Pierce, lowering the target&#x27;s Block chance by that many points - Shielded elites block 15% of your hits for half damage, so 15+ Block Pierce shuts their blocking down entirely.</p>
+<p>Example - Ruby in a weapon (Lifesteal):</p>
+<p>1 = 2% 2 = 3% 3 = 4% 4 = 6% 5 = 8% 6 = 12% 7 = 18%</p>
+<p>Example - Diamond in a weapon (Attack):</p>
+<p>1 = 5% 2 = 8% 3 = 15% 4 = 30% 5 = 75% 6 = 100% 7 = 150%</p>
+        </section>
+        <section class="guide-entry" id="socketing-rates">
+          <h2>Socketing Rates</h2>
+          <p>Adding each gem is a gamble at higher counts. On a fail, the gem you tried to add is lost. On a downgrade, you also lose one gem already in the item.</p>
+<p>1st gem: 100% success</p>
+<p>2nd gem: 95% success / 5% fail</p>
+<p>3rd gem: 80% success / 20% fail</p>
+<p>4th gem: 60% success / 40% fail</p>
+<p>5th gem: 35% success / 50% fail / 15% downgrade</p>
+<p>6th gem: 15% success / 65% fail / 20% downgrade</p>
+<p>7th gem: 5% success / 70% fail / 25% downgrade</p>
+        </section>
+        <section class="guide-entry" id="scroll-of-socket-extension">
+          <h2>Scroll of Socket Extension</h2>
+          <p>A Lumina Shop scroll (50 Lumina) that attempts to carve an extra socket onto a chosen gear piece - the only way to add sockets to gear that dropped with none (e.g. crafted items). Accessories and wings cannot be socketed.</p>
+<p><strong>Where to use:</strong> open the Sockets panel (HUD shortcut or side menu), pick the gear piece (bag or equipped) and press the blue Extend Socket button.</p>
+<p>Max 4 sockets via the scroll. Items already at 4+ sockets cannot be extended further.</p>
+<p>Each extra socket is harder than the last:</p>
+<p>0 -&gt; 1: 90% success / 10% fail</p>
+<p>1 -&gt; 2: 75% success / 25% fail</p>
+<p>2 -&gt; 3: 55% success / 45% fail</p>
+<p>3 -&gt; 4: 35% success / 65% fail</p>
+<p>The scroll is consumed on every attempt, success or fail. The result is locked in and saved BEFORE it&#x27;s revealed - you can&#x27;t reload to retry.</p>
+        </section>
+        <section class="guide-entry" id="gem-extractor">
+          <h2>Gem Extractor</h2>
+          <p>A Lumina Shop consumable (50 Lumina) that prys the top gem out of a socketed item INTACT - the gem is returned to your bag instead of being destroyed.</p>
+<p><strong>Where to use:</strong> open the Sockets panel (HUD shortcut or side menu), pick a gear piece with at least one gem in it and press the amber Extract Top Gem button (you&#x27;ll be asked to confirm).</p>
+<p>Always succeeds; the Gem Extractor is consumed on use. The item&#x27;s socket capacity is unchanged - only the topmost gem is removed (the item still keeps its locked gem color, so you can socket a fresh gem of the same type afterward).</p>
+<p>Use it to recover a high-tier gem before resetting an item, or to undo a socketed gem you no longer want.</p>
+        </section>
+        <section class="guide-entry" id="gems-shards-extraction">
+          <h2>Gems, Shards &amp; Extraction</h2>
+          <p>Each gem color comes in two grades:</p>
+<p>Shard - a weaker socketable, about 60% of the gem&#x27;s effect.</p>
+<p>Gem - the full-strength socketable.</p>
+<p><strong>A shard is its own type:</strong> an item locked to shards takes only shards. Socket shards early, then graduate to gems.</p>
+<p>Combine 3 matching Shards into 1 Gem from the Sockets panel&#x27;s Combine button.</p>
+<p>Shards and gems drop from monsters; gems can also be bought.</p>
+<p>Resetting an item normally destroys its gems. Use a Gem Extractor (Lumina Shop, 50 Lumina) to pull the top one back out intact and re-use it - see Gem Extractor.</p>
+<p>Socket, extract, and combine all from the Sockets panel (HUD shortcut or side menu).</p>
+        </section>
+        <div class="guide-nav"><a href="guide-battle-dungeon.html">&laquo; Battle Dungeon</a><a href="guide-loadouts.html">Loadouts &raquo;</a></div>
+        <p class="guide-fine">Written for game version 0.2.17. Found something out of date? Tell us on <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener" style="color:inherit;">Discord</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Play Free on Steam</h2>
+      <p class="section-subtitle">Echoes of Creation is a free-to-play online 3D action RPG for Windows.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://store.steampowered.com/app/4685890/Echoes_of_Creation_Origin/" class="btn btn-play" target="_blank" rel="noopener">Play on Steam</a>
+        <a href="https://discord.gg/JjrmEN9exb" class="btn btn-secondary" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Echoes of Creation</h3>
+          <p>A free-to-play online 3D action RPG</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#about">Story</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="guides.html">Guides</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="patch-notes-0.2.17.html">Patch Notes</a>
+          <a href="https://discord.gg/JjrmEN9exb" target="_blank" rel="noopener">Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Echoes of Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
